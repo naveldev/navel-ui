@@ -13,6 +13,7 @@ nav.nav-left
 	background-color: var(--nav-primary-color);
     color: var(--nav-secondary-color);
     position: relative;
+    z-index: 10004;
 
 	.nav-branding
 	{
