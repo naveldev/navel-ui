@@ -1,0 +1,26 @@
+{
+  "name": "@naviisml/vuejs-components",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/naveldev/vuejs-components.git"
+  },
+  "version": "1.0.0",
+  "description": "Comming soon...",
+  "sass": "src/scss/app.scss",
+  "main": "src/js/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "vue": "^3.2.16",
+    "@naviisml/navel-ui": "^2.0.0"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naveldev/vuejs-components/issues"
+  },
+  "homepage": "https://github.com/naveldev/vuejs-components#readme",
+  "author": "Navi Ismail",
+  "devDependencies": {}
+}

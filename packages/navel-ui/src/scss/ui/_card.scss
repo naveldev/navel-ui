@@ -1,0 +1,80 @@
+ // Card
+:root
+{
+    --card-primary-color: var(--color-gray-100);
+    --card-secondary-color: var(--color-gray-200);
+    --card-tertiary-color: var(--color-gray-100);
+    --card-quaternary-color: var(--color-gray-900);
+}
+
+.card
+{
+    box-shadow: 0 1px 3px var(--color-gray-500);
+    background: var(--card-tertiary-color);
+    color: var(--card-quaternary-color);
+    box-sizing: border-box;
+    border-radius: 3px;
+	overflow: hidden;
+    display: block;
+
+    .card-heading
+    {
+        padding: 20px;
+        position: relative;
+
+        &:not(:last-child):after
+        {
+            border-top: 1px solid var(--card-secondary-color);
+            position: absolute;
+            content: "";
+            width: 100%;
+            bottom: 0;
+        }
+    }
+
+    .card-content
+    {
+        padding: 20px;
+    }
+
+    .card-footer
+    {
+        background-color: var(--card-secondary-color);
+        border-width: 80%;
+        padding: 20px;
+    }
+
+    &.card-soft
+    {
+        background-color: var(--card-primary-color);
+        color: var(--card-quaternary-color);
+    }
+
+    &.card-hover
+    {
+        cursor: pointer;
+
+        &:hover
+        {
+            box-shadow: 0 1px 5px var(--color-gray-500);
+            transition: .25s;
+        }
+    }
+
+    .alert
+    {
+        box-shadow: none;
+        border-radius: 0;
+    }
+}
+
+@include colors() using ( $color, $value )
+{
+    .card-#{$color}
+    {
+        --card-primary-color: #{"var(--color-" + $color + "-100)"};
+        --card-secondary-color: #{"var(--color-" + $color + "-200)"};
+        --card-tertiary-color: #{"var(--color-" + $color + "-500)"};
+        --card-quaternary-color: #{"var(--color-" + $color + "-900)"};
+    }
+}

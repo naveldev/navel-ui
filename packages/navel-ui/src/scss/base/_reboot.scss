@@ -1,0 +1,49 @@
+body,
+html
+{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body
+{
+	font-weight: $font-weight;
+    font-family: $font-family;
+    background-color: $background-color;
+    color: $text-color;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+button
+{
+    outline: 0;
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0;
+}
+
+input
+{
+    outline: 0;
+    font-family: inherit;
+    font-size: inherit;
+    box-sizing: border-box;
+}
+
+textarea
+{
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: normal;
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
+}

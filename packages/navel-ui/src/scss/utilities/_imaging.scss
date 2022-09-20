@@ -1,0 +1,29 @@
+// Imaging
+img
+{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.img-responsive
+{
+    max-width: 100%;
+}
+
+.img-rounded
+{
+    border-radius: 5px;
+}
+
+.img-circle
+{
+    border-radius: 50%;
+}
+
+.img-stacked
+{
+    *:not(:last-child)
+    {
+        margin-right: -15px;
+    }
+}

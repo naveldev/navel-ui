@@ -1,0 +1,24 @@
+///*
+// * Loop through colors
+// */
+@mixin colors()
+{
+	@each $color, $value in $color-types {
+		@content( $color, $value );
+	}
+}
+
+///*
+// * Get color
+// */
+@mixin color( $color )
+{
+    @if map-has-key( $colors, $color ) {
+        @content( $color, "rgb(" + map-get( $colors, $color ) + ")", map-get( $text-colors, $color ) );
+    }
+
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$color}`. "
+        + "Please make sure it is defined in `$colors` map.";
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "@naviisml/navel-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/naveldev/ui.git"
+  },
+  "version": "2.2.0",
+  "description": "Comming soon...",
+  "sass": "src/scss/app.scss",
+  "main": "src/js/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "vue": "^3.2.16"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naveldev/ui/issues"
+  },
+  "homepage": "https://github.com/naveldev/ui#readme",
+  "author": "Navi Ismail"
+}

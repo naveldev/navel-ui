@@ -1,0 +1,39 @@
+// Alert
+:root
+{
+    --alert-primary-color: var(--color-gray-500);
+    --alert-secondary-color: var(--color-gray-300);
+    --alert-foreground-color: var(--color-gray-700);
+}
+
+.alert
+{
+    box-shadow: 0 1px 3px var(--color-gray-500);
+    background-color: var(--alert-primary-color);
+    color: var(--alert-foreground-color);
+    box-sizing: border-box;
+    display: block;
+    border-radius: 3px;
+    padding: 15px;
+
+	&.alert-soft
+    {
+        background-color: var(--alert-secondary-color);
+    }
+
+    &.alert-sticky
+    {
+        position: sticky;
+        padding: 10px;
+    }
+}
+
+@include colors() using ( $color, $value )
+{
+    .alert-#{$color}
+    {
+        --alert-primary-color: #{"var(--color-" + $color + "-500)"};
+        --alert-secondary-color: #{"var(--color-" + $color + "-300)"};
+        --alert-foreground-color: #{"var(--color-" + $color + "-100)"};
+    }
+}

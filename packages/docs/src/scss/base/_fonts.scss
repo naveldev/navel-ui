@@ -1,0 +1,65 @@
+// Normal
+@font-face {
+	font-family: "Circular Std";
+	font-weight: normal;
+	font-style: normal;
+	src: url("/src/fonts/CircularStd-Book.ttf") format('truetype'),
+		 url("/src/fonts/CircularStd-Book.eot") format('eot'),
+		 url("/src/fonts/CircularStd-Book.woff") format('woff'),
+		 url("/src/fonts/CircularStd-Book.woff2") format('woff2');
+}
+
+// Normal Italic
+@font-face {
+	font-family: "Circular Std";
+	font-weight: normal;
+	font-style: italic;
+	src: url("/src/fonts/CircularStd-BookItalic.ttf") format('truetype'),
+		 url("/src/fonts/CircularStd-BookItalic.eot") format('eot'),
+		 url("/src/fonts/CircularStd-BookItalic.woff") format('woff'),
+		 url("/src/fonts/CircularStd-BookItalic.woff2") format('woff2');
+}
+
+// Bold
+@font-face {
+	font-family: "Circular Std";
+	font-weight: bold;
+	font-style: normal;
+	src: url("/src/fonts/CircularStd-Bold.ttf") format('truetype'),
+		 url("/src/fonts/CircularStd-Bold.eot") format('eot'),
+		 url("/src/fonts/CircularStd-Bold.woff") format('woff'),
+		 url("/src/fonts/CircularStd-Bold.woff2") format('woff2');
+}
+
+// Bold Italic
+@font-face {
+	font-family: "Circular Std";
+	font-weight: bold;
+	font-style: italic;
+	src: url("/src/fonts/CircularStd-BoldItalic.ttf") format('truetype'),
+		 url("/src/fonts/CircularStd-BoldItalic.eot") format('eot'),
+		 url("/src/fonts/CircularStd-BoldItalic.woff") format('woff'),
+		 url("/src/fonts/CircularStd-BoldItalic.woff2") format('woff2');
+}
+
+// Medium
+@font-face {
+	font-family: "Circular Std";
+	font-weight: medium;
+	font-style: normal;
+	src: url("/src/fonts/CircularStd-Medium.ttf") format('truetype'),
+		 url("/src/fonts/CircularStd-Medium.eot") format('eot'),
+		 url("/src/fonts/CircularStd-Medium.woff") format('woff'),
+		 url("/src/fonts/CircularStd-Medium.woff2") format('woff2');
+}
+
+// Medium Italic
+@font-face {
+	font-family: "Circular Std";
+	font-weight: medium;
+	font-style: italic;
+	src: url("/src/fonts/CircularStd-MediumItalic.ttf") format('truetype'),
+		 url("/src/fonts/CircularStd-MediumItalic.eot") format('eot'),
+		 url("/src/fonts/CircularStd-MediumItalic.woff") format('woff'),
+		 url("/src/fonts/CircularStd-MediumItalic.woff2") format('woff2');
+}

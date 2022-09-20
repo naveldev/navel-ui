@@ -1,0 +1,152 @@
+:root
+{
+    --nav-primary-color: var(--color-gray-100);
+    --nav-secondary-color: var(--color-gray-700);
+    --nav-tertiary-color: var(--color-gray-900);
+    --nav-quaternary-color: var(--color-gray-500);
+}
+
+nav.nav-top
+{
+    box-shadow: 0 1px 3px var(--nav-quaternary-color);
+	background-color: var(--nav-primary-color);
+    color: var(--nav-secondary-color);
+	transform: translate3d(0, 0, 0);
+	transition: 0.25s all;
+	position: relative;
+	min-height: 50px;
+
+	.nav-branding
+	{
+		color: rgb(var(--nav-foreground-color));
+		display: inline-block;
+		padding: 0 15px;
+
+		h1
+		{
+			padding: 12px 0;
+		}
+	}
+
+	ul.nav-list
+	{
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+
+		li.nav-item
+		{
+			display: inline-block;
+		}
+
+		li.nav-button
+		{
+			display: inline-block;
+			padding: 6px 5px;
+		}
+
+		a.nav-link
+		{
+            color: var(--nav-secondary-color);
+			padding: 12px 12px;
+			display: block;
+
+			&:hover
+			{
+                color: var(--nav-tertiary-color);
+			}
+
+			&.router-link-exact-active,
+			&.active
+			{
+                color: var(--nav-tertiary-color);
+                font-weight: bold;
+			}
+		}
+	}
+
+	.container
+	{
+		.d-flex
+		{
+			margin: 0 -15px;
+		}
+	}
+
+	// fixed on top
+	&.nav-fixed
+	{
+		position: fixed;
+		width: 100%;
+		z-index: 99999;
+		top: 0;
+	}
+
+	&.nav-fixed + * {
+		margin-top: 50px;
+	}
+
+	// hide navigation
+	&.nav-hidden
+	{
+		box-shadow: none;
+		transform: translate3d(0, -100%, 0);
+	}
+
+	// stick within element
+	&.nav-sticky
+	{
+		position: sticky;
+		z-index: 1002;
+	}
+
+	// transparent navigation
+	&.nav-transparent
+	{
+		background-color: transparent;
+		box-shadow: none;
+	}
+
+	&.nav-rounded
+	{
+		border-radius: 5px;
+	}
+
+	a,
+	a:hover
+	{
+		text-decoration: none;
+	}
+
+	.container
+	{
+		> *:first-child
+		{
+			margin-left: -15px;
+		}
+
+		> *:last-child
+		{
+			margin-right: -15px;
+		}
+	}
+}
+
+@include colors() using ( $color, $value )
+{
+	.nav-#{$color}
+	{
+        --nav-primary-color: #{"var(--color-" + $color + "-100)"};
+        --nav-secondary-color: #{"var(--color-" + $color + "-700)"};
+        --nav-tertiary-color: #{"var(--color-" + $color + "-900)"};
+        --nav-quaternary-color: #{"var(--color-" + $color + "-500)"};
+	}
+
+	.nav-#{$color}-inverted
+	{
+        --nav-primary-color: #{"var(--color-" + $color + "-900)"};
+        --nav-secondary-color: #{"var(--color-" + $color + "-100)"};
+        --nav-tertiary-color: #{"var(--color-" + $color + "-200)"};
+        --nav-quaternary-color: #{"var(--color-" + $color + "-500)"};
+	}
+}

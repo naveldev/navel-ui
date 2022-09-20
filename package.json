@@ -1,0 +1,17 @@
+{
+	"name": "@naveldev/ui",
+	"version": "1.0.0",
+	"description": "A UI",
+	"main": "index.js",
+	"scripts": {
+		"build:docs": "npm run build --workspace=docs",
+		"dev:docs": "npm run dev --workspace=docs",
+		"watch:docs": "npm run watch --workspace=docs",
+		"prod:docs": "npm run prod --workspace=docs"
+	},
+	"workspaces": [
+		"packages/*"
+	],
+	"author": "Navi",
+	"license": "MIT"
+}

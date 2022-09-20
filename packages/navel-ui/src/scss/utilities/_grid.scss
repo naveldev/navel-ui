@@ -1,0 +1,32 @@
+/* Grid */
+@include breakpoints() using ( $name, $breakpoint )
+{
+	@media (min-width: #{$breakpoint})
+    {
+		@for $i from 1 through $column-width
+		{
+			.col-#{$name}-#{$i}
+			{
+				grid-column-start: span #{$i};
+				grid-column-end: span #{$i};
+			}
+
+			.col-#{$name}-start-#{$i}
+			{
+				grid-column-start: span #{$i+1};
+				grid-column-end: span #{$i+1};
+			}
+
+			.col-#{$name}-end-#{$i}
+			{
+				grid-column-start: span #{$i+1};
+				grid-column-end: span #{$i+1};
+			}
+
+			.col-#{$name}-push-#{$i}
+			{
+				grid-column-start: #{$i+1} !important;
+			}
+		}
+	}
+}

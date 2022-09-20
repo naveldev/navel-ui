@@ -1,0 +1,89 @@
+$background-color: "var(--color-light-500)" !default;
+
+$text-color: "var(--color-dark-500)" !default;
+
+// Color Types
+$color-types: (
+    "primary", "info", "success", "warning", "danger", "gray", "muted"
+);
+
+// Primary
+$color-primary: (
+    "primary-100": "#D2E2FB",
+    "primary-200": "#A5C6F7",
+    "primary-300": "#78A9F3",
+    "primary-400": "#4B8DEF",
+    "primary-500": "#1E70EB",
+    "primary-600": "#185ABC",
+    "primary-700": "#12438D",
+    "primary-800": "#0C2D5E",
+    "primary-900": "#06162F",
+) !default;
+
+// Info
+$color-info: (
+    "info-100": "#D2E2FB",
+    "info-200": "#A5C6F7",
+    "info-300": "#78A9F3",
+    "info-400": "#4B8DEF",
+    "info-500": "#1E70EB",
+    "info-600": "#185ABC",
+    "info-700": "#12438D",
+    "info-800": "#0C2D5E",
+    "info-900": "#06162F",
+) !default;
+
+// Success
+$color-success: (
+    "success-100": "#CCFCE4",
+    "success-200": "#99F9C9",
+    "success-300": "#66F5AE",
+    "success-400": "#33F293",
+    "success-500": "#00EF78",
+    "success-600": "#00BF60",
+    "success-700": "#008F48",
+    "success-800": "#006030",
+    "success-900": "#003018",
+) !default;
+
+// Danger
+$color-warning: (
+    "warning-100": "#FDF0DA",
+    "warning-200": "#FAE1B5",
+    "warning-300": "#F8D18F",
+    "warning-400": "#F5C26A",
+    "warning-500": "#F3B345",
+    "warning-600": "#C28F37",
+    "warning-700": "#926B29",
+    "warning-800": "#61481C",
+    "warning-900": "#31240E",
+) !default;
+
+// Warning
+$color-danger: (
+    "danger-100": "#FCD2D5",
+    "danger-200": "#FAA6AB",
+    "danger-300": "#F77982",
+    "danger-400": "#F54D58",
+    "danger-500": "#F2202E",
+    "danger-600": "#C21A25",
+    "danger-700": "#91131C",
+    "danger-800": "#610D12",
+    "danger-900": "#300609",
+) !default;
+
+// Gray
+$color-gray: (
+    "gray-100": "#FFFFFF",
+    "gray-200": "#F8F8F8",
+    "gray-300": "#F1F1F1",
+    "gray-400": "#E3E3E3",
+    "gray-500": "#DCDCDC",
+    "gray-600": "#B0B0B0",
+    "gray-700": "#848484",
+    "gray-800": "#2C2C2C",
+    "gray-900": "#000000",
+) !default;
+
+// Colors
+$colors: map-collect(("muted-500": "#B7B7B7"), $color-primary, $color-info, $color-success, $color-warning, $color-danger, $color-gray);
