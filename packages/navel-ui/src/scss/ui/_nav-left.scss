@@ -13,7 +13,7 @@
 	background-color: var(--nav-left-primary-color);
     color: var(--nav-left-secondary-color);
     position: relative;
-    z-index: 10004;
+    z-index: 1007;
 
 	.nav-branding
 	{
@@ -156,7 +156,7 @@
 	&.nav-sticky
 	{
 		position: sticky;
-		z-index: 1002;
+		z-index: 102;
 	}
 
 	// transparent navigation

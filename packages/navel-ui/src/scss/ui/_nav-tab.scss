@@ -1,6 +1,6 @@
 :root
 {
-    --nav-tab-primary-color: var(--color-gray-100);
+    --nav-tab-primary-color: var(--color-gray-900);
     --nav-tab-secondary-color: var(--color-gray-700);
     --nav-tab-tertiary-color: var(--color-gray-900);
     --nav-tab-quaternary-color: var(--color-gray-500);
@@ -9,6 +9,8 @@
 .nav-tab
 {
     border-bottom: 2px solid var(--nav-tab-quaternary-color);
+    color: var(--nav-top-secondary-color);
+	position: relative;
 
 	ul.nav-list
     {
@@ -37,10 +39,37 @@
 			&.router-link-exact-active,
 			&.active
 			{
-                border-color: var(--nav-tab-tertiary-color);
-                color: var(--nav-tab-tertiary-color);
+                border-color: var(--nav-tab-primary-color);
+                color: var(--nav-tab-primary-color);
                 font-weight: bold;
 			}
         }
     }
+
+	// fixed on top
+	&.nav-fixed
+	{
+		position: fixed;
+		width: 100%;
+		z-index: 99999;
+		top: 0;
+	}
+
+	&.nav-fixed + * {
+		margin-top: 50px;
+	}
+
+	// hide navigation
+	&.nav-hidden
+	{
+		box-shadow: none;
+		transform: translate3d(0, -100%, 0);
+	}
+
+	// stick within element
+	&.nav-sticky
+	{
+		position: sticky;
+		z-index: 1002;
+	}
 }
