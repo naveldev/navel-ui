@@ -1,17 +1,17 @@
 :root
 {
-    --nav-primary-color: var(--color-gray-100);
-    --nav-secondary-color: var(--color-gray-700);
-    --nav-tertiary-color: var(--color-gray-900);
-    --nav-quaternary-color: var(--color-gray-500);
+    --nav-left-primary-color: var(--color-gray-100);
+    --nav-left-secondary-color: var(--color-gray-700);
+    --nav-left-tertiary-color: var(--color-gray-900);
+    --nav-left-quaternary-color: var(--color-gray-500);
 }
 
 
-nav.nav-left
+.nav-left
 {
-    box-shadow: 0 1px 3px var(--nav-quaternary-color);
-	background-color: var(--nav-primary-color);
-    color: var(--nav-secondary-color);
+    box-shadow: 0 1px 3px var(--nav-left-quaternary-color);
+	background-color: var(--nav-left-primary-color);
+    color: var(--nav-left-secondary-color);
     position: relative;
     z-index: 10004;
 
@@ -41,13 +41,13 @@ nav.nav-left
 
 			a.nav-link
 			{
-				color: var(--nav-secondary-color);
+				color: var(--nav-left-secondary-color);
 				display: block;
 				padding: 15px;
 
 				&:hover
 				{
-					color: var(--nav-tertiary-color);
+					color: var(--nav-left-tertiary-color);
 				}
 
 				&.router-link-exact-active,
@@ -60,7 +60,7 @@ nav.nav-left
 
 			.link-icon
 			{
-				color: var(--nav-tertiary-color);
+				color: var(--nav-left-tertiary-color);
 				font-size: 22px;
 				padding: 0 10px;
 				width: 40px;
@@ -73,7 +73,7 @@ nav.nav-left
 
     .divider
     {
-        background-color: var(--nav-quaternary-color);
+        background-color: var(--nav-left-quaternary-color);
         border-radius: 2px;
         height: 2px;
         width: calc(100% - 30px);

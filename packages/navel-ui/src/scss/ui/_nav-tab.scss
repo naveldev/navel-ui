@@ -1,0 +1,46 @@
+:root
+{
+    --nav-tab-primary-color: var(--color-gray-100);
+    --nav-tab-secondary-color: var(--color-gray-700);
+    --nav-tab-tertiary-color: var(--color-gray-900);
+    --nav-tab-quaternary-color: var(--color-gray-500);
+}
+
+.nav-tab
+{
+    border-bottom: 2px solid var(--nav-tab-quaternary-color);
+
+	ul.nav-list
+    {
+		margin: 0;
+        margin-bottom: -2px;
+		padding: 0;
+
+        li.nav-item
+		{
+			display: inline-block;
+		}
+
+		a.nav-link
+        {
+            border-bottom: 2px solid transparent;
+            color: var(--nav-tab-secondary-color);
+            text-decoration: none;
+			padding: 12px 12px;
+			display: block;
+
+			&:hover
+			{
+                //
+			}
+
+			&.router-link-exact-active,
+			&.active
+			{
+                border-color: var(--nav-tab-tertiary-color);
+                color: var(--nav-tab-tertiary-color);
+                font-weight: bold;
+			}
+        }
+    }
+}

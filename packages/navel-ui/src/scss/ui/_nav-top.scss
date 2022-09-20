@@ -1,16 +1,16 @@
 :root
 {
-    --nav-primary-color: var(--color-gray-100);
-    --nav-secondary-color: var(--color-gray-700);
-    --nav-tertiary-color: var(--color-gray-900);
-    --nav-quaternary-color: var(--color-gray-500);
+    --nav-top-primary-color: var(--color-gray-100);
+    --nav-top-secondary-color: var(--color-gray-700);
+    --nav-top-tertiary-color: var(--color-gray-900);
+    --nav-top-quaternary-color: var(--color-gray-500);
 }
 
-nav.nav-top
+.nav-top
 {
-    box-shadow: 0 1px 3px var(--nav-quaternary-color);
-	background-color: var(--nav-primary-color);
-    color: var(--nav-secondary-color);
+    box-shadow: 0 1px 3px var(--nav-top-quaternary-color);
+	background-color: var(--nav-top-primary-color);
+    color: var(--nav-top-secondary-color);
 	transform: translate3d(0, 0, 0);
 	transition: 0.25s all;
 	position: relative;
@@ -19,7 +19,7 @@ nav.nav-top
 
 	.nav-branding
 	{
-		color: rgb(var(--nav-foreground-color));
+		color: rgb(var(--nav-top-foreground-color));
 		display: inline-block;
 		padding: 0 15px;
 
@@ -48,19 +48,19 @@ nav.nav-top
 
 		a.nav-link
 		{
-            color: var(--nav-secondary-color);
+            color: var(--nav-top-secondary-color);
 			padding: 12px 12px;
 			display: block;
 
 			&:hover
 			{
-                color: var(--nav-tertiary-color);
+                color: var(--nav-top-tertiary-color);
 			}
 
 			&.router-link-exact-active,
 			&.active
 			{
-                color: var(--nav-tertiary-color);
+                color: var(--nav-top-tertiary-color);
                 font-weight: bold;
 			}
 		}
@@ -137,17 +137,17 @@ nav.nav-top
 {
 	.nav-#{$color}
 	{
-        --nav-primary-color: #{"var(--color-" + $color + "-100)"};
-        --nav-secondary-color: #{"var(--color-" + $color + "-700)"};
-        --nav-tertiary-color: #{"var(--color-" + $color + "-900)"};
-        --nav-quaternary-color: #{"var(--color-" + $color + "-500)"};
+        --nav-top-primary-color: #{"var(--color-" + $color + "-100)"};
+        --nav-top-secondary-color: #{"var(--color-" + $color + "-700)"};
+        --nav-top-tertiary-color: #{"var(--color-" + $color + "-900)"};
+        --nav-top-quaternary-color: #{"var(--color-" + $color + "-500)"};
 	}
 
 	.nav-#{$color}-inverted
 	{
-        --nav-primary-color: #{"var(--color-" + $color + "-900)"};
-        --nav-secondary-color: #{"var(--color-" + $color + "-100)"};
-        --nav-tertiary-color: #{"var(--color-" + $color + "-200)"};
-        --nav-quaternary-color: #{"var(--color-" + $color + "-500)"};
+        --nav-top-primary-color: #{"var(--color-" + $color + "-900)"};
+        --nav-top-secondary-color: #{"var(--color-" + $color + "-100)"};
+        --nav-top-tertiary-color: #{"var(--color-" + $color + "-200)"};
+        --nav-top-quaternary-color: #{"var(--color-" + $color + "-500)"};
 	}
 }
