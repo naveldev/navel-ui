@@ -13,6 +13,9 @@
 	"main": "src/js/index.js",
 	"module": "src/js/index.js",
 	"unpkg": "dist/navel-ui.js",
+	"dependencies": {
+		"vue": "^3.2.16"
+	},
 	"peerDependencies": {
 		"vue": "^3.2.16"
 	}

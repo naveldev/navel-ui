@@ -8,8 +8,12 @@
 		"email": "contact@navel.dev",
 		"url": "https://navel.dev"
 	},
+	"main": "src/js/index.js",
+	"module": "src/js/index.js",
+	"dependencies": {
+		"vue": "^3.2.16"
+	},
 	"peerDependencies": {
-		"@naveldev/navel-ui": "^2.0.0",
 		"vue": "^3.2.16"
 	}
 }

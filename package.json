@@ -9,10 +9,10 @@
 		"url": "https://navel.dev"
 	},
 	"scripts": {
-		"build:docs": "npm run build --workspace=docs",
-		"dev:docs": "npm run dev --workspace=docs",
-		"watch:docs": "npm run watch --workspace=docs",
-		"prod:docs": "npm run prod --workspace=docs"
+		"build:docs": "npm run build --workspace=@naveldev/docs",
+		"dev:docs": "npm run dev --workspace=@naveldev/docs",
+		"watch:docs": "npm run watch --workspace=@naveldev/docs",
+		"prod:docs": "npm run prod --workspace=@naveldev/docs"
 	},
 	"workspaces": [
 		"packages/*"
