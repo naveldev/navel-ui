@@ -34,10 +34,10 @@
 </template>
 
 <script>
-	import { VInput, VCheckbox, VDatePicker } from '@naviisml/vuejs-components'
+	import { VInput, VCheckbox, VDatePicker } from '@naveldev/vuejs-components'
 	import VSwitch from './Form/VSwitch.vue'
 
-	import '@naviisml/vuejs-components/src/js/utils/string.js'
+	import '@naveldev/vuejs-components/src/js/utils/string.js'
 
 	export default {
 		name: 'VCodeBlock',

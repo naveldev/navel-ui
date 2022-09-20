@@ -35,7 +35,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"options\": () => (/* binding */ options),\n/* harmony export */   \"template\": () => (/* binding */ template)\n/* harmony export */ });\n/* harmony import */ var _naviisml_vuejs_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @naviisml/vuejs-components */ \"../vuejs-components/src/js/index.js\");\n\nvar template = {\n  title: 'Button',\n  component: '<button></button>',\n  template: '<button v-bind=\"args\"></button>'\n};\nvar options = {\n  \"v-html\": {\n    type: 'String',\n    \"default\": false\n  }\n};\n\n//# sourceURL=webpack://docs/./src/stories/button.stories.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"options\": () => (/* binding */ options),\n/* harmony export */   \"template\": () => (/* binding */ template)\n/* harmony export */ });\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module '@naveldev/vuejs-components'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n\nvar template = {\n  title: 'Button',\n  component: '<button></button>',\n  template: '<button v-bind=\"args\"></button>'\n};\nvar options = {\n  \"v-html\": {\n    type: 'String',\n    \"default\": false\n  }\n};\n\n//# sourceURL=webpack://docs/./src/stories/button.stories.js?");
 
 /***/ }),
 

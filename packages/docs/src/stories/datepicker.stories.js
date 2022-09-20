@@ -1,4 +1,4 @@
-import { VDatePicker } from '@naviisml/vuejs-components'
+import { VDatePicker } from '@naveldev/vuejs-components'
 
 export const template = {
 	title: 'VDatePicker',

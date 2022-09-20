@@ -1,8 +1,13 @@
 {
-	"name": "@naveldev/ui",
+	"name": "@naveldev/navel-ui",
 	"version": "1.0.0",
 	"description": "A UI",
-	"main": "index.js",
+	"license": "MIT",
+	"author": {
+		"name": "Navi Ismail",
+		"email": "contact@navel.dev",
+		"url": "https://navel.dev"
+	},
 	"scripts": {
 		"build:docs": "npm run build --workspace=docs",
 		"dev:docs": "npm run dev --workspace=docs",
@@ -11,7 +16,5 @@
 	},
 	"workspaces": [
 		"packages/*"
-	],
-	"author": "Navi",
-	"license": "MIT"
+	]
 }

@@ -1,4 +1,4 @@
-import { VDropdown, VDatePicker, VTable, VButton, VCheckbox, VInput } from '@naviisml/vuejs-components'
+import { VDropdown, VDatePicker, VTable, VButton, VCheckbox, VInput } from '@naveldev/vuejs-components'
 
 import VCodeBlock from './VCodeBlock.vue'
 

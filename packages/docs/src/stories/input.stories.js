@@ -1,4 +1,4 @@
-import { VInput } from '@naviisml/vuejs-components'
+import { VInput } from '@naveldev/vuejs-components'
 
 export const template = {
 	title: 'VInput',
