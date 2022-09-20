@@ -2,7 +2,8 @@
 	"name": "@naveldev/navel-ui",
 	"version": "1.0.0",
 	"description": "A UI",
-	"license": "MIT",
+	"license": "ISC",
+	"private": true,
 	"author": {
 		"name": "Navi Ismail",
 		"email": "contact@navel.dev",
