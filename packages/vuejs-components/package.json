@@ -11,9 +11,11 @@
 	"main": "src/js/index.js",
 	"module": "src/js/index.js",
 	"dependencies": {
-		"vue": "^3.2.16"
+		"vue": "^3.2.16",
+		"axios": "^0.21"
 	},
 	"peerDependencies": {
-		"vue": "^3.2.16"
+		"vue": "^3.2.16",
+		"axios": "^0.21"
 	}
 }
