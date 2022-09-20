@@ -131,6 +131,25 @@
 			margin-right: -15px;
 		}
 	}
+
+    // dropdown fix
+    .dropdown
+    {
+        //
+
+        .dropdown-content
+        {
+            //
+
+            ul.nav-list
+            {
+                li.nav-item
+                {
+                    display: block;
+                }
+            }
+        }
+    }
 }
 
 @include colors() using ( $color, $value )
