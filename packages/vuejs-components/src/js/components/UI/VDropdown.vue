@@ -56,7 +56,10 @@
 					this.close()
 			},
 			triggerClose(e) {
-				if (this.$el.contains(e.target)) {
+                let element = this.$el
+
+                // check if the main element contains the target
+				if (element.contains(e.target)) {
                     return false
 				}
 
