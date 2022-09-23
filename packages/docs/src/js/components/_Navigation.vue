@@ -30,9 +30,3 @@
 		name: 'Navigation',
 	}
 </script>
-
-<style scoped>
-.nav-top {
-	z-index: 999;
-}
-</style>

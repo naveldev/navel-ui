@@ -6,7 +6,7 @@ import VCodeBlock from './VCodeBlock.vue'
 export const components = [
 	VCodeBlock,
 
-    // @naveldev/ui
+    // @naveldev/navel-ui
     VDatePicker,
     VCheckbox,
 	VButton,

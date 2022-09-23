@@ -10,7 +10,7 @@
 		"url": "https://navel.dev"
 	},
 	"scripts": {
-		"build:docs": "npm run build --workspace=@naveldev/docs",
+		"serve:docs": "npm run serve --workspace=@naveldev/docs",
 		"dev:docs": "npm run dev --workspace=@naveldev/docs",
 		"watch:docs": "npm run watch --workspace=@naveldev/docs",
 		"prod:docs": "npm run prod --workspace=@naveldev/docs"
