@@ -8,7 +8,7 @@ module.exports = {
 
 	// compilation configuration
 	output: {
-		path: path.join(__dirname, "./docs"),
+		path: path.join(__dirname, "../../docs"),
 		filename: "bundle.js",
 		publicPath: "/"
 	},
@@ -16,7 +16,7 @@ module.exports = {
 	// webpack-dev-server configuration
 	devServer: {
 		static: {
-			contentBase: path.join(__dirname, '../../docs'),
+			contentBase: path.join(__dirname, '../.../../docs'),
 		},
 		compress: true,
 		port: 3000,
@@ -78,7 +78,7 @@ module.exports = {
 			patterns: [
 				{
 					from: path.join(__dirname, './public'),
-					to: path.join(__dirname, './docs')
+					to: path.join(__dirname, '../../docs')
 				},
 			],
 		}),
