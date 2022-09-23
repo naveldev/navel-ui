@@ -8,14 +8,16 @@
 
 .nav-tab
 {
-    border-bottom: 2px solid var(--nav-tab-quaternary-color);
+    border-bottom: 1px solid var(--nav-tab-quaternary-color);
     color: var(--nav-top-secondary-color);
 	position: relative;
+    width: 100%;
 
 	ul.nav-list
     {
+	    position: relative;
 		margin: 0;
-        margin-bottom: -2px;
+        margin-bottom: -1px;
 		padding: 0;
 
         li.nav-item

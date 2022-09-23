@@ -1,6 +1,7 @@
 <template>
     <div v-if="isActive" class="modal">
         <div class="modal-backdrop" @click="this.triggerClose">
+        </div>
             <transition class="animation-modalAnimation" name="animation-modalAnimation" enter-active-class="animate__animated animate__slideInRight" leave-active-class="animate__animated animate__slideOutLeft" mode="out-in" appear>
                 <div class="modal-container d-flex">
                     <slot name="modal">
@@ -31,7 +32,6 @@
                     </slot>
                 </div>
             </transition>
-        </div>
     </div>
 </template>
 
@@ -68,9 +68,10 @@
                     return false
                 }
 
-                let modal = this.$el.querySelector('.modal-content')
+                let element = this.$el.querySelector('.modal-content')
 
-				if (modal.contains(e.target)) {
+                // check if the main element contains the target
+				if (element.contains(e.target)) {
                     return false
 				}
 
