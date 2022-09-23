@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		Getting Started with @naveldev/ui
+		Getting Started with @naveldev/navel-ui
     </div>
 </template>
 

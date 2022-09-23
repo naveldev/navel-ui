@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		Install @naveldev/ui
+		Install @naveldev/navel-ui
     </div>
 </template>
 
