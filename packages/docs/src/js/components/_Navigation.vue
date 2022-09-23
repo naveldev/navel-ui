@@ -17,7 +17,7 @@
 			<ul class="nav-list ml-auto">
 				<li class="nav-item">
 					<a class="nav-link" href="#">
-						Sign Up
+						Version x
 					</a>
 				</li>
 			</ul>
