@@ -1,5 +1,5 @@
 <template>
-	<nav class="nav-top py-2">
+	<nav class="nav-top nav-primary nav-dark py-2">
 		<div class="container d-flex flex-row">
 			<ul class="nav-list">
 				<li class="nav-item">
