@@ -17,10 +17,3 @@
 		}
 	}
 </script>
-
-<style scoped>
-.wrapper {
-	position: relative;
-	min-height: 100vh;
-}
-</style>
