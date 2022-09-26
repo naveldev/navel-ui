@@ -2,9 +2,7 @@
 	<header class="hero hero-primary hero-dark">
 		<v-navigation class="nav-transparent" />
 
-		<div class="container py-5">
-			Hi
-		</div>
+		<slot />
 	</header>
 </template>
 
