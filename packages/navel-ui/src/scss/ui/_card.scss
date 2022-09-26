@@ -68,13 +68,13 @@
     }
 }
 
-@include colors() using ( $color, $value )
+@include colors() using ( $color, $value, $type )
 {
-    .card-#{$color}
+    .card-#{$type}
     {
-        --card-primary-color: #{"var(--color-" + $color + "-100)"};
-        --card-secondary-color: #{"var(--color-" + $color + "-200)"};
-        --card-tertiary-color: #{"var(--color-" + $color + "-500)"};
-        --card-quaternary-color: #{"var(--color-" + $color + "-900)"};
+        --card-primary-color: #{"var(--color-" + $type + "-100)"};
+        --card-secondary-color: #{"var(--color-" + $type + "-200)"};
+        --card-tertiary-color: #{"var(--color-" + $type + "-500)"};
+        --card-quaternary-color: #{"var(--color-" + $type + "-900)"};
     }
 }

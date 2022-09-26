@@ -144,17 +144,17 @@
     }
 }
 
-@include colors() using ( $color, $value )
+@include colors() using ( $color, $value, $type )
 {
-	.nav-#{$color}
+	.nav-#{$type}
 	{
-        --nav-top-primary-color: #{"var(--color-" + $color + "-500)"};
-        --nav-top-secondary-color: #{"var(--color-" + $color + "-300)"};
-        --nav-top-tertiary-color: #{"var(--color-" + $color + "-100)"};
+        --nav-top-primary-color: #{"var(--color-" + $type + "-500)"};
+        --nav-top-secondary-color: #{"var(--color-" + $type + "-300)"};
+        --nav-top-tertiary-color: #{"var(--color-" + $type + "-100)"};
 
 		&.nav-dark
 		{
-			--nav-top-primary-color: #{"var(--color-" + $color + "-900)"};
+			--nav-top-primary-color: #{"var(--color-" + $type + "-900)"};
 		}
 	}
 }

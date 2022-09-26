@@ -1,20 +1,27 @@
 :host, :root
 {
-	@each $color, $value in $colors {
+	@include colors() using ( $color, $value, $type )
+	{
 		#{"--color-" + $color}: #{$value};
 	}
 }
 
-@include colors() using ( $color, $value )
+@include colors() using ( $color, $value, $type )
 {
+    #{".text-" + $type},
+    #{".color-" + $type}
+    {
+        color: #{"var(--color-" + $type + "-500)"} !important;
+    }
+
     #{".text-" + $color},
     #{".color-" + $color}
     {
-        color: #{"var(--color-" + $color + "-500)"} !important;
+        color: #{"var(--color-" + $color + ")"} !important;
     }
 
     #{".bg-" + $color}
     {
-        background: #{"var(--color-" + $color+ "-500)"} !important;
+        background: #{"var(--color-" + $color+ ")"} !important;
     }
 }

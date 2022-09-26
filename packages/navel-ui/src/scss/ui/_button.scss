@@ -43,6 +43,15 @@ a.btn
         }
     }
 
+    // Outline button
+    &.btn-outline
+    {
+        box-shadow: none;
+        background-color: transparent;
+        color: var(--button-quaternary-color);
+        border: 1px solid var(--button-quaternary-color);
+    }
+
     // Rounded button
     &.btn-rounded
     {
@@ -115,15 +124,15 @@ a.btn:hover,
 	text-decoration: none;
 }
 
-@include colors() using ( $color, $value )
+@include colors() using ( $color, $value, $type )
 {
-    .btn-#{$color}
+    .btn-#{$type}
     {
-        --button-primary-color: #{"var(--color-" + $color + "-100)"};
-        --button-secondary-color: #{"var(--color-" + $color + "-200)"};
-        --button-tertiary-color: #{"var(--color-" + $color + "-300)"};
-        --button-quaternary-color: #{"var(--color-" + $color + "-500)"};
-        --button-text-color: #{"var(--color-" + $color + "-900)"};
+        --button-primary-color: #{"var(--color-" + $type + "-100)"};
+        --button-secondary-color: #{"var(--color-" + $type + "-200)"};
+        --button-tertiary-color: #{"var(--color-" + $type + "-300)"};
+        --button-quaternary-color: #{"var(--color-" + $type + "-500)"};
+        --button-text-color: #{"var(--color-" + $type + "-900)"};
     }
 }
 

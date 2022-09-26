@@ -3,8 +3,10 @@
 // */
 @mixin colors()
 {
-	@each $color, $value in $color-types {
-		@content( $color, $value );
+	@each $name, $types in $colors {
+		@each $color, $hex in $types {
+			@content( $color, $hex, $name );
+		}
 	}
 }
 
