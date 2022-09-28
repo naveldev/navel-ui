@@ -12,6 +12,7 @@ export { default as VueForm } from './utils/vue-form.js'
 
 export { default as VInput } from './components/VInput.vue'
 export { default as VCheckbox } from './components/VCheckbox.vue'
+export { default as VDatePicker } from './components/VDatePicker.vue'
 
 export { default as VModal } from './components/VModal.vue'
 export { default as VOffcanvas } from './components/VOffcanvas.vue'
