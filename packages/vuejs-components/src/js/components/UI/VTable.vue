@@ -17,7 +17,9 @@
 			<tbody :class="{ 'table-loading': loading }">
 				<tr v-for="(entry, key) in data" :key="key">
                     <td v-if="this.$slots.multiSelectOptions">
-                        <input type="checkbox" v-model="selectedEntries" :value="entry" :id="key" />
+                        <div class="d-block">
+                            <input type="checkbox" v-model="selectedEntries" :value="entry" :id="key" />
+                        </div>
                     </td>
 					<td v-for="(type, key) in defaultColumns" :key="key">
                         <slot :name="type" v-bind:value="parseAttributeFromArray(entry, type)" v-bind:entry="entry">
