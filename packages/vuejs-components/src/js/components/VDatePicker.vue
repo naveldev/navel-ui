@@ -59,7 +59,7 @@
                 <button class="btn btn-primary btn-outline btn-block m-1" @click.prevent="setSelectedDate(null)">
                     Clear
                 </button>
-                <button class="btn btn-primary btn-action btn-block m-1" @click.prevent="setSelectedDate(day)">
+                <button class="btn btn-primary btn-action btn-block m-1" @click.prevent="setState(false)">
                     Apply
                 </button>
             </div>
