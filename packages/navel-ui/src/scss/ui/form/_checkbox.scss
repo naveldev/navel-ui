@@ -1,0 +1,108 @@
+
+// Checkbox
+.form-control[type="checkbox"],
+.form-control[type="radio"]
+{
+    --form-control-color: transparent;
+    box-shadow: 0 1px 3px var(--color-gray-500);
+    border: 2px solid var(--form-control-color);
+    background: var(--form-primary-color);
+    color: var(--form-secondary-color);
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+
+    & + label
+    {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+    }
+
+    // Checkbox
+    &:after
+    {
+        display: block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 6 Pro";
+        font-weight: 900;
+        content: "\f00c";
+        text-align: center;
+        font-size: small;
+        color: var(--form-control-color);
+        padding: 2px 0;
+    }
+
+    // Hover
+    //&:focus:not(:disabled),
+    //&:focus-within:not(:disabled),
+    &:hover:not(:disabled)
+    {
+        --form-control-color: var(--color-muted-500);
+    }
+
+    // Checked
+    &:checked:not(:disabled)
+    {
+        --form-control-color: var(--color-primary-500);
+    }
+
+    // Disabled
+    &:disabled
+    {
+        background: var(--color-gray-400);
+
+        &:checked:after
+        {
+            --form-control-color: var(--color-gray-700);
+        }
+    }
+}
+
+// Radio
+.form-control[type="radio"]
+{
+    --form-control-color: transparent;
+    border-radius: 50%;
+
+    // Checked
+    &:checked:not(:disabled)
+    {
+        --form-control-color: var(--color-primary-500);
+
+        border-color: var(--form-control-color);
+    }
+}
+
+.form-group
+{
+    .form-control[type="radio"]
+    {
+        margin: 0;
+
+        &:first-child
+        {
+            border-radius: 0;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        &:not(:first-child):not(:last-child)
+        {
+            border-radius: 0;
+        }
+
+        &:last-child
+        {
+            border-radius: 0;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+}
