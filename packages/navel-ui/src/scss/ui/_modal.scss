@@ -29,10 +29,6 @@
     &.show
     {
         display: flex;
-
-        + body {
-            overflow: hidden !important;
-        }
     }
 
     .modal-container
