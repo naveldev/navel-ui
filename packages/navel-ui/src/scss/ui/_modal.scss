@@ -9,6 +9,7 @@
     display: none;
     flex-direction: row;
     justify-content: center;
+    overflow: auto;
 
     &.modal-start
     {
@@ -28,6 +29,10 @@
     &.show
     {
         display: flex;
+
+        + body {
+            overflow: hidden !important;
+        }
     }
 
     .modal-container
@@ -40,6 +45,7 @@
         flex-direction: column;
         border-radius: 5px;
         padding: 0;
+        overflow: auto;
 
         .modal-heading
         {
