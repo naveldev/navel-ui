@@ -10,12 +10,11 @@
 // JS Modules
 export { default as VueForm } from './utils/vue-form.js'
 
-export { default as VInput } from './components/Form/VInput.vue'
-export { default as VCheckbox } from './components/Form/VCheckbox.vue'
-export { default as VDatePicker } from './components/Form/VDatePicker.vue'
+export { default as VInput } from './components/VInput.vue'
+export { default as VCheckbox } from './components/VCheckbox.vue'
 
-export { default as VModal } from './components/UI/VModal.vue'
-export { default as VOffcanvas } from './components/UI/VOffcanvas.vue'
-export { default as VTable } from './components/UI/VTable.vue'
-export { default as VButton } from './components/UI/VButton.vue'
-export { default as VDropdown } from './components/UI/VDropdown.vue'
+export { default as VModal } from './components/VModal.vue'
+export { default as VOffcanvas } from './components/VOffcanvas.vue'
+export { default as VTable } from './components/VTable.vue'
+export { default as VButton } from './components/VButton.vue'
+export { default as VDropdown } from './components/VDropdown.vue'

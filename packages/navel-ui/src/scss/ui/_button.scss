@@ -63,7 +63,7 @@ a.btn
 	&.btn-disabled {
 		pointer-events: none;
 		cursor: not-allowed;
-		color: var(--color-muted);
+		color: var(--color-muted-500);
 	}
 
 	// Loading state
