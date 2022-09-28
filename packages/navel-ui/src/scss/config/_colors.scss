@@ -2,11 +2,6 @@ $background-color: "var(--color-light-500)" !default;
 
 $text-color: "var(--color-dark-500)" !default;
 
-// Color Types
-$color-types: (
-    "primary", "info", "success", "warning", "danger", "gray", "muted"
-);
-
 // Primary
 $color-primary: (
     "primary-100": "#D2E2FB",
@@ -85,5 +80,15 @@ $color-gray: (
     "gray-900": "#000000",
 ) !default;
 
-// Colors
-$colors: map-collect(("muted-500": "#B7B7B7"), $color-primary, $color-info, $color-success, $color-warning, $color-danger, $color-gray);
+// Color Types
+$colors: map-collect(
+	("muted": (
+		"muted-500": "#B7B7B7"
+	)),
+	("primary": $color-primary),
+	("info": $color-info),
+	("success": $color-success),
+	("warning": $color-warning),
+	("danger": $color-danger),
+	("gray": $color-gray)
+);

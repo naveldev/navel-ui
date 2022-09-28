@@ -1,0 +1,70 @@
+// Switch
+.form-switch[type="checkbox"]
+{
+    --form-control-color: var(--color-muted-500);
+
+    box-shadow: 0 1px 3px var(--color-gray-500);
+    background: var(--form-primary-color);
+    color: var(--form-secondary-color);
+    border-radius: 50px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 40px;
+    height: 20px;
+
+    & + label
+    {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+    }
+
+    // Switch
+    &:after
+    {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--form-control-color);
+        transition: .25s;
+    }
+
+    // Checked
+    &:checked
+    {
+        --form-control-color: var(--color-primary-500);
+
+        &:after
+        {
+            left: calc(100% - 20px);
+        }
+    }
+
+    // Focus
+    &:focus:not(:disabled),
+    &:focus-within:not(:disabled)
+    {
+        border-color: var(--color-primary-500);
+    }
+
+    // Checked
+    &:checked:not(:disabled):after
+    {
+        --form-control-color: var(--color-primary-500);
+    }
+
+    // Disabled
+    &:disabled
+    {
+        background: var(--color-gray-400);
+
+        &:checked:after
+        {
+            --form-control-color: var(--color-primary-600);
+        }
+    }
+}

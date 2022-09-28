@@ -1,54 +1,69 @@
 .modal
 {
     position: fixed;
+    z-index: 1009 !important;
     bottom: 0;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10011;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    overflow: auto;
 
-    .modal-backdrop
+    &.modal-start
     {
-        background-color: rgba(0, 0, 0, .35);
-        position: absolute;
-        bottom: 0;
-        top: 0;
-        left: 0;
-        right: 0;
-        overflow-x: hidden;
-        overflow-y: auto;
-        padding: 20px;
+        justify-content: start;
     }
 
-    .modal-content
+    &.modal-center
     {
-        background: var(--card-tertiary-color);
-        color: var(--card-quaternary-color);
-        border-radius: 10px;
-        overflow: auto;
+        justify-content: center;
+    }
+
+    &.modal-end
+    {
+        justify-content: end;
+    }
+
+    &.show
+    {
+        display: flex;
+    }
+
+    .modal-container
+    {
+        background-color: #FFFFFF;
         position: relative;
         min-width: 500px;
+        max-width: 80%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        padding: 0;
+        overflow: auto;
 
-        .modal-header
+        .modal-heading
         {
-            box-sizing: border-box;
             padding: 20px;
             position: relative;
+            box-sizing: border-box;
 
             &:not(:last-child):after
             {
                 border-top: 1px solid var(--card-secondary-color);
                 position: absolute;
                 content: "";
-                width: 100%;
+                left: 20px;
+                right: 20px;
                 bottom: 0;
-                left: 0;
             }
         }
 
-        .modal-body
+        .modal-content
         {
             padding: 20px;
+            flex: 1;
         }
 
         .modal-footer
@@ -59,10 +74,9 @@
         }
     }
 
-    .modal-container
+    &[data-backdrop="true"]
     {
-        position: relative;
-        z-index: 109;
+        background: rgba(0, 0, 0, .25);
     }
 
     .animate__animated {

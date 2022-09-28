@@ -28,12 +28,12 @@
     }
 }
 
-@include colors() using ( $color, $value )
+@include colors() using ( $color, $value, $type )
 {
-    .alert-#{$color}
+    .alert-#{$type}
     {
-        --alert-primary-color: #{"var(--color-" + $color + "-500)"};
-        --alert-secondary-color: #{"var(--color-" + $color + "-300)"};
-        --alert-foreground-color: #{"var(--color-" + $color + "-100)"};
+        --alert-primary-color: #{"var(--color-" + $type + "-500)"};
+        --alert-secondary-color: #{"var(--color-" + $type + "-300)"};
+        --alert-foreground-color: #{"var(--color-" + $type + "-100)"};
     }
 }

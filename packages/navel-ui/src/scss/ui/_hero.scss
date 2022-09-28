@@ -1,30 +1,34 @@
 :root
 {
     --hero-primary-color: var(--color-gray-100);
-    --hero-secondary-color: var(--color-gray-700);
-    --hero-tertiary-color: var(--color-gray-900);
-    --hero-quaternary-color: var(--color-gray-500);
+    --hero-secondary-color: var(--color-gray-900);
+    --hero-tertiary-color: var(--color-gray-500);
 }
 
 .hero
 {
-    box-shadow: 0 1px 3px var(--hero-quaternary-color);
+    box-shadow: 0 1px 3px var(--hero-tertiary-color);
 	background-color: var(--hero-primary-color);
     color: var(--hero-secondary-color);
 
 }
 
-@include colors() using ( $color, $value )
+@include colors() using ( $color, $value, $type )
 {
-	.hero-#{$color}
+	.hero-#{$type}
 	{
-        --hero-primary-color: #{"var(--color-" + $color + "-500)"};
-        --hero-secondary-color: #{"var(--color-" + $color + "-300)"};
-        --hero-tertiary-color: #{"var(--color-" + $color + "-100)"};
+        --hero-primary-color: #{"var(--color-" + $type + "-500)"};
+        --hero-secondary-color: #{"var(--color-" + $type + "-100)"};
+
+		&.hero-soft
+		{
+			--hero-primary-color: #{"var(--color-" + $type + "-200)"};
+			--hero-secondary-color: #{"var(--color-" + $type + "-900)"};
+		}
 
 		&.hero-dark
 		{
-			--hero-primary-color: #{"var(--color-" + $color + "-900)"};
+			--hero-primary-color: #{"var(--color-" + $type + "-900)"};
 		}
 	}
 }

@@ -248,6 +248,13 @@ class VueForm
     clear() {
         return this.setError( false )
     }
+
+    reset(data) {
+        // Fill the form with user data.
+        Object.keys(data).forEach(key => {
+            this[key] = data[key]
+        })
+    }
 }
 
 export default VueForm

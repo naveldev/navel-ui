@@ -13,14 +13,13 @@ a.btn
     box-shadow: 0 1px 3px var(--color-gray-500);
     background-color: var(--button-quaternary-color);
     color: var(--button-primary-color);
-    box-sizing: border-box;
+    border: 2px solid transparent;
     font-weight: 500;
     border-radius: 3px;
-    padding: 8px 14px;
     cursor: pointer;
     display: inline-block;
     transition: .25s;
-    border: none;
+    padding: 8px 1rem;
 
     // Soft button
     &.btn-soft
@@ -43,6 +42,15 @@ a.btn
         }
     }
 
+    // Outline button
+    &.btn-outline
+    {
+        box-shadow: none;
+        background-color: transparent;
+        color: var(--button-quaternary-color);
+        border: 1px solid var(--button-quaternary-color);
+    }
+
     // Rounded button
     &.btn-rounded
     {
@@ -55,7 +63,7 @@ a.btn
 	&.btn-disabled {
 		pointer-events: none;
 		cursor: not-allowed;
-		color: var(--color-muted);
+		color: var(--color-muted-500);
 	}
 
 	// Loading state
@@ -105,6 +113,11 @@ a.btn
         display: block;
         width: 100%;
     }
+
+    &.btn-medium
+    {
+        padding: 1rem;
+    }
 }
 
 a.btn,
@@ -115,15 +128,15 @@ a.btn:hover,
 	text-decoration: none;
 }
 
-@include colors() using ( $color, $value )
+@include colors() using ( $color, $value, $type )
 {
-    .btn-#{$color}
+    .btn-#{$type}
     {
-        --button-primary-color: #{"var(--color-" + $color + "-100)"};
-        --button-secondary-color: #{"var(--color-" + $color + "-200)"};
-        --button-tertiary-color: #{"var(--color-" + $color + "-300)"};
-        --button-quaternary-color: #{"var(--color-" + $color + "-500)"};
-        --button-text-color: #{"var(--color-" + $color + "-900)"};
+        --button-primary-color: #{"var(--color-" + $type + "-100)"};
+        --button-secondary-color: #{"var(--color-" + $type + "-200)"};
+        --button-tertiary-color: #{"var(--color-" + $type + "-300)"};
+        --button-quaternary-color: #{"var(--color-" + $type + "-500)"};
+        --button-text-color: #{"var(--color-" + $type + "-900)"};
     }
 }
 

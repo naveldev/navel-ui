@@ -49,7 +49,7 @@ $border-table: (
     }
 }
 
-@include colors() using ( $color, $value )
+@include colors() using ( $color, $value, $type )
 {
     .border-#{$color}
     {

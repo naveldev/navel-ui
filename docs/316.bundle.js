@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_naveldev_docs=self.webpackChunk_naveldev_docs||[]).push([[316],{6316:(e,n,s)=>{s.r(n),s.d(n,{default:()=>r});var c=s(8514),a={class:"container"};const d={},r=(0,s(2681).Z)(d,[["render",function(e,n,s,d,r,t){return(0,c.wg)(),(0,c.iD)("div",a," Home ")}]])}}]);
