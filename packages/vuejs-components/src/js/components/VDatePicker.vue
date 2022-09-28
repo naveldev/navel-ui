@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <div class="form-control d-flex justify-content-start" :class="{ 'form-error': error, 'form-loading': loading, 'color-muted': disabled }" @click="!disabled ? setState(!calendar.state) : () => {}">
+        <div class="form-input d-flex justify-content-start" :class="{ 'form-error': error, 'form-loading': loading, 'color-muted': disabled }" @click="!disabled ? setState(!calendar.state) : () => {}">
             <!-- Prefix -->
             <div v-if="this.$slots.prefix || prefix" class="p-3 mr-pull-3">
                 <slot name="prefix">

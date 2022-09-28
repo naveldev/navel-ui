@@ -1,5 +1,5 @@
 <template>
-    <div class="form-control d-flex justify-content-start" :class="{ 'form-error': error, 'form-loading': loading, 'color-muted': disabled }">
+    <div class="form-input d-flex justify-content-start" :class="{ 'form-error': error, 'form-loading': loading, 'color-muted': disabled }">
         <!-- Prefix -->
         <div v-if="this.$slots.prefix || prefix" class="p-3 mr-pull-3">
             <slot name="prefix">
