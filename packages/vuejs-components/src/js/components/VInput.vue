@@ -9,7 +9,7 @@
 
         <!-- Input -->
         <slot name="input">
-            <input class="p-3" :type="formType" v-model="input" :placeholder="placeholder" :required="required" :disabled="disabled" @input="e => this.$emit('update:modelValue', e.target.value)" />
+            <input class="flex-grow-1 p-3" :type="formType" v-model="input" :placeholder="placeholder" :required="required" :disabled="disabled" @input="e => this.$emit('update:modelValue', e.target.value)" :autocomplete="autocomplete" />
         </slot>
 
         <!-- Suffix -->
@@ -28,6 +28,16 @@
                 <i class="far fa-exclamation"></i>
             </span>
         </div>
+        <div v-else-if="type === 'password'" class="p-3">
+            <span class="tooltip-left" :aria-label="(!show ? 'Show' : 'Hide')" @click.prevent="this.show = !this.show">
+                <span v-if="!show">
+                    <i class="far fa-eye"></i>
+                </span>
+                <span v-else>
+                    <i class="far fa-eye-slash"></i>
+                </span>
+            </span>
+        </div>
     </div>
 </template>
 
@@ -43,6 +53,11 @@
                 type: String,
                 required: false,
                 default: 'text',
+            },
+            autocomplete: {
+                type: String,
+                required: false,
+                default: '',
             },
             placeholder: {
                 type: String,
@@ -83,13 +98,25 @@
 
         data() {
             return {
-                input: null
+                show: false,
+                input: null,
+                formTypes: {
+                    'text': true,
+                    'password': true,
+                    'checkbox': true,
+                    'radio': true,
+                    'email': true
+                },
             }
         },
 
         computed: {
             formType() {
-                return 'text';
+                if (this.type === 'password') {
+                    return this.show ? 'text' : 'password'
+                }
+
+                return (this.formTypes[this.type] ? this.type : 'text')
             },
             errorMessage() {
                 if (typeof this.error === 'string') {
