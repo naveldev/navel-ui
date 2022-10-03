@@ -9,7 +9,7 @@
 
         <!-- Input -->
         <slot name="input">
-            <input class="flex-grow-1 p-3" :type="formType" v-model="input" :placeholder="placeholder" :required="required" :disabled="disabled" @input="e => this.$emit('update:modelValue', e.target.value)" :autocomplete="autocomplete" />
+            <input class="flex-grow-1 p-3" :type="formType" v-model="modelValue" :placeholder="placeholder" :required="required" :disabled="disabled" @input="e => this.$emit('update:modelValue', e.target.value)" :autocomplete="autocomplete" />
         </slot>
 
         <!-- Suffix -->
@@ -99,7 +99,6 @@
         data() {
             return {
                 show: false,
-                input: null,
                 formTypes: {
                     'text': true,
                     'password': true,
@@ -128,17 +127,6 @@
                 }
 
                 return false
-            },
-        },
-
-        watch: {
-            modelValue: {
-                handler: function (value) {
-                    if (value) {
-                        this.input = value
-                    }
-                },
-                immediate: true,
             },
         },
     }
