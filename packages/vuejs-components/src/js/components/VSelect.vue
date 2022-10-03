@@ -1,5 +1,5 @@
 <template>
-    <v-dropdown>
+    <v-dropdown class="d-block">
         <!-- Title -->
         <template v-slot:title>
             <div class="d-block form-input d-flex justify-content-start" :class="{ 'form-error': error, 'form-loading': loading, 'color-muted': disabled }">
@@ -12,7 +12,7 @@
 
                 <!-- Input -->
                 <slot name="input">
-                    <div class="p-3">
+                    <div class="flex-grow-1 p-3">
                         {{ modelValue || placeholder }}
                     </div>
                 </slot>
