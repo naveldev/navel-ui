@@ -11,7 +11,7 @@
 				<tr>
                     <th v-if="this.$slots.multiSelectOptions"></th>
 					<th v-for="(type, key) in defaultColumns" :key="key">{{ settings.parseColumns[type] || type }}</th>
-                    <th v-if="this.$slots.action"></th>
+                    <th v-if="this.$slots.tableActions"></th>
 				</tr>
 			</thead>
 			<tbody :class="{ 'table-loading': loading }">
@@ -27,8 +27,8 @@
                             <span v-else>{{ truncate(parseAttributeFromArray(entry, type) ?? false, 40, '...') }}</span>
                         </slot>
 					</td>
-                    <td v-if="this.$slots.action">
-                        <slot name="action" v-bind:entry="entry"/>
+                    <td v-if="this.$slots.tableActions">
+                        <slot name="tableActions" v-bind:entry="entry"/>
                     </td>
 				</tr>
 			</tbody>
