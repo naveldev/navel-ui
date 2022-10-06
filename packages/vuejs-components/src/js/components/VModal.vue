@@ -1,6 +1,6 @@
 <template>
     <div class="modal p-5" :class="{ 'show': isActive }" @click.prevent="triggerClose">
-        <div class="d-flex justify-content-center">
+        <div>
             <transition name="animation-modalAnimation" enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut" mode="out-in" appear>
                 <div class="modal-container" v-if="isActive">
                     <slot name="modal">
