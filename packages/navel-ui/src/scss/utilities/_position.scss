@@ -1,26 +1,59 @@
-.sticky
+/* Position */
+.position-sticky
 {
     position: sticky;
-    top: 0;
     z-index: 1002;
 }
 
-.absolute
+.position-absolute
 {
     position: absolute;
 }
 
-.static
+.position-static
 {
     position: static;
 }
 
-.fixed
+.position-fixed
 {
     position: fixed;
 }
 
-.relative
+.position-relative
 {
     position: relative;
+}
+
+@include breakpoints() using ( $name, $breakpoint )
+{
+	@media (min-width: #{$breakpoint})
+    {
+        .position-#{$name}-sticky
+        {
+            position: sticky;
+            top: 0;
+            z-index: 1002;
+        }
+
+        .position-#{$name}-absolute
+        {
+            position: absolute;
+        }
+
+        .position-#{$name}-static
+        {
+            position: static;
+        }
+
+        .position-#{$name}-fixed
+        {
+            position: fixed;
+        }
+
+        .position-#{$name}-relative
+        {
+            position: relative;
+        }
+	}
 }
