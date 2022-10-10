@@ -1,0 +1,36 @@
+/* Snackbar */
+:root
+{
+    --snackbar-primary-color: rgba(0, 0, 0, .85);
+    --snackbar-secondary-color: var(--color-gray-100);
+}
+
+.snackbar
+{
+    box-shadow: 0 1px 3px rgb(0, 0, 0, .25);
+    background: var(--snackbar-primary-color);
+    color: var(--snackbar-secondary-color);
+    box-sizing: border-box;
+    border-radius: 3px;
+    min-width: 200px;
+    max-width: 600px;
+
+    .snackbar-content
+    {
+        padding: 20px;
+    }
+
+    a
+    {
+        text-decoration: underline;
+    }
+}
+
+@include colors() using ( $color, $value, $type )
+{
+    .snackbar-#{$type}
+    {
+        --snackbar-primary-color: #{"var(--color-" + $type + "-100)"};
+        --snackbar-secondary-color: #{"var(--color-" + $type + "-200)"};
+    }
+}
