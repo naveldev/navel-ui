@@ -10,7 +10,7 @@ button,
 .btn,
 a.btn
 {
-    box-shadow: 0 1px 3px var(--color-gray-500);
+    box-shadow: 0 1px 3px rgb(0, 0, 0, .25);
     background-color: var(--button-quaternary-color);
     color: var(--button-primary-color);
     border: 2px solid transparent;
@@ -56,7 +56,8 @@ a.btn
     &.btn-rounded
     {
         border-radius: 2.5rem;
-        min-width: 40px;
+        padding: 8px 10px;
+        line-height: 0;
     }
 
 	// Disabled button
@@ -136,6 +137,15 @@ a.btn:hover,
         --button-primary-color: #{"var(--color-" + $type + "-100)"};
         --button-secondary-color: #{"var(--color-" + $type + "-200)"};
         --button-tertiary-color: #{"var(--color-" + $type + "-300)"};
+        --button-quaternary-color: #{"var(--color-" + $type + "-500)"};
+        --button-text-color: #{"var(--color-" + $type + "-900)"};
+    }
+
+    .btn-#{$type}-inverted
+    {
+        --button-primary-color: #{"var(--color-" + $type + "-100)"};
+        --button-secondary-color: #{"var(--color-" + $type + "-700)"};
+        --button-tertiary-color: #{"var(--color-" + $type + "-800)"};
         --button-quaternary-color: #{"var(--color-" + $type + "-500)"};
         --button-text-color: #{"var(--color-" + $type + "-900)"};
     }

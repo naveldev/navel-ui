@@ -15,6 +15,19 @@ $color-primary: (
     "primary-900": "#06162F",
 ) !default;
 
+// Secondary
+$color-secondary: (
+    "secondary-100": "#D2E2FB",
+    "secondary-200": "#A5C6F7",
+    "secondary-300": "#78A9F3",
+    "secondary-400": "#4B8DEF",
+    "secondary-500": "#1E70EB",
+    "secondary-600": "#185ABC",
+    "secondary-700": "#12438D",
+    "secondary-800": "#0C2D5E",
+    "secondary-900": "#06162F",
+) !default;
+
 // Info
 $color-info: (
     "info-100": "#D2E2FB",
@@ -86,6 +99,7 @@ $colors: map-collect(
 		"muted-500": "#B7B7B7"
 	)),
 	("primary": $color-primary),
+	("secondary": $color-secondary),
 	("info": $color-info),
 	("success": $color-success),
 	("warning": $color-warning),

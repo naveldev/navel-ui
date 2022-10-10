@@ -8,7 +8,7 @@
 
 .alert
 {
-    box-shadow: 0 1px 3px var(--color-gray-500);
+    box-shadow: 0 1px 3px rgb(0, 0, 0, .25);
     background-color: var(--alert-primary-color);
     color: var(--alert-foreground-color);
     box-sizing: border-box;
