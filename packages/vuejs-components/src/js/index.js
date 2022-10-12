@@ -8,8 +8,10 @@
  */
 
 // JS Modules
-export { default as VueForm } from './utils/vue-form.js'
+export { useSnackbar, SnackbarService, messages as SnackbarMessages } from "./plugins/snackbar"
+export { default as VueForm } from './plugins/vue-form.js'
 
+export { default as VSnackbarWrapper } from './components/VSnackbarWrapper.vue'
 export { default as VSelect } from './components/VSelect.vue'
 export { default as VInput } from './components/VInput.vue'
 export { default as VCheckbox } from './components/VCheckbox.vue'
