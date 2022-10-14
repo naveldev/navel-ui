@@ -1,5 +1,5 @@
 <template>
-	<nav class="nav-left p-3">
+	<nav class="nav-left d-xs-none d-md-block p-3">
 		<!-- Getting Started -->
 		<div class="nav-label">
 			<div class="label-icon">
