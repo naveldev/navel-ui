@@ -3,15 +3,15 @@
 		<hero>
 			<div class="container py-5">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-xs-12 col-md-6">
 						<h1>The <u>perfect</u> kit to <u>design</u> your web applications.</h1>
-						<p>Try now!</p>
+						<p></p>
 					</div>
 				</div>
 			</div>
 		</hero>
 
-		Home
+		
 	</div>
 </template>
 
