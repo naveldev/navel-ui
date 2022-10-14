@@ -1,6 +1,6 @@
 {
 	"name": "@naveldev/vuejs-components",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Vuejs Components",
 	"license": "MIT",
 	"author": {
@@ -12,6 +12,7 @@
 	"module": "src/js/index.js",
 	"dependencies": {
 		"vue": "^3.2.16",
+        "tiny-emitter": "^2.1.0",
 		"axios": "^0.21"
 	},
 	"peerDependencies": {

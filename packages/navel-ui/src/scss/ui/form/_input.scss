@@ -14,7 +14,7 @@ textarea.form-control,
 {
     padding: 1rem;
     margin: 0;
-    box-shadow: 0 1px 3px var(--color-gray-500);
+    box-shadow: 0 1px 3px rgb(0, 0, 0, .25);
     border: 2px solid transparent;
     background: var(--form-primary-color);
     color: var(--form-secondary-color);
@@ -39,6 +39,11 @@ textarea.form-control,
     &.form-loading
     {
         border-color: transparent;
+    }
+
+    input
+    {
+        display: block;
     }
 }
 

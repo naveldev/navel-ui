@@ -1,0 +1,34 @@
+/* Padding */
+@include spacing-list() using ( $name, $value )
+{
+    #{".p-" + $name}
+    {
+        padding: #{$value} !important;
+    }
+
+    #{".pb-" + $name},
+    #{".py-" + $name}
+    {
+        padding-bottom: #{$value} !important;
+    }
+
+    #{".pt-" + $name},
+    #{".py-" + $name}
+    {
+        padding-top: #{$value} !important;
+    }
+
+    #{".ps-" + $name},
+    #{".pl-" + $name},
+    #{".px-" + $name}
+    {
+        padding-left: #{$value} !important;
+    }
+
+    #{".pe-" + $name},
+    #{".pr-" + $name},
+    #{".px-" + $name}
+    {
+        padding-right: #{$value} !important;
+    }
+}

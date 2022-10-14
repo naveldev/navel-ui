@@ -4,7 +4,7 @@
 .form-control[type="radio"]
 {
     --form-control-color: transparent;
-    box-shadow: 0 1px 3px var(--color-gray-500);
+    box-shadow: 0 1px 3px rgb(0, 0, 0, .25);
     border: 2px solid var(--form-control-color);
     background: var(--form-primary-color);
     color: var(--form-secondary-color);
