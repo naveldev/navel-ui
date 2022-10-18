@@ -1,5 +1,5 @@
 <template>
-	<header class="hero hero-primary hero-dark">
+	<header class="hero hero-primary">
 		<v-navigation class="nav-transparent" />
 
 		<slot />

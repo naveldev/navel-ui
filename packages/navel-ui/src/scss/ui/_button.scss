@@ -1,9 +1,10 @@
 :root
 {
-    --button-primary-color: var(--color-gray-100);
-    --button-secondary-color: var(--color-gray-200);
-    --button-tertiary-color: var(--color-gray-300);
-    --button-quaternary-color: var(--color-gray-900);
+    --button-primary-color: var(--color-primary-100);
+    --button-secondary-color: var(--color-primary-100);
+    --button-tertiary-color: var(--color-primary-200);
+    --button-quaternary-color: var(--color-primary-500);
+	--button-text-color: var(--color-primary-900);
 }
 
 button,
@@ -42,6 +43,31 @@ a.btn
         	color: var(--button-quaternary-color);
         }
     }
+
+	// Action
+	&.btn-action
+	{
+    	&:hover
+		{
+			box-shadow: 0 3px 5px rgb(0, 0, 0, .25);
+		}
+		
+		&:active,
+        &.btn-active
+		{
+			box-shadow: 0 2px 4px rgb(0, 0, 0, .25);
+		}
+	}
+
+	&.btn-text,
+	&.btn-text:hover,
+	&.btn-text:active
+	{
+		background-color: transparent;
+		border-color: transparent;
+		box-shadow: none;
+        color: var(--button-quaternary-color);
+	}
 
     // Outline button
     &.btn-outline
@@ -135,8 +161,8 @@ a.btn:hover,
     .btn-#{$type}
     {
         --button-primary-color: #{"var(--color-" + $type + "-100)"};
-        --button-secondary-color: #{"var(--color-" + $type + "-200)"};
-        --button-tertiary-color: #{"var(--color-" + $type + "-300)"};
+        --button-secondary-color: #{"var(--color-" + $type + "-100)"};
+        --button-tertiary-color: #{"var(--color-" + $type + "-200)"};
         --button-quaternary-color: #{"var(--color-" + $type + "-500)"};
         --button-text-color: #{"var(--color-" + $type + "-900)"};
     }

@@ -1,8 +1,6 @@
 <template>
 	<div v-if="code">
-		<h3 class="py-3">{{ title }}</h3>
-
-		<div v-if="showPreview" class="card-content" v-html="code"></div>
+		<div class="card-content" v-html="code" v-if="showPreview"></div>
 
 		<v-code-api v-if="showExample" :code="code" :showOptions="showOptions" />
 	</div>
@@ -20,11 +18,6 @@
 		},
 
 		props: {
-			title: {
-                type: String,
-                required: false,
-				default: 'Preview'
-			},
 			template: {
                 type: String,
                 required: true,
@@ -61,13 +54,3 @@
 		}
 	}
 </script>
-
-<style scoped>
-pre {
-	border: 1px solid rgb(var(--color-muted));
-	border-radius: 5px;
-	padding: 7px;
-}
-pre code {
-}
-</style>

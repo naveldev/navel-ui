@@ -1,0 +1,9 @@
+import { VueForm } from '@naveldev/vuejs-components'
+
+// Prepare the Form Builder
+let form = new VueForm({
+	id: 0
+})
+
+form.get('<url>/to/path') // Send a GET request
+form.patch('<url>/to/path', { id: 1 }) // Send a PATCH request, and overwrite the data send with the request

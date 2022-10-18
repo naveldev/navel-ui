@@ -1,18 +1,14 @@
 <template>
-	<div>
-		<div v-if="showOptions" class="d-flex align-items-center px-4 py-3 bg-gray-300"> 
-			Example
-
+	<div class="position-relative">
+		<div v-if="showOptions" class="position-absolute right-2 top-2"> 
 			<div class="ml-auto">
-				<a @click="copyToClipboard" class="btn btn-soft btn-xs" id="copy">Copy</a>
+				<a @click="copyToClipboard" class="btn btn-primary btn-soft tooltip-bottom" aria-label="Copy" id="copy"><i class="fa-regular fa-copy"></i></a>
 			</div>
 		</div>
 
-		<div class="bg-gray-200">
-			<pre><code>{{ code }}</code></pre>
-		</div>
+		<pre><code>{{ code }}</code></pre>
 
-		<slot name="options"></slot>
+		<slot name="root"></slot>
 	</div>
 </template>
 
@@ -50,11 +46,11 @@
 					return false
 				}
 
-				copyTextBtn.oldHTML = copyTextBtn.innerHTML
-				copyTextBtn.innerHTML = 'Copied!'
+				copyTextBtn.oldAriaLabel = copyTextBtn.ariaLabel
+				copyTextBtn.ariaLabel = 'Copied!'
 				
 				setTimeout(() => {
-					copyTextBtn.innerHTML = copyTextBtn.oldHTML
+					copyTextBtn.ariaLabel = copyTextBtn.oldAriaLabel
 				}, 2500)
 			}
 		}
@@ -63,9 +59,12 @@
 
 <style scoped>
 pre {
-	border: 1px solid rgb(var(--color-muted));
-	border-radius: 5px;
-	padding: 7px;
+	background-color: var(--color-gray-200);
+	border-radius: 4px;
+	padding: 15px;
+	min-height: 55px;
+	-moz-tab-size: 4;
+	tab-size: 4;
 }
 pre code {
 }

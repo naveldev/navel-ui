@@ -1,25 +1,23 @@
 <template>
-	<div >
-		<h3 class="py-3">{{ title }}</h3>
-		
-		<div class="card-content"> 
-			<component :is="component.title" v-model="model" v-bind="options" />
-		</div>
+	<div class="card-content"> 
+		<component :is="component.title" v-model="model" v-bind="options" />
+	</div>
 
-		<div class="card-heading"> 
-			<h3>Interactions</h3>
-		</div>
+	<v-code-api v-if="showExample" :code="parsedTemplateToComponent" :showOptions="showOptions">
+		<template v-slot:root={}>
+			<div class="card-heading"> 
+				<h3>Interactions</h3>
+			</div>
 
-		<v-code-api v-if="showExample" :code="parsedTemplateToComponent" :showOptions="showOptions">
-			<template v-slot:options={}>
+			<div class="card-content"> 
 				<div v-if="arguments" v-for="(argument, key) in arguments">
 					<label>{{ argument.label ?? key }}</label>
 
 					<component :is="componentAliases[argument.type] ?? 'input'" v-model="argument.default"></component>
 				</div>
-			</template>
-		</v-code-api>
-	</div>
+			</div>
+		</template>
+	</v-code-api>
 </template>
 
 <script>
@@ -40,11 +38,6 @@
 		},
 
 		props: {
-			title: {
-                type: String,
-                required: false,
-				default: 'Live Preview',
-			},
 			template: {
                 type: String,
                 required: true,
@@ -111,30 +104,6 @@
 				return object || {}
 			},
 			/**
-			 * Copy the parsed component html to the clipboard
-			 */
-			copyToClipboard() {
-				// get the template html
-				let data = this.parsedTemplateToComponent.htmlDecode()
-
-				// copy the text
-				navigator.clipboard.writeText(data.htmlDecode())
-
-				// let the user know we copied it
-				let copyTextBtn = this.$el.querySelector('#copy')
-
-				if (!copyTextBtn) {
-					return false
-				}
-
-				copyTextBtn.oldHTML = copyTextBtn.innerHTML
-				copyTextBtn.innerHTML = 'Copied!'
-				
-				setTimeout(() => {
-					copyTextBtn.innerHTML = copyTextBtn.oldHTML
-				}, 2500)
-			},
-			/**
 			 * Parse a default template with the options
 			 *
 			 * @return  {String}
@@ -184,14 +153,3 @@
         },
 	}
 </script>
-
-<style scoped>
-pre {
-	border: 1px solid rgb(var(--color-muted));
-	border-radius: 5px;
-	padding: 7px;
-}
-pre code {
-	white-space: normal;
-}
-</style>
