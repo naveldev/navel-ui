@@ -14,32 +14,6 @@
     font-weight: normal;
     border-radius: 3px;
     padding: 8px 12px;
-
-    &.badge-xs
-    {
-        padding: 6px 8px;
-        font-size: 80%;
-    }
-
-    &.badge-s
-    {
-
-    }
-
-    &.badge-m
-    {
-
-    }
-
-    &.badge-l
-    {
-
-    }
-
-    &.badge-lg
-    {
-
-    }
 }
 
 @include colors() using ( $color, $value, $type )

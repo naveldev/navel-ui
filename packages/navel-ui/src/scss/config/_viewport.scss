@@ -5,3 +5,26 @@ $screen-viewports: (
     "lg": 992px,
     "xl": 1260px
 );
+
+$screen-sizes: (
+    "xs": (
+		"padding": 8px,
+		"font-size": 80%,
+	),
+    "sm": (
+		"padding": 12px,
+		"font-size": 90%,
+	),
+    "md": (
+		"padding": 15px,
+		"font-size": 100%,
+	),
+    "lg": (
+		"padding": 18px,
+		"font-size": 110%,
+	),
+    "xl": (
+		"padding": 22px,
+		"font-size": 120%,
+	)
+);

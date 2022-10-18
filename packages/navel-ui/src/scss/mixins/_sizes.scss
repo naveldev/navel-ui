@@ -1,0 +1,13 @@
+
+@use "sass:map";
+
+/*
+ * Sizes
+ */
+@mixin sizes()
+{
+    @each $key, $properties in $screen-sizes
+    {
+		@content( $key, map.get($properties, 'padding'), map.get($properties, 'font-size') );
+    }
+}
