@@ -15,6 +15,11 @@ export default [
 	
 	// Components...
 	{
+		path: '/docs/components/nav-top',
+		name: 'docs.components.nav-top',
+		component: Container('Components/NavTop')
+	},
+	{
 		path: '/docs/components/button',
 		name: 'docs.components.button',
 		component: Container('Components/Button')

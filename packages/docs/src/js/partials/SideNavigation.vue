@@ -33,6 +33,11 @@
 
 		<ul class="nav-list">
 			<li class="nav-item">
+				<router-link class="nav-link" :to="{ name: 'docs.components.nav-top' }">
+					Top Nav
+				</router-link>
+			</li>
+			<li class="nav-item">
 				<router-link class="nav-link" :to="{ name: 'docs.components.button' }">
 					Button
 				</router-link>
