@@ -18,8 +18,8 @@
 </template>
 
 <script>
-	import Navigation from '@components/_Navigation.vue'
-	import SideNavigation from '@components/_SideNavigation.vue'
+	import Navigation from '@partials/Navigation.vue'
+	import SideNavigation from '@partials/SideNavigation.vue'
 
 	export default {
 		name: 'DocumentationLayout',

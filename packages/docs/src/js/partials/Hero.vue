@@ -7,7 +7,7 @@
 </template>
 
 <script>
-	import VNavigation from './_Navigation.vue'
+	import VNavigation from '@partials/Navigation.vue'
 
 	export default {
 		name: 'Hero',

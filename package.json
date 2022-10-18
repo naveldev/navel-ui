@@ -17,5 +17,8 @@
 	},
 	"workspaces": [
 		"packages/*"
-	]
+	],
+	"devDependencies": {
+		"marked": "^4.1.1"
+	}
 }

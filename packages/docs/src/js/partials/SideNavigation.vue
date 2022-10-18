@@ -55,6 +55,11 @@
 				</router-link>
 			</li>
 			<li class="nav-item">
+				<router-link class="nav-link" :to="{ name: 'docs.vue.components.snackbar' }">
+					Snackbar
+				</router-link>
+			</li>
+			<li class="nav-item">
 				<router-link class="nav-link" :to="{ name: 'docs.vue.components.input' }">
 					Input
 				</router-link>
