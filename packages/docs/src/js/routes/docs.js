@@ -1,37 +1,46 @@
 import { Container } from '../router'
 
 export default [
-	// Documentation
+	// Documentation...
 	{
 		path: '/docs/getting-started',
 		name: 'docs',
-		component: Container('Documentation/GettingStarted')
+		component: Container('GettingStarted')
 	},
 	{
 		path: '/docs/installation',
 		name: 'docs.installation',
-		component: Container('Documentation/Installation')
+		component: Container('Installation')
 	},
+	
+	// Components...
 	{
-		path: '/docs/button',
+		path: '/docs/components/button',
 		name: 'docs.components.button',
-		component: Container('Documentation/Components/Button')
+		component: Container('Components/Button')
 	},
 
 	// Vue Components...
 	{
-		path: '/docs/input',
+		path: '/docs/vuejs/getting-started',
 		name: 'docs.vue',
-		component: Container('Documentation/VueComponents/GettingStarted')
+		component: Container('Stories/GettingStarted')
 	},
 	{
-		path: '/docs/input',
+		path: '/docs/vuejs/input',
 		name: 'docs.vue.components.input',
-		component: Container('Documentation/VueComponents/Input')
+		component: Container('Stories/Input')
 	},
 	{
-		path: '/docs/datepicker',
+		path: '/docs/vuejs/datepicker',
 		name: 'docs.vue.components.datepicker',
-		component: Container('Documentation/VueComponents/DatePicker')
+		component: Container('Stories/DatePicker')
+	},
+	
+	// Plugins...
+	{
+		path: '/docs/plugins/snackbar',
+		name: 'docs.vue.components.snackbar',
+		component: Container('Plugins/Snackbar')
 	},
 ]

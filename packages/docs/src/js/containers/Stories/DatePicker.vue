@@ -6,7 +6,7 @@
 </template>
 
 <script>
-	import { template, options } from '@/stories/datepicker.stories.js'
+	import { template, options } from '@stories/datepicker.js'
 
 	export default {
 		layout: 'Documentation',

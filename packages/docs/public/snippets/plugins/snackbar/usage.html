@@ -1,0 +1,11 @@
+import  { SnackbarService, VSnackbarWrapper } from '@naveldev/vuejs-components'
+
+app.component(VSnackbarWrapper)
+
+app.use(SnackbarService)
+
+this.$snackbar.add({
+	text: 'Lorem ipsum dolor sit amet',
+	type: 'success',
+	duration: 5000,
+})
