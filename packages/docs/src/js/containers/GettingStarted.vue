@@ -11,6 +11,10 @@
 				<code class="my-3 p-2">comming soon</code>
 			</div>
 		</div>
+			
+		<v-color-example color="rgb(100, 100, 100)" />
+		
+		<v-color-example color="#843746" />
 	</div>
 </template>
 
