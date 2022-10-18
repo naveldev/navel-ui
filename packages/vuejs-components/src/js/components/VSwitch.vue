@@ -1,6 +1,6 @@
 <template>
-	<input class="form-control" id="styled-switch" type="checkbox" v-model="modelValue" />
-	<label for="styled-switch">{{ label }}</label>
+	<label for="styled-switch" class="d-block">{{ label }}</label>
+	<input class="form-switch" id="styled-switch" type="checkbox" v-model="modelValue" />
 </template>
 
 <script>
@@ -56,7 +56,7 @@
 
         methods: {
             updateModelValue(value) {
-                this.$emit('update:modelValue', value)
+				this.$emit('update:modelValue', value)
             },
         },
 
@@ -80,7 +80,9 @@
                     let newValue = value
 
                     if (!value && !(newValue = Object.keys(this.items)[0])) {
-                        return false
+                        this.$emit('update:modelValue', value)
+
+						return false
                     }
 
                     this.updateModelValue(newValue)

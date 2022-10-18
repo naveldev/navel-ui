@@ -10,7 +10,7 @@ export const options = {
 	placeholder: {
 		label: 'Placeholder',
 		type: 'String',
-		default: 'Test'
+		default: 'Placeholder'
 	},
 	minDate: {
 		label: 'Date from',
@@ -25,12 +25,12 @@ export const options = {
 	prefix: {
 		label: 'Prefix',
 		type: 'String',
-		default: false
+		default: ''
 	},
 	suffix: {
 		label: 'Suffix',
 		type: 'String',
-		default: false
+		default: ''
 	},
 	error: {
 		label: 'Error',

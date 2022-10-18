@@ -1,7 +1,7 @@
 <template>
 	<div class="container py-5">
 		<!-- Code Block -->
-        <v-interactive-code-example v-model="value" :component="component" :template="template" :arguments="arguments" :options="options" />
+        <v-interactive-code-example v-model="value" :component="component" :template="template" :arguments="arguments" />
     </div>
 </template>
 
