@@ -55,18 +55,30 @@
 				</router-link>
 			</li>
 			<li class="nav-item">
-				<router-link class="nav-link" :to="{ name: 'docs.vue.components.snackbar' }">
-					Snackbar
-				</router-link>
-			</li>
-			<li class="nav-item">
-				<router-link class="nav-link" :to="{ name: 'docs.vue.components.input' }">
+				<router-link class="nav-link" :to="{ name: 'docs.vue.input' }">
 					Input
 				</router-link>
 			</li>
 			<li class="nav-item">
-				<router-link class="nav-link" :to="{ name: 'docs.vue.components.datepicker' }">
+				<router-link class="nav-link" :to="{ name: 'docs.vue.datepicker' }">
 					DatePicker
+				</router-link>
+			</li>
+		</ul>
+		
+		<!-- Plugins -->
+		<div class="nav-label mt-3">
+			<div class="label-icon">
+				<i class="fa-regular fa-puzzle-piece-simple"></i>
+			</div>
+
+			<p>Plugins</p>
+		</div>
+
+		<ul class="nav-list">
+			<li class="nav-item">
+				<router-link class="nav-link" :to="{ name: 'docs.plugins.snackbar' }">
+					Snackbar
 				</router-link>
 			</li>
 		</ul>

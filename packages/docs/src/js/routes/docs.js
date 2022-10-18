@@ -22,25 +22,25 @@ export default [
 
 	// Vue Components...
 	{
-		path: '/docs/vuejs/getting-started',
+		path: '/docs/vue/getting-started',
 		name: 'docs.vue',
 		component: Container('Stories/GettingStarted')
 	},
 	{
-		path: '/docs/vuejs/input',
-		name: 'docs.vue.components.input',
+		path: '/docs/vue/input',
+		name: 'docs.vue.input',
 		component: Container('Stories/Input')
 	},
 	{
-		path: '/docs/vuejs/datepicker',
-		name: 'docs.vue.components.datepicker',
+		path: '/docs/vue/datepicker',
+		name: 'docs.vue.datepicker',
 		component: Container('Stories/DatePicker')
 	},
 	
 	// Plugins...
 	{
 		path: '/docs/plugins/snackbar',
-		name: 'docs.vue.components.snackbar',
+		name: 'docs.plugins.snackbar',
 		component: Container('Plugins/Snackbar')
 	},
 ]
