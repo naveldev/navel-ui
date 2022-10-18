@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div >
 		<h3 class="py-3">{{ title }}</h3>
 		
 		<div class="card-content"> 
@@ -32,10 +32,10 @@
 		name: 'VInteractiveCodeExample',
 
 		components: {
-			"input": VInput,
-			"checkbox": VCheckbox,
-			"switch": VSwitch,
-			"date": VDatePicker,
+			"vinput": VInput,
+			"vcheckbox": VCheckbox,
+			"vswitch": VSwitch,
+			"vdate": VDatePicker,
 			VCodeApi,
 		},
 
@@ -85,10 +85,9 @@
 		data() {
 			return {
 				componentAliases: {
-					"v-html": "input",
-					"String": "input",
-					"Boolean": "switch",
-					"Date": "date",
+					"String": "vinput",
+					"Boolean": "vswitch",
+					"Date": "vdate",
 				},
 				model: null
 			}
