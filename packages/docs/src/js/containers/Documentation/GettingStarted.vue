@@ -19,11 +19,3 @@
 		layout: 'Documentation',
 	}
 </script>
-
-<style scoped>
-code {
-	display: block;
-	border: 1px solid var(--color-gray-300);
-	border-radius: 3px;
-}
-</style>
