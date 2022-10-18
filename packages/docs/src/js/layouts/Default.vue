@@ -7,7 +7,7 @@
 </template>
 
 <script>
-	import Navigation from '@components/_Navigation.vue'
+	import Navigation from '@partials/Navigation.vue'
 
 	export default {
 		name: 'DefaultLayout',

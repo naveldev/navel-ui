@@ -6,7 +6,7 @@
 </template>
 
 <script>
-	import { template, options } from '@/stories/input.stories.js'
+	import { template, options } from '@stories/input.js'
 
 	export default {
 		layout: 'Documentation',

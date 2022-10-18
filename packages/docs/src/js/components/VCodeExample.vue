@@ -1,100 +1,64 @@
 <template>
-	<div class="card">
-		<div class="card-heading"> 
-			<h3>Preview</h3>
-		</div>
+	<div v-if="code">
+		<h3 class="py-3">{{ title }}</h3>
 
-		<div class="card-content example"> 
-			<slot></slot>
-		</div>
+		<div v-if="showPreview" class="card-content" v-html="code"></div>
 
-		<div class="card-heading"> 
-			<h3>Code</h3>
-		</div>
-
-		<div class="card-content bg-gray">
-			<pre><code v-html="parsedTemplate"></code></pre>
-		</div>
-
-		<div class="card-content"> 
-			<a @click="copyToClipboard" class="btn btn-soft" id="copy">Copy</a>
-		</div>
+		<v-code-api v-if="showExample" :code="code" :showOptions="showOptions" />
 	</div>
 </template>
 
 <script>
-	import '@naveldev/vuejs-components/src/js/utils/string.js'
+	import { VueForm } from '@naveldev/vuejs-components'
+	import VCodeApi from './VCodeApi.vue'
 
 	export default {
 		name: 'VCodeExample',
 
+		components: {
+			VCodeApi
+		},
+
 		props: {
+			title: {
+                type: String,
+                required: false,
+				default: 'Preview'
+			},
 			template: {
                 type: String,
                 required: true,
 			},
-			component: {
-                type: Object,
-                required: true,
-            }
+			showExample: {
+                type: Boolean,
+                required: false,
+				default: true
+			},
+			showPreview: {
+                type: Boolean,
+                required: false,
+				default: true
+			},
+			showOptions: {
+                type: Boolean,
+                required: false,
+				default: true
+			}
 		},
 
 		data() {
 			return {
-				parsedTemplate: null
+				code: null
 			}
 		},
 
-		mounted() {
-			this.parseComponentTemplate()
-		},
+		async created() {
+			if (this.template) {
+				const { data, status } = await new VueForm().get(this.template)
 
-		methods: {
-			parseComponentTemplate() {
-				let content = this.$el.querySelector('.example').innerHTML
-
-				this.parsedTemplate = content.match(/<(\S*?)(.*?)>.*?<\/\1>|<.*?\/>/g).join('\n').htmlEncode()
+				this.code = data
 			}
-		},
-
-		computed: {
-			/**
-			 * Copy the parsed component html to the clipboard
-			 */
-			copyToClipboard() {
-				// get the template html
-				let data = this.parsedTemplate.htmlDecode()
-
-				// copy the text
-				navigator.clipboard.writeText(data.htmlDecode())
-
-				// let the user know we copied it
-				let copyTextBtn = this.$el.querySelector('#copy')
-
-				if (!copyTextBtn) {
-					return false
-				}
-
-				copyTextBtn.oldHTML = copyTextBtn.innerHTML
-				copyTextBtn.innerHTML = 'Copied!'
-				
-				setTimeout(() => {
-					copyTextBtn.innerHTML = copyTextBtn.oldHTML
-				}, 2500)
-			}
-		},
-
-        watch: {
-            model: {
-                handler: function (value) {
-					if (value) {
-						this.model = value
-						this.$emit('update:modelValue', value)
-					}
-                },
-                immediate: true,
-            },
-        },
+		}
 	}
 </script>
 

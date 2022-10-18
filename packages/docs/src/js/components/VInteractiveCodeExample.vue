@@ -1,8 +1,7 @@
 <template>
-	<div class="card">
-		<div class="card-heading"> 
-			<h3>Live Preview</h3>
-		</div>
+	<div>
+		<h3 class="py-3">{{ title }}</h3>
+		
 		<div class="card-content"> 
 			<component :is="component.title" v-model="model" v-bind="options" />
 		</div>
@@ -10,32 +9,22 @@
 		<div class="card-heading"> 
 			<h3>Interactions</h3>
 		</div>
-		
-		<div class="card-content"> 
-			<div v-if="arguments" v-for="(argument, key) in arguments">
-				<label>{{ argument.label ?? key }}</label>
 
-				<component :is="componentAliases[argument.type] ?? 'input'" v-model="argument.default"></component>
-			</div>
-		</div>
+		<v-code-api v-if="showExample" :code="parsedTemplateToComponent" :showOptions="showOptions">
+			<template v-slot:options={}>
+				<div v-if="arguments" v-for="(argument, key) in arguments">
+					<label>{{ argument.label ?? key }}</label>
 
-		<div class="card-heading"> 
-			<h3>Code</h3>
-		</div>
-
-		<div class="card-content bg-gray">
-			<pre><code v-html="parsedTemplateToComponent"></code></pre>
-		</div>
-
-		<div class="card-content"> 
-			<a @click="copyToClipboard" class="btn btn-soft" id="copy">Copy</a>
-		</div>
+					<component :is="componentAliases[argument.type] ?? 'input'" v-model="argument.default"></component>
+				</div>
+			</template>
+		</v-code-api>
 	</div>
 </template>
 
 <script>
-	import { VInput, VCheckbox, VDatePicker } from '@naveldev/vuejs-components'
-	import VSwitch from './Form/VSwitch.vue'
+	import { VInput, VCheckbox, VDatePicker, VSwitch } from '@naveldev/vuejs-components'
+	import VCodeApi from './VCodeApi.vue'
 
 	import '@naveldev/vuejs-components/src/js/utils/string.js'
 
@@ -47,12 +36,33 @@
 			"checkbox": VCheckbox,
 			"switch": VSwitch,
 			"date": VDatePicker,
+			VCodeApi,
 		},
 
 		props: {
+			title: {
+                type: String,
+                required: false,
+				default: 'Live Preview',
+			},
 			template: {
                 type: String,
                 required: true,
+			},
+			showExample: {
+                type: Boolean,
+                required: false,
+				default: true
+			},
+			showPreview: {
+                type: Boolean,
+                required: false,
+				default: true
+			},
+			showOptions: {
+                type: Boolean,
+                required: false,
+				default: true
 			},
 			component: {
                 type: Object,
@@ -99,7 +109,7 @@
 
 				Object.keys(this.arguments).forEach((key, index) => object[key] = this.arguments[key].default ?? this.arguments[key])
 
-				return object
+				return object || {}
 			},
 			/**
 			 * Copy the parsed component html to the clipboard
@@ -158,7 +168,7 @@
 
 				template = template.replace(regex, binds)
 
-				return template.htmlEncode()
+				return template
 			},
 		},
 

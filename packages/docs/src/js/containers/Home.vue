@@ -16,7 +16,7 @@
 </template>
 
 <script>
-	import Hero from '@components/_Hero.vue'
+	import Hero from '@partials/Hero.vue'
 
 	export default {
 		layout: 'Stylesheet',

@@ -28,6 +28,8 @@ module.exports = {
 		alias: {
 			'@components': path.join(__dirname, './src/js/components'),
 			'@containers': path.join(__dirname, './src/js/containers'),
+			'@partials': path.join(__dirname, './src/js/partials'),
+			'@stories': path.join(__dirname, './public/snippets/stories'),
 			'@utils': path.join(__dirname, './src/js/utils'),
 			'@': path.join(__dirname, './src')
 		},
