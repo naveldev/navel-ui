@@ -82,7 +82,6 @@ a.btn
     &.btn-rounded
     {
         border-radius: 2.5rem;
-        padding: 8px 10px;
         line-height: 0;
     }
 
@@ -91,12 +90,13 @@ a.btn
 	&.btn-disabled {
 		pointer-events: none;
 		cursor: not-allowed;
-		color: var(--color-muted-500);
+		opacity: .75;
 	}
 
 	// Loading state
 	&.btn-loading
 	{
+		border-color: transparent;
 		position: relative;
 		color: transparent;
         overflow: hidden;
@@ -141,11 +141,6 @@ a.btn
         display: block;
         width: 100%;
     }
-
-    &.btn-medium
-    {
-        padding: 1rem;
-    }
 }
 
 a.btn,
@@ -175,6 +170,15 @@ a.btn:hover,
         --button-quaternary-color: #{"var(--color-" + $type + "-500)"};
         --button-text-color: #{"var(--color-" + $type + "-900)"};
     }
+}
+
+@include sizes() using ( $key, $padding, $font-size )
+{
+	.btn-#{$key}
+	{
+		padding: $padding;
+		font-size: $font-size;
+	}
 }
 
 @keyframes btn-loading-ring

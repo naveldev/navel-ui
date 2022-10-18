@@ -1,11 +1,20 @@
 <template>
 	<div class="container py-5">
-		<!-- Code Block -->
-        <v-code-example template="/snippets/components/button/simple.html"></v-code-example>
+        <v-code-example template="/snippets/components/button/type-default.html"></v-code-example>
+
+        <v-code-example template="/snippets/components/button/type-action.html"></v-code-example>
+
+        <v-code-example template="/snippets/components/button/type-outline.html"></v-code-example>
+
+        <v-code-example template="/snippets/components/button/type-soft.html"></v-code-example>
+
+        <v-code-example template="/snippets/components/button/type-text.html"></v-code-example>
+
+        <v-code-example template="/snippets/components/button/rounded.html"></v-code-example>
 
         <v-code-example template="/snippets/components/button/sizes.html"></v-code-example>
 
-        <v-code-example template="/snippets/components/button/styles.html"></v-code-example>
+        <v-code-example template="/snippets/components/button/disabled.html"></v-code-example>
     </div>
 </template>
 
