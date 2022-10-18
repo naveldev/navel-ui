@@ -1,6 +1,6 @@
 <template>
-	<nav class="nav-top nav-primary nav-dark py-2">
-		<div class="container d-flex flex-row">
+	<nav class="nav-top nav-primary py-2">
+		<div class="container d-flex flex-row align-items-center">
 			<ul class="nav-list">
 				<li class="nav-item">
 					<router-link class="nav-link" :to="{ name: 'home' }">

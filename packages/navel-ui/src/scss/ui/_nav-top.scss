@@ -148,9 +148,9 @@
 {
 	.nav-#{$type}
 	{
-        --nav-top-primary-color: #{"var(--color-" + $type + "-500)"};
-        --nav-top-secondary-color: #{"var(--color-" + $type + "-300)"};
-        --nav-top-tertiary-color: #{"var(--color-" + $type + "-100)"};
+		--nav-top-primary-color: #{"var(--color-" + $type + "-500)"};
+		--nav-top-secondary-color: #{"var(--color-" + $type + "-200)"};
+		--nav-top-tertiary-color: #{"var(--color-" + $type + "-100)"};
 
 		&.nav-dark
 		{

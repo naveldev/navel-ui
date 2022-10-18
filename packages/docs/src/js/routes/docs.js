@@ -12,6 +12,11 @@ export default [
 		name: 'docs.installation',
 		component: Container('Installation')
 	},
+	{
+		path: '/docs/configuration',
+		name: 'docs.configuration',
+		component: Container('Configuration')
+	},
 	
 	// Components...
 	{
@@ -47,5 +52,10 @@ export default [
 		path: '/docs/plugins/snackbar',
 		name: 'docs.plugins.snackbar',
 		component: Container('Plugins/Snackbar')
+	},
+	{
+		path: '/docs/plugins/vue-form',
+		name: 'docs.plugins.vue-form',
+		component: Container('Plugins/VueForm')
 	},
 ]

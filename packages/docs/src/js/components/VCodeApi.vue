@@ -2,7 +2,7 @@
 	<div class="position-relative">
 		<div v-if="showOptions" class="position-absolute right-2 top-2"> 
 			<div class="ml-auto">
-				<a @click="copyToClipboard" class="btn btn-action tooltip-bottom" aria-label="Copy" id="copy"><i class="fa-regular fa-copy"></i></a>
+				<a @click="copyToClipboard" class="btn btn-primary btn-soft tooltip-bottom" aria-label="Copy" id="copy"><i class="fa-regular fa-copy"></i></a>
 			</div>
 		</div>
 
@@ -61,8 +61,8 @@
 pre {
 	background-color: var(--color-gray-200);
 	border-radius: 4px;
-	padding: 12px;
-	min-height: 150px;
+	padding: 15px;
+	min-height: 55px;
 	-moz-tab-size: 4;
 	tab-size: 4;
 }

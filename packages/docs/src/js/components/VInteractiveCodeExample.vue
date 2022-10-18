@@ -153,14 +153,3 @@
         },
 	}
 </script>
-
-<style scoped>
-pre {
-	border: 1px solid rgb(var(--color-muted));
-	border-radius: 5px;
-	padding: 7px;
-}
-pre code {
-	white-space: normal;
-}
-</style>
