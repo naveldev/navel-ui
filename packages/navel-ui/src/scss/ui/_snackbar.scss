@@ -17,12 +17,28 @@
 
     .snackbar-content
     {
-        padding: 20px;
+        padding: 15px;
     }
 
     a
     {
         text-decoration: underline;
+    }
+}
+
+@include breakpoint('md') using ( $name, $breakpoint )
+{
+    @media (max-width: #{$breakpoint})
+    {
+        .snackbar
+        {
+            max-width: 100%;
+
+            .snackbar-content
+            {
+                padding: 8px 12px;
+            }
+        }
     }
 }
 
