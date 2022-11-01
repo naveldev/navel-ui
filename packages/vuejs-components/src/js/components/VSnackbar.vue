@@ -1,35 +1,15 @@
 <template>
+    <div class="snackbar mt-2 mx-2" :style="snackbarStyle" :class="snackbarClass">
+        <div class="snackbar-content d-flex align-items-center">
+            <p v-if="this.message.text" v-html="this.message.text"></p>
 
-	<article
-		class="snackbar mt-2"
-		:class="[
-			this.message.type,
-			this.messageClass,
-			this.borderClass,
-			{
-				'has-background': this.message.background,
-				'has-border': this.borderClass,
-				'is-dense': this.dense,
-			},
-		]"
-		:style="{
-			'--message-background': this.message.background,
-		}"
-	>
-		<div class="">
-			<div class="snackbar-content">
-				<p v-if="this.message.text" v-html="this.message.text"></p>
-			</div>
-
-			<div class="spacer"></div>
-
-			<div class="vue3-snackbar-message-close">
-				<button v-if="this.message.dismissible !== false" @click="dismissClick">
-                    X
-				</button>
-			</div>
-		</div>
-	</article>
+            <div class="ml-auto" v-if="this.message.dismissible !== false" @click="dismissClick">
+                <button class="btn-transparent">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
 </template>
 
 
@@ -85,6 +65,26 @@
             },
             dismiss() {
                 this.$emit("dismiss", this.message)
+            }
+        },
+
+        computed: {
+            snackbarStyle() {
+                return {
+                    '--message-background': this.message.background
+                }
+            },
+            snackbarClass() {
+                return [
+                    this.message.type,
+                    this.messageClass,
+                    this.borderClass,
+                    {
+                        'has-background': this.message.background,
+                        'has-border': this.borderClass,
+                        'is-dense': this.dense,
+                    }
+                ]
             }
         },
 

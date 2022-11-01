@@ -51,7 +51,7 @@ a.btn
 		{
 			box-shadow: 0 3px 5px rgb(0, 0, 0, .25);
 		}
-		
+
 		&:active,
         &.btn-active
 		{
@@ -170,6 +170,15 @@ a.btn:hover,
         --button-quaternary-color: #{"var(--color-" + $type + "-500)"};
         --button-text-color: #{"var(--color-" + $type + "-900)"};
     }
+}
+
+.btn-transparent
+{
+    --button-primary-color: #FFFFFF;
+    --button-secondary-color: rgba(0, 0, 0, .5);
+    --button-tertiary-color: rgba(0, 0, 0, .5);
+    --button-quaternary-color: rgba(0, 0, 0, .5);
+    --button-text-color: rgba(0, 0, 0, .5);
 }
 
 @include sizes() using ( $key, $padding, $font-size )
