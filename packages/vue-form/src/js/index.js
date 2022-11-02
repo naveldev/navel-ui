@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-class VueForm
+export class VueForm
 {
     /**
      * The vue form constructor
@@ -256,5 +256,3 @@ class VueForm
         })
     }
 }
-
-export default VueForm

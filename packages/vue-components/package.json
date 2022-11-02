@@ -1,0 +1,19 @@
+{
+	"name": "@naveldev/vue-components",
+	"version": "1.0.4",
+	"description": "Vuejs Components",
+	"license": "MIT",
+	"author": {
+		"name": "Navi Ismail",
+		"email": "contact@navel.dev",
+		"url": "https://navel.dev"
+	},
+	"main": "src/js/index.js",
+	"module": "src/js/index.js",
+	"dependencies": {
+		"vue": "^3.2.16"
+	},
+	"peerDependencies": {
+		"vue": "^3.2.16"
+	}
+}

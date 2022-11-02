@@ -21,8 +21,8 @@
 </template>
 
 <script>
-    import { messages } from '../plugins/snackbar/index.js'
-    import EventBus from '../plugins/snackbar/eventbus'
+    import { messages } from '../index.js'
+    import EventBus from '../eventbus.js'
     import VSnackbar from './VSnackbar.vue'
 
     const hashCode = (s) => Math.abs(s.split("").reduce((a, b) => ((a << 5) - a + b.charCodeAt(0)) | 0, 0));

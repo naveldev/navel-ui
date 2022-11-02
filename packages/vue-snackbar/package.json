@@ -1,0 +1,22 @@
+{
+	"name": "@naveldev/vue-snackbar",
+	"version": "1.0.1",
+	"description": "Vuejs Snackbar Plugin",
+	"license": "MIT",
+	"author": {
+		"name": "Navi Ismail",
+		"email": "contact@navel.dev",
+		"url": "https://navel.dev"
+	},
+	"main": "src/js/index.js",
+	"module": "src/js/index.js",
+	"dependencies": {
+		"vue": "^3.2.16",
+        "tiny-emitter": "^2.1.0",
+		"axios": "^0.21"
+	},
+	"peerDependencies": {
+		"vue": "^3.2.16",
+		"axios": "^0.21"
+	}
+}
