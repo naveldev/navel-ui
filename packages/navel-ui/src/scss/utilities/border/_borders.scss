@@ -1,0 +1,47 @@
+/* Borders */
+:root
+{
+    --border-color: var(--color-gray-500);
+}
+
+@include breakpoints() using ( $name, $breakpoint )
+{
+    $prefix: breakpoint-class($name);
+
+	@media (min-width: #{$breakpoint})
+    {
+        @each $type, $suffix in $style-types
+        {
+            #{"." + $prefix + "border" + $suffix}
+            {
+                border: 1px solid var(--border-color);
+            }
+
+            #{"." + $prefix + "border-y" + $suffix},
+            #{"." + $prefix + "border-bottom" + $suffix}
+            {
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            #{"." + $prefix + "border-y" + $suffix},
+            #{"." + $prefix + "border-top" + $suffix}
+            {
+                border-top: 1px solid var(--border-color);
+            }
+
+            #{"." + $prefix + "border-x" + $suffix},
+            #{"." + $prefix + "border-start" + $suffix},
+            #{"." + $prefix + "border-left" + $suffix}
+            {
+                border-left: 1px solid var(--border-color);
+            }
+
+            #{"." + $prefix + "border-x" + $suffix},
+            #{"." + $prefix + "border-end"},
+            #{"." + $prefix + "border-right"}
+            {
+                border-right: 1px solid var(--border-color);
+            }
+        }
+    }
+}
