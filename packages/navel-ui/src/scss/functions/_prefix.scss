@@ -1,0 +1,8 @@
+@function breakpoint-class($name) {
+    $prefix: '';
+    @if $name != 'xs' {
+        $prefix: #{$name}\:;
+    }
+
+    @return $prefix;
+}
