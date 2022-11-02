@@ -1,0 +1,15 @@
+@use "sass:map";
+
+@function theme-add($theme, $colors) {
+    @return map-merge($themes, (
+        $theme: $colors
+    ));
+}
+
+@function theme-update($theme, $colors) {
+    @return map.set($themes, $theme, $colors);
+}
+
+@function theme-get($theme) {
+    @return map.get($themes, $theme);
+}

@@ -5,11 +5,14 @@
  * Copyrights (c) navel.dev 2020
  */
 
+// Config
+@import 'config/config';
+
 // Functions
 @import 'functions/functions';
 
-// Config
-@import 'config/config';
+// Themes
+@import 'themes/themes';
 
 // Mixin
 @import 'mixins/mixins';
