@@ -1,0 +1,12 @@
+@mixin fa-icon($icon) {
+    font-family: IconFont;
+    font-variant: normal;
+    font-weight: normal;
+    content: $icon;
+}
+
+@mixin define-fa-icon($name, $icon) {
+    .far-#{$name} {
+        @include fa-emoji($name, $icon);
+    }
+}
