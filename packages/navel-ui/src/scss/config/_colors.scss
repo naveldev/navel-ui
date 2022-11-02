@@ -1,8 +1,8 @@
-$background-color: "var(--color-light-500)" !default;
+$background-color: var(--color-gray-200) !default;
 
-$text-color: "var(--color-dark-500)" !default;
+$text-color: var(--color-gray-900) !default;
 
 // Theme
-$default-theme: "light" !default;
+$default-theme: "default" !default;
 
 $themes: ();

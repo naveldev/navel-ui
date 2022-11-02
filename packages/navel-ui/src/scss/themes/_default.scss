@@ -9,7 +9,7 @@ $color-primary: (
     "primary-700": "#040d1c",
     "primary-800": "#020913",
     "primary-900": "#010409",
-) !default;
+);
 
 // Secondary
 $color-secondary: (
@@ -22,7 +22,7 @@ $color-secondary: (
     "secondary-700": "#092f68",
     "secondary-800": "#062046",
     "secondary-900": "#031023",
-) !default;
+);
 
 // Info
 $color-info: (
@@ -35,7 +35,7 @@ $color-info: (
     "info-700": "#12438D",
     "info-800": "#0C2D5E",
     "info-900": "#06162F",
-) !default;
+);
 
 // Success
 $color-success: (
@@ -48,7 +48,7 @@ $color-success: (
     "success-700": "#008F48",
     "success-800": "#006030",
     "success-900": "#003018",
-) !default;
+);
 
 // Danger
 $color-warning: (
@@ -61,7 +61,7 @@ $color-warning: (
     "warning-700": "#926B29",
     "warning-800": "#61481C",
     "warning-900": "#31240E",
-) !default;
+);
 
 // Warning
 $color-danger: (
@@ -74,7 +74,7 @@ $color-danger: (
     "danger-700": "#91131C",
     "danger-800": "#610D12",
     "danger-900": "#300609",
-) !default;
+);
 
 // Gray
 $color-gray: (
@@ -87,7 +87,7 @@ $color-gray: (
     "gray-700": "#848484",
     "gray-800": "#2C2C2C",
     "gray-900": "#000000",
-) !default;
+);
 
 // Color Types
 $colors: map-collect(
@@ -103,4 +103,4 @@ $colors: map-collect(
 	("gray": $color-gray)
 );
 
-$themes: theme-add('light', $colors);
+$themes: theme-add('default', $colors);

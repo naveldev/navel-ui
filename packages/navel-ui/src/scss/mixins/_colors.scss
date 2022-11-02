@@ -4,8 +4,8 @@
  */
 @mixin colors( $theme: $default-theme )
 {
-    @if map-has-key( $themes, $themes ) {
-        $colors: map.get($themes, $themes);
+    @if map-has-key( $themes, $theme ) {
+        $colors: map.get($themes, $theme);
 
         @each $name, $types in $colors {
             @each $color, $hex in $types {
@@ -25,7 +25,7 @@
  */
 @mixin color( $color, $theme: $default-theme )
 {
-    @if map-has-key( $themes, $themes ) {
+    @if map-has-key( $themes, $theme ) {
         $colors: map.get($themes, $theme);
 
         @if map-has-key( $colors, $color ) {
