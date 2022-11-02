@@ -28,3 +28,9 @@ $screen-sizes: (
 		"font-size": 120%,
 	)
 );
+
+$style-types: (
+    "": "",
+    "hover:": ":hover",
+    "active:": ":active",
+);

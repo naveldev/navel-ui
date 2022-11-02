@@ -1,57 +1,33 @@
 /* Position */
-.position-sticky
-{
-    position: sticky;
-    z-index: 1002;
-}
-
-.position-absolute
-{
-    position: absolute;
-}
-
-.position-static
-{
-    position: static;
-}
-
-.position-fixed
-{
-    position: fixed;
-}
-
-.position-relative
-{
-    position: relative;
-}
-
 @include breakpoints() using ( $name, $breakpoint )
 {
+    $prefix: breakpoint-class($name);
+
 	@media (min-width: #{$breakpoint})
     {
-        .position-#{$name}-sticky
+        #{"." + $prefix + "position-sticky"}
         {
             position: sticky;
             top: 0;
             z-index: 1002;
         }
 
-        .position-#{$name}-absolute
+        #{"." + $prefix + "position-absolute"}
         {
             position: absolute;
         }
 
-        .position-#{$name}-static
+        #{"." + $prefix + "position-static"}
         {
             position: static;
         }
 
-        .position-#{$name}-fixed
+        #{"." + $prefix + "position-fixed"}
         {
             position: fixed;
         }
 
-        .position-#{$name}-relative
+        #{"." + $prefix + "position-relative"}
         {
             position: relative;
         }
