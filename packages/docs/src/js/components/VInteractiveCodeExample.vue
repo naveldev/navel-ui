@@ -1,15 +1,15 @@
 <template>
-	<div class="card-content"> 
+	<div class="card-content">
 		<component :is="component.title" v-model="model" v-bind="options" />
 	</div>
 
 	<v-code-api v-if="showExample" :code="parsedTemplateToComponent" :showOptions="showOptions">
 		<template v-slot:root={}>
-			<div class="card-heading"> 
+			<div class="card-heading">
 				<h3>Interactions</h3>
 			</div>
 
-			<div class="card-content"> 
+			<div class="card-content">
 				<div v-if="arguments" v-for="(argument, key) in arguments">
 					<label>{{ argument.label ?? key }}</label>
 
@@ -21,10 +21,10 @@
 </template>
 
 <script>
-	import { VInput, VCheckbox, VDatePicker, VSwitch } from '@naveldev/vuejs-components'
+	import { VInput, VCheckbox, VDatePicker, VSwitch } from '@naveldev/vue-components'
 	import VCodeApi from './VCodeApi.vue'
 
-	import '@naveldev/vuejs-components/src/js/utils/string.js'
+	import '@naveldev/vue-components/src/js/utils/string.js'
 
 	export default {
 		name: 'VInteractiveCodeExample',
