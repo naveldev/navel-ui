@@ -56,10 +56,14 @@
             setMessageTimeout() {
                 const messageDuration = !this.message.duration && !this.message.dismissible ? 4000 : this.message.duration
 
-                timeout = setTimeout(this.dismiss, messageDuration)
+                if (this.message.duration) {
+                    timeout = setTimeout(this.dismiss, messageDuration)
+                }
             },
             dismissClick() {
-                if (timeout) clearTimeout(timeout)
+                if (timeout) {
+                    clearTimeout(timeout)
+                }
 
                 this.dismiss()
             },
