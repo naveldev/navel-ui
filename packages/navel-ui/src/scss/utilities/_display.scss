@@ -1,54 +1,31 @@
 // Display
-.d-none
-{
-    display: none !important;
-}
-
-.d-block
-{
-    display: block !important;
-}
-
-.d-inline-block
-{
-    display: inline-block !important;
-}
-
-.d-flex
-{
-    display: flex !important;
-}
-
-.d-grid
-{
-    display: grid !important;
-}
-
 @include breakpoints() using ( $name, $breakpoint )
 {
+    $prefix: breakpoint-class($name);
+
     @media (min-width: #{$breakpoint})
     {
-        #{".d-" + $name + "-none"}
+        #{"." + $prefix + "d-none"}
         {
             display: none !important;
         }
 
-        #{".d-" + $name + "-block"}
+        #{"." + $prefix + "d-block"}
         {
             display: block !important;
         }
 
-        #{".d-" + $name + "-inline-block"}
+        #{"." + $prefix + "d-inline-block"}
         {
             display: inline-block !important;
         }
 
-        #{".d-" + $name + "-flex"}
+        #{"." + $prefix + "d-flex"}
         {
             display: flex !important;
         }
 
-        #{".d-" + $name + "-grid"}
+        #{"." + $prefix + "d-grid"}
         {
             display: grid !important;
         }
