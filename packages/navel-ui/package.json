@@ -1,22 +1,22 @@
 {
-  "name": "@naveldev/navel-ui",
-  "version": "1.0.6",
-  "description": "UI",
-  "license": "MIT",
-  "author": "Navi Ismail <contact@navel.dev> (https://navel.dev)",
-  "type": "module",
-  "sass": "src/scss/app.scss",
-  "main": "src/js/index.js",
-  "module": "src/js/index.js",
-  "unpkg": "dist/navel-ui.js",
-  "dependencies": {
-    "vue": "^3.2.16"
-  },
-  "peerDependencies": {
-    "vue": "^3.2.16"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": []
+    "name": "@naveldev/navel-ui",
+    "version": "1.0.1",
+    "description": "UI",
+    "license": "MIT",
+    "author": "Navi Ismail <contact@navel.dev> (https://navel.dev)",
+    "type": "module",
+    "sass": "src/scss/app.scss",
+    "main": "src/js/index.js",
+    "module": "src/js/index.js",
+    "unpkg": "dist/navel-ui.js",
+    "dependencies": {
+        "vue": "^3.2.16"
+    },
+    "peerDependencies": {
+        "vue": "^3.2.16"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": []
 }
