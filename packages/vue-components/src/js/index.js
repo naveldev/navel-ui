@@ -7,6 +7,8 @@
  * Copyrights (c) navel.dev 2020
  */
 
+export { default as Cookie } from './utils/js-cookie.js'
+
 export { default as VSelect } from './components/VSelect.vue'
 export { default as VInput } from './components/VInput.vue'
 export { default as VCheckbox } from './components/VCheckbox.vue'
