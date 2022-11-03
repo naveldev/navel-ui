@@ -29,7 +29,7 @@ jobs:
           node-version: 18
           registry-url: https://registry.npmjs.org/
       - run: npm i --workspace=@naveldev/navel-ui
-      - run: npm version patch -m "🚚 Preparing `navel-ui` release"
+      - run: npm version patch -m "🚚 Preparing `navel-ui` release" --no-git-tag-version
       - run: npm publish --workspace=@naveldev/navel-ui
 
   publish-vue-form:
@@ -43,7 +43,7 @@ jobs:
           node-version: 18
           registry-url: https://registry.npmjs.org/
       - run: npm i --workspace=@naveldev/vue-form
-      - run: npm version patch -m "🚚 Preparing `vue-form` release"
+      - run: npm version patch -m "🚚 Preparing `vue-form` release" --no-git-tag-version
       - run: npm publish --workspace=@naveldev/vue-form
 
   publish-vue-snackbar:
@@ -57,7 +57,7 @@ jobs:
           node-version: 18
           registry-url: https://registry.npmjs.org/
       - run: npm i --workspace=@naveldev/vue-snackbar
-      - run: npm version patch -m "🚚 Preparing `vue-snackbar` release"
+      - run: npm version patch -m "🚚 Preparing `vue-snackbar` release" --no-git-tag-version
       - run: npm publish --workspace=@naveldev/vue-snackbar
 
   publish-vue-components:
@@ -71,5 +71,5 @@ jobs:
           node-version: 18
           registry-url: https://registry.npmjs.org/
       - run: npm i --workspace=@naveldev/vue-components
-      - run: npm version patch -m "🚚 Preparing `vue-components` release"
+      - run: npm version patch -m "🚚 Preparing `vue-components` release" --no-git-tag-version
       - run: npm publish --workspace=@naveldev/vue-components
