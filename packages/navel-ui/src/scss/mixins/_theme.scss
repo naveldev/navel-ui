@@ -1,0 +1,11 @@
+@use "sass:map";
+
+/*
+ * Loop through themes
+ */
+@mixin themes()
+{
+    @each $theme, $colors in $themes {
+        @content( $theme );
+    }
+}

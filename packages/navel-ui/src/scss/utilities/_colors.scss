@@ -1,41 +1,53 @@
-:root, :host
+:not([class^="theme-"]):root,
+:not([class^="theme-"]):host
 {
-	@include colors() using ( $color, $value, $type )
-	{
-		#{"--color-" + $color}: #{$value};
-	}
+    @include themes() using ( $theme )
+    {
+        @include colors($theme) using ( $color, $value, $type )
+        {
+            #{"--color-" + $color}: #{$value};
+        }
+    }
 }
 
-// loop through themes, and make a class for them
-$list: map-remove($themes, $default-theme);
-
-@each $theme, $properties in $list {
-    #{".theme-" + $theme}
+@include themes() using ( $theme )
+{
+    @include themes() using ( $theme )
     {
-        @each $name, $types in $properties {
-            @each $color, $hex in $types {
-                #{"--color-" + $color}: #{$hex};
+        #{".theme-" + $theme}:root,
+        #{".theme-" + $theme}:host
+        {
+            @include colors($theme) using ( $color, $value, $type )
+            {
+                #{"--color-" + $color}: #{$value};
             }
         }
     }
 }
 
-@include colors() using ( $color, $value, $type )
+@include themes() using ( $theme )
 {
-    #{".text-" + $type},
-    #{".color-" + $type}
+    #{".theme-" + $theme}:root,
+    #{".theme-" + $theme}:host
     {
-        color: #{"var(--color-" + $type + "-500)"} !important;
-    }
+        @include colors($theme) using ( $color, $value, $type )
+        {
+            #{".text-" + $type},
+            #{".color-" + $type}
+            {
+                color: #{"var(--color-" + $type + "-500)"} !important;
+            }
 
-    #{".text-" + $color},
-    #{".color-" + $color}
-    {
-        color: #{"var(--color-" + $color + ")"} !important;
-    }
+            #{".text-" + $color},
+            #{".color-" + $color}
+            {
+                color: #{"var(--color-" + $color + ")"} !important;
+            }
 
-    #{".bg-" + $color}
-    {
-        background: #{"var(--color-" + $color+ ")"} !important;
+            #{".bg-" + $color}
+            {
+                background: #{"var(--color-" + $color+ ")"} !important;
+            }
+        }
     }
 }
