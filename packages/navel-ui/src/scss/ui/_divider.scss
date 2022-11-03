@@ -1,0 +1,10 @@
+.divider
+{
+    text-align: center;
+    display: block;
+
+    &:after
+    {
+        background-color: var(--color-gray-500);
+    }
+}

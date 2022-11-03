@@ -1,0 +1,21 @@
+{
+	"name": "@naveldev/vue-form",
+	"version": "1.0.3",
+	"description": "Vuejs Form Plugin",
+	"license": "MIT",
+	"author": {
+		"name": "Navi Ismail",
+		"email": "contact@navel.dev",
+		"url": "https://navel.dev"
+	},
+	"main": "src/js/index.js",
+	"module": "src/js/index.js",
+	"dependencies": {
+		"vue": "^3.2.16",
+		"axios": "^0.21"
+	},
+	"peerDependencies": {
+		"vue": "^3.2.16",
+		"axios": "^0.21"
+	}
+}

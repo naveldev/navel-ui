@@ -1,0 +1,7 @@
+@include colors() using ( $color, $value, $type )
+{
+    .border-#{$color}
+    {
+        --border-color: #{"var(--color-" + $color + "-500)"};
+    }
+}

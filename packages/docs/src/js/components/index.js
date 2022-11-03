@@ -1,4 +1,4 @@
-import { VDropdown, VDatePicker, VTable, VButton, VCheckbox, VInput, VIcon } from '@naveldev/vuejs-components'
+import { VDropdown, VDatePicker, VTable, VButton, VCheckbox, VInput, VIcon } from '@naveldev/vue-components'
 
 import VColorExample from './VColorExample.vue'
 import VCodeExample from './VCodeExample.vue'

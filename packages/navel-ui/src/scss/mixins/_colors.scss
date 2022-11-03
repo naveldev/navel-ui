@@ -1,26 +1,46 @@
-///*
-// * Loop through colors
-// */
-@mixin colors()
-{
-	@each $name, $types in $colors {
-		@each $color, $hex in $types {
-			@content( $color, $hex, $name );
-		}
-	}
-}
+@use "sass:map";
 
-///*
-// * Get color
-// */
-@mixin color( $color )
+/*
+ * Loop through colors
+ */
+@mixin colors( $theme: $default-theme )
 {
-    @if map-has-key( $colors, $color ) {
-        @content( $color, "rgb(" + map-get( $colors, $color ) + ")", map-get( $text-colors, $color ) );
+    @if map-has-key( $themes, $theme ) {
+        $colors: map.get($themes, $theme);
+
+        @each $name, $types in $colors {
+            @each $color, $hex in $types {
+                @content( $color, $hex, $name );
+            }
+        }
     }
 
     @else {
-        @warn "Unfortunately, no value could be retrieved from `#{$color}`. "
-        + "Please make sure it is defined in `$colors` map.";
+        @warn "Unfortunately, no theme could be retrieved from `#{$theme}`. "
+        + "Please make sure it is defined with the `theme-add($name, $colors)` function.";
+    }
+}
+
+/*
+ * Get color
+ */
+@mixin color( $color, $theme: $default-theme )
+{
+    @if map-has-key( $themes, $theme ) {
+        $colors: map.get($themes, $theme);
+
+        @if map-has-key( $colors, $color ) {
+            @content( $color, "rgb(" + map-get( $colors, $color ) + ")", map-get( $text-colors, $color ) );
+        }
+
+        @else {
+            @warn "Unfortunately, no value could be retrieved from `#{$color}`. "
+            + "Please make sure it is defined in `$colors` map.";
+        }
+    }
+
+    @else {
+        @warn "Unfortunately, no theme could be retrieved from `#{$theme}`. "
+        + "Please make sure it is defined with the `theme-add($name, $colors)` function.";
     }
 }

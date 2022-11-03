@@ -7,12 +7,12 @@
 				<p class="text-muted py-3">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 			</div>
 		</div>
-		
+
 		<div class="row">
 			<div class="col-md-12">
 				<h2>Usage</h2>
 
-				<code class="my-3 p-2">import { VDatePicker } from '@naveldev/vuejs-components'</code>
+				<code class="my-3 p-2">import { VDatePicker } from '@naveldev/vue-components'</code>
 			</div>
 		</div>
 	</div>

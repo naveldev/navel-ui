@@ -1,0 +1,27 @@
+@use "sass:map";
+
+@function theme-add($theme, $colors) {
+    $themes: map-merge($themes, (
+        $theme: $colors
+    ));
+
+    @return $themes;
+}
+
+@function theme-get($theme) {
+    @return map.get($themes, $theme);
+}
+
+@function theme($theme, $colors) {
+    @if map-has-key( $themes, $theme ) {
+        $themeMap: theme-get($theme);
+
+        $edittedTheme: map-merge($themeMap, $colors);
+
+        @return map.set($themes, $theme, $edittedTheme);
+    }
+    @else {
+        @debug $theme;
+        @return theme-add($theme, $colors);
+    }
+}

@@ -1,0 +1,106 @@
+// Primary
+$color-primary: (
+    "primary-100": "#cdd0d5",
+    "primary-200": "#9ba2ac",
+    "primary-300": "#6a7382",
+    "primary-400": "#384559",
+    "primary-500": "#06162f",
+    "primary-600": "#051226",
+    "primary-700": "#040d1c",
+    "primary-800": "#020913",
+    "primary-900": "#010409",
+);
+
+// Secondary
+$color-secondary: (
+    "secondary-100": "#cfdcef",
+    "secondary-200": "#9fb9df",
+    "secondary-300": "#6f95ce",
+    "secondary-400": "#3f72be",
+    "secondary-500": "#1E70EB",
+    "secondary-600": "#0c3f8b",
+    "secondary-700": "#092f68",
+    "secondary-800": "#062046",
+    "secondary-900": "#031023",
+);
+
+// Info
+$color-info: (
+    "info-100": "#D2E2FB",
+    "info-200": "#A5C6F7",
+    "info-300": "#78A9F3",
+    "info-400": "#4B8DEF",
+    "info-500": "#1E70EB",
+    "info-600": "#185ABC",
+    "info-700": "#12438D",
+    "info-800": "#0C2D5E",
+    "info-900": "#06162F",
+);
+
+// Success
+$color-success: (
+    "success-100": "#CCFCE4",
+    "success-200": "#99F9C9",
+    "success-300": "#66F5AE",
+    "success-400": "#33F293",
+    "success-500": "#00EF78",
+    "success-600": "#00BF60",
+    "success-700": "#008F48",
+    "success-800": "#006030",
+    "success-900": "#003018",
+);
+
+// Danger
+$color-warning: (
+    "warning-100": "#FDF0DA",
+    "warning-200": "#FAE1B5",
+    "warning-300": "#F8D18F",
+    "warning-400": "#F5C26A",
+    "warning-500": "#F3B345",
+    "warning-600": "#C28F37",
+    "warning-700": "#926B29",
+    "warning-800": "#61481C",
+    "warning-900": "#31240E",
+);
+
+// Warning
+$color-danger: (
+    "danger-100": "#FCD2D5",
+    "danger-200": "#FAA6AB",
+    "danger-300": "#F77982",
+    "danger-400": "#F54D58",
+    "danger-500": "#F2202E",
+    "danger-600": "#C21A25",
+    "danger-700": "#91131C",
+    "danger-800": "#610D12",
+    "danger-900": "#300609",
+);
+
+// Gray
+$color-gray: (
+    "gray-900": "#FFFFFF",
+    "gray-800": "#F8F8F8",
+    "gray-700": "#F1F1F1",
+    "gray-600": "#E3E3E3",
+    "gray-500": "#DCDCDC",
+    "gray-400": "#B0B0B0",
+    "gray-300": "#848484",
+    "gray-200": "#2C2C2C",
+    "gray-100": "#000000",
+);
+
+// Color Types
+$colors: map-collect(
+	("muted": (
+		"muted-500": "#B7B7B7"
+	)),
+	("primary": $color-primary),
+	("secondary": $color-secondary),
+	("info": $color-info),
+	("success": $color-success),
+	("warning": $color-warning),
+	("danger": $color-danger),
+	("gray": $color-gray)
+);
+
+$themes: theme('dark', $colors);

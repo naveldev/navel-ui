@@ -257,4 +257,4 @@ class VueForm
     }
 }
 
-export default VueForm
+export { VueForm as default }

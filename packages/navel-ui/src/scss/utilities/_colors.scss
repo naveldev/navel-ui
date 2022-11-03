@@ -1,27 +1,48 @@
-:host, :root
+:not([class^="theme-"]):root,
+:not([class^="theme-"]):host
 {
-	@include colors() using ( $color, $value, $type )
-	{
-		#{"--color-" + $color}: #{$value};
-	}
+    @include colors($default-theme) using ( $color, $value, $type )
+    {
+        #{"--color-" + $color}: #{$value};
+    }
 }
 
-@include colors() using ( $color, $value, $type )
+// Theme Classes
+@include themes() using ( $theme )
 {
-    #{".text-" + $type},
-    #{".color-" + $type}
+    @include themes() using ( $theme )
     {
-        color: #{"var(--color-" + $type + "-500)"} !important;
+        #{".theme-" + $theme}:root,
+        #{".theme-" + $theme}:host
+        {
+            @include colors($theme) using ( $color, $value, $type )
+            {
+                #{"--color-" + $color}: #{$value};
+            }
+        }
     }
+}
 
-    #{".text-" + $color},
-    #{".color-" + $color}
+// Color Classes
+@include themes() using ( $theme )
+{
+    @include colors($theme) using ( $color, $value, $type )
     {
-        color: #{"var(--color-" + $color + ")"} !important;
-    }
+        #{".text-" + $type},
+        #{".color-" + $type}
+        {
+            color: #{"var(--color-" + $type + "-500)"} !important;
+        }
 
-    #{".bg-" + $color}
-    {
-        background: #{"var(--color-" + $color+ ")"} !important;
+        #{".text-" + $color},
+        #{".color-" + $color}
+        {
+            color: #{"var(--color-" + $color + ")"} !important;
+        }
+
+        #{".bg-" + $color}
+        {
+            background: #{"var(--color-" + $color+ ")"} !important;
+        }
     }
 }

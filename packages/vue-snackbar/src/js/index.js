@@ -43,3 +43,5 @@ export const SnackbarService = {
 		app.provide(SnackbarSymbol, SnackbarService)
 	}
 }
+
+export { default as VSnackbarWrapper } from './components/VSnackbarWrapper.vue'

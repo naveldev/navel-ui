@@ -1,0 +1,21 @@
+@use "sass:map";
+
+/*
+ * Loop through themes
+ */
+@mixin themes()
+{
+    @each $theme, $colors in $themes {
+        @content( $theme );
+    }
+}
+
+/*
+ * Get a specific team
+ */
+@mixin theme($theme: $default-theme)
+{
+    $theme: theme-get($theme);
+
+    @content($theme);
+}

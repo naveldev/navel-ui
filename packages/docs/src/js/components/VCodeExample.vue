@@ -7,7 +7,7 @@
 </template>
 
 <script>
-	import { VueForm } from '@naveldev/vuejs-components'
+	import { VueForm } from '@naveldev/vue-form'
 	import VCodeApi from './VCodeApi.vue'
 
 	export default {

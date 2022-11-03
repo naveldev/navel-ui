@@ -21,8 +21,8 @@
 </template>
 
 <script>
-    import { messages } from '../plugins/snackbar/index.js'
-    import EventBus from '../plugins/snackbar/eventbus'
+    import { messages } from '../index.js'
+    import EventBus from '../eventbus.js'
     import VSnackbar from './VSnackbar.vue'
 
     const hashCode = (s) => Math.abs(s.split("").reduce((a, b) => ((a << 5) - a + b.charCodeAt(0)) | 0, 0));
@@ -128,7 +128,9 @@
                 if (!ev.group) ev.group = hashCode(`${ev.type}${ev.title}${ev.text}`).toString(16)
 
                 // If there's a default duration and no message duration is set, use the default
-                if (this.duration && !ev.duration && ev.duration !== 0) ev.duration = this.duration
+                if (this.duration && !ev.duration && ev.duration !== 0) {
+                    ev.duration = this.duration
+                }
 
                 // Find the existing message if one with the same group-key already exists
                 const existingGroup = ev.group && messages.value.find((msg) => msg.group === ev.group)
