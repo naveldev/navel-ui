@@ -8,27 +8,20 @@
     @return $themes;
 }
 
-@function theme-update-color($theme, $color, $colors) {
-
-    @if map-has-key( $themes, $theme ) {
-        $themeMap: map.get($themes, $theme);
-
-        @if map-has-key( $themeMap, $color ) {
-            $themeMap: map.set($themeMap, $color, $colors);
-        }
-
-        $themes: theme-update($theme, $themeMap);
-    }
-
-    @return $themes;
-}
-
-@function theme-update($theme, $colors) {
-    $themes: map.set($themes, $theme, $colors);
-
-    @return $themes;
-}
-
 @function theme-get($theme) {
     @return map.get($themes, $theme);
+}
+
+@function theme($theme, $colors) {
+    @if map-has-key( $themes, $theme ) {
+        $themeMap: theme-get($theme);
+
+        $edittedTheme: map-merge($themeMap, $colors);
+
+        @return map.set($themes, $theme, $edittedTheme);
+    }
+    @else {
+        @debug $theme;
+        @return theme-add($theme, $colors);
+    }
 }

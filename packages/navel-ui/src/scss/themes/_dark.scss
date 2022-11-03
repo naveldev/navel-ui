@@ -103,4 +103,4 @@ $colors: map-collect(
 	("gray": $color-gray)
 );
 
-$themes: theme-add('dark', $colors);
+$themes: theme('dark', $colors);

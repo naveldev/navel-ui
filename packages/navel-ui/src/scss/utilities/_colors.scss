@@ -1,15 +1,13 @@
 :not([class^="theme-"]):root,
 :not([class^="theme-"]):host
 {
-    @include themes() using ( $theme )
+    @include colors($default-theme) using ( $color, $value, $type )
     {
-        @include colors($theme) using ( $color, $value, $type )
-        {
-            #{"--color-" + $color}: #{$value};
-        }
+        #{"--color-" + $color}: #{$value};
     }
 }
 
+// Theme Classes
 @include themes() using ( $theme )
 {
     @include themes() using ( $theme )
@@ -25,29 +23,26 @@
     }
 }
 
+// Color Classes
 @include themes() using ( $theme )
 {
-    #{".theme-" + $theme}:root,
-    #{".theme-" + $theme}:host
+    @include colors($theme) using ( $color, $value, $type )
     {
-        @include colors($theme) using ( $color, $value, $type )
+        #{".text-" + $type},
+        #{".color-" + $type}
         {
-            #{".text-" + $type},
-            #{".color-" + $type}
-            {
-                color: #{"var(--color-" + $type + "-500)"} !important;
-            }
+            color: #{"var(--color-" + $type + "-500)"} !important;
+        }
 
-            #{".text-" + $color},
-            #{".color-" + $color}
-            {
-                color: #{"var(--color-" + $color + ")"} !important;
-            }
+        #{".text-" + $color},
+        #{".color-" + $color}
+        {
+            color: #{"var(--color-" + $color + ")"} !important;
+        }
 
-            #{".bg-" + $color}
-            {
-                background: #{"var(--color-" + $color+ ")"} !important;
-            }
+        #{".bg-" + $color}
+        {
+            background: #{"var(--color-" + $color+ ")"} !important;
         }
     }
 }

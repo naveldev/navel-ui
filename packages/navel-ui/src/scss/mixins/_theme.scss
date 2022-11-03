@@ -9,3 +9,13 @@
         @content( $theme );
     }
 }
+
+/*
+ * Get a specific team
+ */
+@mixin theme($theme: $default-theme)
+{
+    $theme: theme-get($theme);
+
+    @content($theme);
+}
