@@ -68,6 +68,10 @@
                 this.dismiss()
             },
             dismiss() {
+                if (typeof this.message.close === 'function') {
+                    this.message.close()
+                }
+
                 this.$emit("dismiss", this.message)
             }
         },
