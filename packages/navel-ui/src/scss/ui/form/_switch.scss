@@ -1,11 +1,14 @@
+:root
+{
+    --form-control-color: var(--color-muted-500);
+}
+
 // Switch
 .form-switch[type="checkbox"]
 {
-    --form-control-color: var(--color-muted-500);
-
-    box-shadow: 0 1px 3px rgb(0, 0, 0, .25);
     background: var(--form-primary-color);
     color: var(--form-secondary-color);
+    box-shadow: $box-shadow;
     border-radius: 50px;
     position: relative;
     display: inline-block;
