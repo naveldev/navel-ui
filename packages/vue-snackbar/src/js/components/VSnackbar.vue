@@ -1,10 +1,10 @@
 <template>
     <div class="snackbar mt-2 mx-2" :style="snackbarStyle" :class="snackbarClass">
         <div class="snackbar-content d-flex align-items-center">
-            <p v-if="this.message.text" v-html="this.message.text"></p>
+            <p v-if="this.message.text" class="mr-3" v-html="this.message.text"></p>
 
             <div class="ml-auto" v-if="this.message.dismissible !== false" @click="dismissClick">
-                <button class="btn-transparent">
+                <button class="btn btn-transparent">
                     Close
                 </button>
             </div>
@@ -113,3 +113,31 @@
 		}
     }
 </script>
+
+<style scoped>
+.snackbar {
+    background: rgba(0, 0, 0, .85);
+    color: #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    min-width: 400px;
+    max-width: 600px;
+    margin: 5px;
+}
+.snackbar .snackbar-content {
+    padding: 15px;
+}
+.snackbar a {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .snackbar {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .snackbar .snackbar-content {
+        padding: 8px 12px;
+    }
+}
+</style>

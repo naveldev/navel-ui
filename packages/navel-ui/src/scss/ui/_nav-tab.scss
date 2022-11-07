@@ -64,7 +64,7 @@
 	// hide navigation
 	&.nav-hidden
 	{
-		box-shadow: none;
+		box-shadow: $border-radius;
 		transform: translate3d(0, -100%, 0);
 	}
 

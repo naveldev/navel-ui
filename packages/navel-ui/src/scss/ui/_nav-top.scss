@@ -8,7 +8,7 @@
 
 .nav-top
 {
-    box-shadow: 0 1px 3px var(--nav-top-quaternary-color);
+    box-shadow: $box-shadow;
 	background-color: var(--nav-top-primary-color);
     color: var(--nav-top-secondary-color);
 	transform: translate3d(0, 0, 0);
@@ -82,7 +82,7 @@
 	// hide navigation
 	&.nav-hidden
 	{
-		box-shadow: none;
+		box-shadow: $border-radius;
 		transform: translate3d(0, -100%, 0);
 	}
 
@@ -97,12 +97,12 @@
 	&.nav-transparent
 	{
 		background-color: transparent;
-		box-shadow: none;
+		box-shadow: $border-radius;
 	}
 
 	&.nav-rounded
 	{
-		border-radius: 5px;
+		border-radius: $border-radius;
 	}
 
 	a,

@@ -9,7 +9,7 @@
 
 .nav-left
 {
-    box-shadow: 0 1px 3px var(--nav-left-quaternary-color);
+    box-shadow: $box-shadow;
 	background-color: var(--nav-left-primary-color);
     color: var(--nav-left-secondary-color);
     position: relative;
@@ -74,7 +74,7 @@
     .divider
     {
         background-color: var(--nav-left-quaternary-color);
-        border-radius: 2px;
+        border-radius: $border-radius;
         height: 2px;
         width: calc(100% - 30px);
         margin: 15px 15px;
@@ -121,7 +121,7 @@
 	// hide navigation
 	&.nav-hidden
 	{
-		box-shadow: none;
+		box-shadow: $box-shadow;
 		transform: translate3d(0, -100%, 0);
 	}
 
@@ -163,11 +163,11 @@
 	&.nav-transparent
 	{
 		background-color: transparent;
-		box-shadow: none;
+		box-shadow: $box-shadow;
 	}
 
 	&.nav-rounded
 	{
-		border-radius: 5px;
+		border-radius: $border-radius;
 	}
 }
