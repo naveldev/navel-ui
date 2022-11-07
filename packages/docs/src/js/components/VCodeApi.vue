@@ -1,6 +1,6 @@
 <template>
 	<div class="position-relative">
-		<div v-if="showOptions" class="position-absolute right-2 top-2"> 
+		<div v-if="showOptions" class="position-absolute right-2 top-2">
 			<div class="ml-auto">
 				<a @click="copyToClipboard" class="btn btn-primary btn-soft tooltip-bottom" aria-label="Copy" id="copy"><i class="fa-regular fa-copy"></i></a>
 			</div>
@@ -48,7 +48,7 @@
 
 				copyTextBtn.oldAriaLabel = copyTextBtn.ariaLabel
 				copyTextBtn.ariaLabel = 'Copied!'
-				
+
 				setTimeout(() => {
 					copyTextBtn.ariaLabel = copyTextBtn.oldAriaLabel
 				}, 2500)
@@ -59,8 +59,10 @@
 
 <style scoped>
 pre {
-	background-color: var(--color-gray-200);
-	border-radius: 4px;
+	background-color: var(--color-gray-100);
+	box-shadow: var(--box-shadow);
+	border-radius: var(--border-radius);
+    overflow: auto;
 	padding: 15px;
 	min-height: 55px;
 	-moz-tab-size: 4;

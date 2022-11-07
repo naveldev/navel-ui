@@ -3,17 +3,16 @@
 {
     --card-primary-color: var(--color-gray-100);
     --card-secondary-color: var(--color-gray-200);
-    --card-tertiary-color: var(--color-gray-100);
-    --card-quaternary-color: var(--color-gray-900);
+    --card-tertiary-color: var(--color-gray-900);
 }
 
 .card
 {
-    box-shadow: 0 1px 3px rgb(0, 0, 0, .25);
-    background: var(--card-tertiary-color);
-    color: var(--card-quaternary-color);
+    background: var(--card-primary-color);
+    color: var(--card-tertiary-color);
     box-sizing: border-box;
-    border-radius: 3px;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
 	overflow: hidden;
     display: block;
 
@@ -48,8 +47,7 @@
 
     &.card-soft
     {
-        background-color: var(--card-primary-color);
-        color: var(--card-quaternary-color);
+        background-color: var(--card-secondary-color);
     }
 
     &.card-hover
@@ -58,15 +56,15 @@
 
         &:hover
         {
-            box-shadow: 0 1px 5px var(--color-gray-500);
+            //box-shadow: 0 1px 5px var(--color-gray-500);
             transition: .25s;
         }
     }
 
     .alert
     {
-        box-shadow: none;
-        border-radius: 0;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
     }
 }
 
@@ -74,9 +72,8 @@
 {
     .card-#{$type}
     {
-        --card-primary-color: #{"var(--color-" + $type + "-100)"};
-        --card-secondary-color: #{"var(--color-" + $type + "-200)"};
-        --card-tertiary-color: #{"var(--color-" + $type + "-500)"};
-        --card-quaternary-color: #{"var(--color-" + $type + "-900)"};
+        --card-primary-color: #{"var(--color-" + $type + "-500)"};
+        --card-secondary-color: #{"var(--color-" + $type + "-400)"};
+        --card-tertiary-color: #{"var(--color-" + $type + "-900)"};
     }
 }

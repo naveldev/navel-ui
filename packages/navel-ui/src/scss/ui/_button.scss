@@ -17,7 +17,7 @@ a.btn
     border: 2px solid transparent;
     box-sizing: border-box;
     font-weight: 500;
-    border-radius: 3px;
+    border-radius: $border-radius;
     cursor: pointer;
     display: inline-block;
     transition: .25s;
@@ -26,7 +26,7 @@ a.btn
     // Soft button
     &.btn-soft
     {
-        box-shadow: none;
+        box-shadow: $box-shadow;
         background-color: transparent;
         color: var(--button-quaternary-color);
 
@@ -65,14 +65,14 @@ a.btn
 	{
 		background-color: transparent;
 		border-color: transparent;
-		box-shadow: none;
+		box-shadow: $box-shadow;
         color: var(--button-quaternary-color);
 	}
 
     // Outline button
     &.btn-outline
     {
-        box-shadow: none;
+        box-shadow: $box-shadow;
         background-color: transparent;
         color: var(--button-quaternary-color);
         border: 1px solid var(--button-quaternary-color);

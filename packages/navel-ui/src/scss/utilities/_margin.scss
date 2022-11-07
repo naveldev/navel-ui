@@ -1,56 +1,64 @@
 
-/* Margin */
-@include spacing-list() using ( $name, $value )
+// Display
+@include breakpoints() using ( $breakpoint, $size )
 {
-    #{".m-" + $name}
-    {
-        margin: #{$value} !important;
-    }
+    $prefix: breakpoint-class($breakpoint);
 
-    #{".mb-" + $name},
-    #{".my-" + $name}
+    @include spacing-list() using ( $name, $value )
     {
-        margin-bottom: #{$value} !important;
-    }
+        @media (min-width: #{$size})
+        {
+            #{"." + $prefix + "m-" + $name}
+            {
+                margin: #{$value} !important;
+            }
 
-    #{".mt-" + $name},
-    #{".my-" + $name}
-    {
-        margin-top: #{$value} !important;
-    }
+            #{"." + $prefix + "mb-" + $name},
+            #{"." + $prefix + "my-" + $name}
+            {
+                margin-bottom: #{$value} !important;
+            }
 
-    #{".ms-" + $name},
-    #{".ml-" + $name},
-    #{".mx-" + $name}
-    {
-        margin-left: #{$value} !important;
-    }
+            #{"." + $prefix + "mt-" + $name},
+            #{"." + $prefix + "my-" + $name}
+            {
+                margin-top: #{$value} !important;
+            }
 
-    #{".me-" + $name},
-    #{".mr-" + $name},
-    #{".mx-" + $name}
-    {
-        margin-right: #{$value} !important;
-    }
+            #{"." + $prefix + "ms-" + $name},
+            #{"." + $prefix + "ml-" + $name},
+            #{"." + $prefix + "mx-" + $name}
+            {
+                margin-left: #{$value} !important;
+            }
 
-    // Pull Margin
-    #{".mb-pull-" + $name}
-    {
-        margin-bottom: -#{$value} !important;
-    }
+            #{"." + $prefix + "me-" + $name},
+            #{"." + $prefix + "mr-" + $name},
+            #{"." + $prefix + "mx-" + $name}
+            {
+                margin-right: #{$value} !important;
+            }
 
-    #{".mt-pull-" + $name}
-    {
-        margin-top: -#{$value} !important;
-    }
+            // Pull Margin
+            #{"." + $prefix + "mb-pull-" + $name}
+            {
+                margin-bottom: -#{$value} !important;
+            }
 
-    #{".ml-pull-" + $name}
-    {
-        margin-left: -#{$value} !important;
-    }
+            #{"." + $prefix + "mt-pull-" + $name}
+            {
+                margin-top: -#{$value} !important;
+            }
 
-    #{".mr-pull-" + $name}
-    {
-        margin-right: -#{$value} !important;
+            #{"." + $prefix + "ml-pull-" + $name}
+            {
+                margin-left: -#{$value} !important;
+            }
+
+            #{"." + $prefix + "mr-pull-" + $name}
+            {
+                margin-right: -#{$value} !important;
+            }
+        }
     }
 }

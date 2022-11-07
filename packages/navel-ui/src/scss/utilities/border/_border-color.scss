@@ -1,7 +1,16 @@
-@include colors() using ( $color, $value, $type )
+/* Border Color */
+@include breakpoints() using ( $name, $breakpoint )
 {
-    .border-#{$color}
+    $prefix: breakpoint-class($name);
+
+    @media (min-width: #{$breakpoint})
     {
-        --border-color: #{"var(--color-" + $color + "-500)"};
+        @include colors() using ( $color, $value, $type )
+        {
+            #{"." + $prefix + "border-" + $color + "-" + $type}
+            {
+                --border-color: #{"var(--color-" + $color + ")"};
+            }
+        }
     }
 }

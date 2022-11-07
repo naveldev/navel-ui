@@ -2,7 +2,7 @@
     <div class="alerts">
         <div class="alert" ref="draggableContainer">
             <div class="alertHead" @mousedown.prevent="dragMouseDown">
-                <p class="alertTitle">Application Error</p>
+                <p class="alertTitle">{{ title }}</p>
 
                 <div class="closeAlert" @click="closeAlert"></div>
             </div>
@@ -77,7 +77,15 @@
                 this.positions.clientY = event.clientY
 
                 if (this.repeatable) {
-                    if (this.clones.length <= 200 && this.cloneCount >= 5) {
+                    this.cloneCount++
+
+                    if (this.clones.length >= 100) {
+                        let element = this.clones.shift()
+
+                        element.remove()
+                    }
+
+                    if (this.cloneCount >= 5) {
                         let nodes = this.$el.querySelectorAll('.alert')
 
                         this.clone = nodes[nodes.length - 1].cloneNode(true)
@@ -90,8 +98,6 @@
 
                         this.cloneCount = 0
                     }
-
-                    this.cloneCount++
                 }
 
                 // set the element's new position:

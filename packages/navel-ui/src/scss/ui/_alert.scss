@@ -13,7 +13,7 @@
     color: var(--alert-foreground-color);
     box-sizing: border-box;
     display: block;
-    border-radius: 3px;
+    border-radius: $border-radius;
     padding: 15px;
 
 	&.alert-soft

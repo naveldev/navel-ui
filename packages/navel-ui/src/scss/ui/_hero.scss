@@ -7,10 +7,16 @@
 
 .hero
 {
-    box-shadow: 0 1px 3px var(--hero-tertiary-color);
 	background-color: var(--hero-primary-color);
     color: var(--hero-secondary-color);
+    box-shadow: $box-shadow;
 
+
+
+}
+
+.container .hero {
+    border-radius: $border-radius;
 }
 
 @include colors() using ( $color, $value, $type )

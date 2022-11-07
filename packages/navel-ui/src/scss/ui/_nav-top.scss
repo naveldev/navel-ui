@@ -8,25 +8,19 @@
 
 .nav-top
 {
-    box-shadow: 0 1px 3px var(--nav-top-quaternary-color);
+    box-shadow: $box-shadow;
 	background-color: var(--nav-top-primary-color);
     color: var(--nav-top-secondary-color);
 	transform: translate3d(0, 0, 0);
 	transition: 0.25s all;
 	position: relative;
 	min-height: 50px;
-    z-index: 1008;
+    z-index: 1007;
+    width: 100%;
 
 	.nav-branding
 	{
-		color: var(--color-gray-900);
 		display: inline-block;
-		padding: 0 15px;
-
-		h1
-		{
-			padding: 12px 0;
-		}
 	}
 
 	ul.nav-list
@@ -66,12 +60,18 @@
 		}
 	}
 
+    .nav-collapse
+    {
+        display: flex;
+        flex: 1 1;
+    }
+
 	// fixed on top
 	&.nav-fixed
 	{
 		position: fixed;
 		width: 100%;
-		z-index: 99999;
+		z-index: 10010;
 		top: 0;
 	}
 
@@ -82,7 +82,7 @@
 	// hide navigation
 	&.nav-hidden
 	{
-		box-shadow: none;
+		box-shadow: $border-radius;
 		transform: translate3d(0, -100%, 0);
 	}
 
@@ -90,7 +90,7 @@
 	&.nav-sticky
 	{
 		position: sticky;
-		z-index: 1002;
+		z-index: 10010;
 	}
 
 	// transparent navigation
@@ -102,26 +102,13 @@
 
 	&.nav-rounded
 	{
-		border-radius: 5px;
+		border-radius: $border-radius;
 	}
 
 	a,
 	a:hover
 	{
 		text-decoration: none;
-	}
-
-	.container
-	{
-		> *:first-child
-		{
-			margin-left: -15px;
-		}
-
-		> *:last-child
-		{
-			margin-right: -15px;
-		}
 	}
 
     // dropdown fix
@@ -138,6 +125,107 @@
                 li.nav-item
                 {
                     display: block;
+                }
+            }
+        }
+    }
+}
+
+// Phone
+@include breakpoint('md') using ( $name, $breakpoint )
+{
+    @media (max-width: #{$breakpoint})
+    {
+        .nav-top
+        {
+            max-width: 100% !important;
+            z-index: 100010 !important;
+
+            // Collapsed
+            &.nav-collapsed
+            {
+                .nav-collapse
+                {
+                    display: none;
+                }
+            }
+
+            // Not collapsed
+            &:not(.nav-collapsed)
+            {
+		        z-index: 10010;
+
+                .nav-collapse
+                {
+                    background-color: var(--nav-top-primary-color);
+                    color: var(--nav-top-secondary-color);
+                    position: absolute;
+                    display: block;
+                    top: 50px;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100vw;
+                    max-width: 100vw;
+                    height: 100vh;
+
+                    ul.nav-list
+                    {
+                        display: block;
+
+                        li.nav-button,
+                        li.nav-item
+                        {
+                            display: block;
+                        }
+                    }
+
+                    .dropdown
+                    {
+                        display: block;
+
+                        .dropdown-content
+                        {
+                            left: 0;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+
+            .container
+            {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+// Tablet or Computer
+@include breakpoint('md') using ( $name, $breakpoint )
+{
+    @media (min-width: #{$breakpoint})
+    {
+        .nav-top
+        {
+            .nav-collapse
+            {
+                display: flex;
+                flex: 1 1;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .container
+            {
+                > *:first-child
+                {
+                    margin-left: -15px;
+                }
+
+                > *:last-child
+                {
+                    margin-right: -15px;
                 }
             }
         }

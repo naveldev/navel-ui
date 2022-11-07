@@ -3,6 +3,7 @@
 {
     position: relative;
     display: inline-block;
+        z-index: 10015 !important;
 
     span
     {
@@ -19,17 +20,17 @@
 
     .dropdown-content
     {
-        box-shadow: 0 1px 3px rgb(0, 0, 0, .25);
         background-color: var(--color-gray-100);
         color: var(--color-gray-800);
         box-sizing: border-box;
-        border-radius: 3px;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
         position: absolute;
         display: none;
         top: calc(100% + 10px);
         max-width: 100%;
         min-width: 200px;
-        z-index: 10010;
+        z-index: 10015 !important;
 
         .list
         {

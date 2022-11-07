@@ -47,7 +47,7 @@
 [class*="tooltip-"]:after {
     background: rgba(0, 0, 0, .8);
     font-weight: 700;
-    border-radius: 3px;
+    border-radius: $border-radius;
     color: white;
     padding: 8px 10px;
     font-size: 12px;
@@ -570,7 +570,7 @@
  *
  */
 .tooltip-rounded:after {
-    border-radius: 4px;
+    border-radius: $border-radius;
 }
 
 /**
@@ -600,5 +600,5 @@
 .tooltip-no-shadow:before,
 .tooltip-no-shadow:after {
     text-shadow: initial;
-    box-shadow: initial;
+    box-shadow: $box-shadow;
 }

@@ -1,14 +1,18 @@
+:root
+{
+    --form-control-color: transparent;
+}
+
 
 // Checkbox
 .form-control[type="checkbox"],
 .form-control[type="radio"]
 {
-    --form-control-color: transparent;
-    box-shadow: 0 1px 3px rgb(0, 0, 0, .25);
     border: 2px solid var(--form-control-color);
     background: var(--form-primary-color);
     color: var(--form-secondary-color);
-    border-radius: 3px;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
     position: relative;
     display: inline-block;
     cursor: pointer;

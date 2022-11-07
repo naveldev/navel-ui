@@ -5,10 +5,23 @@
  * Copyrights (c) navel.dev 2020
  */
 
+// Custom Configuration
+
+// Required
+@import '@naveldev/navel-ui/src/scss/config/config';
+@import '@naveldev/navel-ui/src/scss/functions/functions';
+@import '@naveldev/navel-ui/src/scss/mixins/mixins';
+@import '@naveldev/navel-ui/src/scss/themes/themes';
+
+// Custom themes
 @import 'config';
+@import 'themes/themes';
 
-@import '@naveldev/navel-ui';
+// Optional
+@import '@naveldev/navel-ui/src/scss/ui/ui';
+@import '@naveldev/navel-ui/src/scss/base/base';
+@import '@naveldev/navel-ui/src/scss/utilities/utilities';
 
-@import 'base/base';
-
+// Custom
 @import 'components/components';
+@import 'base/base';

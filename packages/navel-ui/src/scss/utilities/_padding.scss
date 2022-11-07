@@ -1,34 +1,42 @@
 /* Padding */
-@include spacing-list() using ( $name, $value )
+@include breakpoints() using ( $breakpoint, $size )
 {
-    #{".p-" + $name}
-    {
-        padding: #{$value} !important;
-    }
+    $prefix: breakpoint-class($breakpoint);
 
-    #{".pb-" + $name},
-    #{".py-" + $name}
+    @include spacing-list() using ( $name, $value )
     {
-        padding-bottom: #{$value} !important;
-    }
+        @media (min-width: #{$size})
+        {
+            #{"." + $prefix + "p-" + $name}
+            {
+                padding: #{$value} !important;
+            }
 
-    #{".pt-" + $name},
-    #{".py-" + $name}
-    {
-        padding-top: #{$value} !important;
-    }
+            #{"." + $prefix + "pb-" + $name},
+            #{"." + $prefix + "py-" + $name}
+            {
+                padding-bottom: #{$value} !important;
+            }
 
-    #{".ps-" + $name},
-    #{".pl-" + $name},
-    #{".px-" + $name}
-    {
-        padding-left: #{$value} !important;
-    }
+            #{"." + $prefix + "pt-" + $name},
+            #{"." + $prefix + "py-" + $name}
+            {
+                padding-top: #{$value} !important;
+            }
 
-    #{".pe-" + $name},
-    #{".pr-" + $name},
-    #{".px-" + $name}
-    {
-        padding-right: #{$value} !important;
+            #{"." + $prefix + "ps-" + $name},
+            #{"." + $prefix + "pl-" + $name},
+            #{"." + $prefix + "px-" + $name}
+            {
+                padding-left: #{$value} !important;
+            }
+
+            #{"." + $prefix + "pe-" + $name},
+            #{"." + $prefix + "pr-" + $name},
+            #{"." + $prefix + "px-" + $name}
+            {
+                padding-right: #{$value} !important;
+            }
+        }
     }
 }
