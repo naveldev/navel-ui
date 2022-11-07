@@ -7,10 +7,19 @@ $border-table: (
     "5": "5px"
 );
 
+/* Border Width */
 @each $name, $value in $border-table
 {
-    #{".border-" + $name}
+    @include breakpoints() using ( $name, $breakpoint )
     {
-        border-width: #{$value};
+        $prefix: breakpoint-class($name);
+
+        @media (min-width: #{$breakpoint})
+        {
+            #{"." + $prefix + "border-" + $name}
+            {
+                border-width: #{$value};
+            }
+        }
     }
 }
