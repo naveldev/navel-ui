@@ -17,7 +17,7 @@ export default [
 		name: 'docs.configuration',
 		component: Container('Configuration')
 	},
-	
+
 	// Components...
 	{
 		path: '/docs/components/nav-top',
@@ -28,6 +28,11 @@ export default [
 		path: '/docs/components/button',
 		name: 'docs.components.button',
 		component: Container('Components/Button')
+	},
+	{
+		path: '/docs/components/badge',
+		name: 'docs.components.badge',
+		component: Container('Components/Badge')
 	},
 
 	// Vue Components...
@@ -46,7 +51,7 @@ export default [
 		name: 'docs.vue.datepicker',
 		component: Container('Stories/DatePicker')
 	},
-	
+
 	// Plugins...
 	{
 		path: '/docs/plugins/snackbar',

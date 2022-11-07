@@ -11,7 +11,31 @@
 			</div>
 		</hero>
 
+        <v-table>
+            <template v-slot:table-head>
+                <th>
+                    #
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Email
+                </th>
+            </template>
 
+            <template v-slot:table-content>
+                <td>
+                    1
+                </td>
+                <td>
+                    John Do
+                </td>
+                <td>
+                    contact@navel.dev
+                </td>
+            </template>
+        </v-table>
 	</div>
 </template>
 
