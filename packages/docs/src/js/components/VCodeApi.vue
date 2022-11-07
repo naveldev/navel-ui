@@ -59,8 +59,10 @@
 
 <style scoped>
 pre {
-	background-color: var(--color-gray-200);
+	background-color: var(--color-gray-100);
+	box-shadow: var(--box-shadow);
 	border-radius: var(--border-radius);
+    overflow: auto;
 	padding: 15px;
 	min-height: 55px;
 	-moz-tab-size: 4;

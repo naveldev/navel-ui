@@ -1,19 +1,11 @@
 <template>
-	<nav class="nav-top nav-primary" :class="{ 'nav-collapsed': !navigationState }">
-        <div class="container d-flex flex-row align-items-center py-2">
+	<nav class="nav-top nav-primary p-3 md:py-2" :class="{ 'nav-collapsed': !navigationState }">
+        <div class="container d-flex flex-row align-items-center">
             <h3 class="nav-branding">
-                Branding
+                Navel UI
             </h3>
 
             <div class="nav-collapse md:d-flex flex-grow-1 align-items-center">
-                <div class="d-flex align-items-center md:d-none p-3">
-                    Menu
-
-                    <a class="ml-auto" @click.prevent="toggleState(!this.navigationState)">
-                        <v-icon icon="fa-xmark" />
-                    </a>
-                </div>
-
                 <ul class="nav-list">
                     <li class="nav-item">
                         <router-link class="nav-link" :to="{ name: 'home' }">
@@ -68,7 +60,12 @@
             </div>
 
             <a class="ml-auto md:d-none" @click.prevent="toggleState(!this.navigationState)">
-                <v-icon icon="fa-bars-staggered fa-2x" />
+                <div v-if="navigationState">
+                    <v-icon icon="fa-xmark" />
+                </div>
+                <div v-else>
+                    <v-icon icon="fa-bars-staggered" />
+                </div>
             </a>
         </div>
 	</nav>

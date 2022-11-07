@@ -1,22 +1,19 @@
 <template>
 	<nav class="nav-left" :class="{ 'nav-collapsed': !navigationState }">
         <div class="d-flex align-items-center md:d-none p-3">
-            Menu
+            Documentation
 
             <a class="ml-auto" @click.prevent="toggleState(!this.navigationState)">
-                <v-icon icon="fa-bars-staggered fa-2x" />
+               <div v-if="navigationState">
+                    <v-icon icon="fa-xmark" />
+                </div>
+                <div v-else>
+                    <v-icon icon="fa-bars-staggered" />
+                </div>
             </a>
         </div>
 
         <div class="nav-collapse p-3">
-            <div class="d-flex align-items-center md:d-none mb-3">
-                Menu
-
-                <a class="ml-auto" @click.prevent="toggleState(!this.navigationState)">
-                    <v-icon icon="fa-xmark" />
-                </a>
-            </div>
-
             <!-- Getting Started -->
             <div class="nav-label">
                 <div class="label-icon">

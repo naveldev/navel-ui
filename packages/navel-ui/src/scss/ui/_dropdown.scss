@@ -3,6 +3,7 @@
 {
     position: relative;
     display: inline-block;
+        z-index: 10015 !important;
 
     span
     {
@@ -29,7 +30,7 @@
         top: calc(100% + 10px);
         max-width: 100%;
         min-width: 200px;
-        z-index: 10010;
+        z-index: 10015 !important;
 
         .list
         {

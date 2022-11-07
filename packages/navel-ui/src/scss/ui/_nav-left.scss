@@ -127,7 +127,6 @@
     // collapse navigation
     &.nav-collapsed
     {
-        display: none;
 
         .dropdown-content
         {
@@ -165,6 +164,7 @@
 	}
 }
 
+// Phone
 @include breakpoint('md') using ( $name, $breakpoint )
 {
     @media (max-width: #{$breakpoint})
@@ -186,7 +186,7 @@
             &:not(.nav-collapsed)
             {
                 position: absolute;
-                z-index: 100094 !important;
+		        z-index: 10010;
                 top: 0;
                 left: 0;
                 right: 0;
@@ -222,6 +222,23 @@
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+// Tablet or Computer
+@include breakpoint('md') using ( $name, $breakpoint )
+{
+    @media (min-width: #{$breakpoint})
+    {
+        .nav-left
+        {
+            .nav-collapse
+            {
+                display: flex;
+                flex: 1 1;
+                flex-direction: column;
             }
         }
     }
