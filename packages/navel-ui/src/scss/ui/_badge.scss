@@ -1,26 +1,33 @@
 // Badge
 :root
 {
-    --badge-background-color: var(--color-gray-500);
-    --badge-foreground-color: var(--color-gray-100);
+    --badge-primary-color: var(--color-gray-500);
+    --badge-secondary-color: var(--color-gray-400);
+    --badge-tertiary-color: var(--color-gray-100);
 }
 
 .badge
 {
-    background-color: var(--badge-background-color);
-    color: var(--badge-foreground-color);
+    background-color: var(--badge-primary-color);
+    color: var(--badge-tertiary-color);
     box-sizing: border-box;
     display: inline-block;
     font-weight: normal;
-    border-radius: $border-radius;
+    border-radius: 3px;
     padding: 8px 12px;
+
+    &.badge-soft
+    {
+        background-color: var(--badge-secondary-color);
+    }
 }
 
 @include colors() using ( $color, $value, $type )
 {
     .badge-#{$type}
     {
-        --badge-background-color: #{"var(--color-" + $type + "-500)"};
-        --badge-foreground-color: #{"var(--color-" + $type + "-100)"};
+        --badge-primary-color: #{"var(--color-" + $type + "-500)"};
+        --badge-secondary-color: #{"var(--color-" + $type + "-400)"};
+        --badge-tertiary-color: #{"var(--color-" + $type + "-100)"};
     }
 }
