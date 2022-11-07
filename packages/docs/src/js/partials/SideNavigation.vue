@@ -1,114 +1,149 @@
 <template>
-	<nav class="nav-left d-xs-none d-md-block p-3">
-		<!-- Getting Started -->
-		<div class="nav-label">
-			<div class="label-icon">
-				<i class="fa-regular fa-house"></i>
-			</div>
+	<nav class="nav-left" :class="{ 'nav-collapsed': !navigationState }">
+        <div class="d-flex align-items-center md:d-none p-3">
+            Menu
 
-			<p>Getting Started</p>
-		</div>
+            <a class="ml-auto" @click.prevent="toggleState(!this.navigationState)">
+                <v-icon icon="fa-bars-staggered fa-2x" />
+            </a>
+        </div>
 
-		<ul class="nav-list">
-			<li class="nav-item">
-				<router-link class="nav-link" :to="{ name: 'docs' }">
-					Getting Started
-				</router-link>
-			</li>
-			<li class="nav-item">
-				<router-link class="nav-link" :to="{ name: 'docs.installation' }">
-					Installation
-				</router-link>
-			</li>
-			<li class="nav-item">
-				<router-link class="nav-link" :to="{ name: 'docs.configuration' }">
-					Configuration
-				</router-link>
-			</li>
-		</ul>
-		
-		<!-- Components -->
-		<div class="nav-label mt-3">
-			<div class="label-icon">
-				<i class="fa-regular fa-layer-group"></i>
-			</div>
+        <div class="nav-collapse p-3">
+            <div class="d-flex align-items-center md:d-none mb-3">
+                Menu
 
-			<p>Components</p>
-		</div>
+                <a class="ml-auto" @click.prevent="toggleState(!this.navigationState)">
+                    <v-icon icon="fa-xmark" />
+                </a>
+            </div>
 
-		<ul class="nav-list">
-			<li class="nav-item">
-				<router-link class="nav-link" :to="{ name: 'docs.components.nav-top' }">
-					Top Nav
-				</router-link>
-			</li>
-			<li class="nav-item">
-				<router-link class="nav-link" :to="{ name: 'docs.components.button' }">
-					Button
-				</router-link>
-			</li>
-		</ul>
-		
-		<!-- Vue Components -->
-		<div class="nav-label mt-3">
-			<div class="label-icon">
-				<i class="fa-brands fa-vuejs"></i>
-			</div>
+            <!-- Getting Started -->
+            <div class="nav-label">
+                <div class="label-icon">
+                    <i class="fa-regular fa-house"></i>
+                </div>
 
-			<p>Vue Components</p>
-		</div>
+                <p>Getting Started</p>
+            </div>
 
-		<ul class="nav-list">
-			<li class="nav-item">
-				<router-link class="nav-link" :to="{ name: 'docs.vue' }">
-					Installation
-				</router-link>
-			</li>
-			<li class="nav-item">
-				<router-link class="nav-link" :to="{ name: 'docs.vue.input' }">
-					Input
-				</router-link>
-			</li>
-			<li class="nav-item">
-				<router-link class="nav-link" :to="{ name: 'docs.vue.datepicker' }">
-					DatePicker
-				</router-link>
-			</li>
-		</ul>
-		
-		<!-- Plugins -->
-		<div class="nav-label mt-3">
-			<div class="label-icon">
-				<i class="fa-regular fa-puzzle-piece-simple"></i>
-			</div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <router-link class="nav-link" :to="{ name: 'docs' }">
+                        Getting Started
+                    </router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" :to="{ name: 'docs.installation' }">
+                        Installation
+                    </router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" :to="{ name: 'docs.configuration' }">
+                        Configuration
+                    </router-link>
+                </li>
+            </ul>
 
-			<p>Plugins</p>
-		</div>
+            <!-- Components -->
+            <div class="nav-label mt-3">
+                <div class="label-icon">
+                    <i class="fa-regular fa-layer-group"></i>
+                </div>
 
-		<ul class="nav-list">
-			<li class="nav-item">
-				<router-link class="nav-link" :to="{ name: 'docs.plugins.snackbar' }">
-					Snackbar
-				</router-link>
-			</li>
-			<li class="nav-item">
-				<router-link class="nav-link" :to="{ name: 'docs.plugins.vue-form' }">
-					Vue Form
-				</router-link>
-			</li>
-		</ul>
+                <p>Components</p>
+            </div>
+
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <router-link class="nav-link" :to="{ name: 'docs.components.nav-top' }">
+                        Top Nav
+                    </router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" :to="{ name: 'docs.components.button' }">
+                        Button
+                    </router-link>
+                </li>
+            </ul>
+
+            <!-- Vue Components -->
+            <div class="nav-label mt-3">
+                <div class="label-icon">
+                    <i class="fa-brands fa-vuejs"></i>
+                </div>
+
+                <p>Vue Components</p>
+            </div>
+
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <router-link class="nav-link" :to="{ name: 'docs.vue' }">
+                        Installation
+                    </router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" :to="{ name: 'docs.vue.input' }">
+                        Input
+                    </router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" :to="{ name: 'docs.vue.datepicker' }">
+                        DatePicker
+                    </router-link>
+                </li>
+            </ul>
+
+            <!-- Plugins -->
+            <div class="nav-label mt-3">
+                <div class="label-icon">
+                    <i class="fa-regular fa-puzzle-piece-simple"></i>
+                </div>
+
+                <p>Plugins</p>
+            </div>
+
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <router-link class="nav-link" :to="{ name: 'docs.plugins.snackbar' }">
+                        Snackbar
+                    </router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" :to="{ name: 'docs.plugins.vue-form' }">
+                        Vue Form
+                    </router-link>
+                </li>
+            </ul>
+        </div>
 	</nav>
 </template>
 
 <script>
 	export default {
 		name: 'SideNavigation',
+
+        data() {
+            return {
+                navigationState: false
+            }
+        },
+
+        methods: {
+			/**
+			 * Set the navigation state and save it in the localStorage
+			 *
+			 * @return  {boolean}
+			 */
+			toggleState(state) {
+				return this.navigationState = state
+			},
+        },
 	}
 </script>
 
 <style scoped>
 .nav-left {
-    min-width: 300px;
+    max-width: 300px;
     height: auto;
 }
 .nav-left label

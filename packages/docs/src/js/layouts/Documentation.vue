@@ -1,8 +1,8 @@
 <template>
-	<div class="wrapper d-flex flex-column flex-grow-1">
+	<div class="wrapper md:d-flex flex-column flex-grow-1">
 		<navigation />
 
-		<div class="wrapcontent d-flex flex-grow-1">
+		<div class="wrapcontent md:d-flex flex-grow-1">
 			<side-navigation />
 
 			<router-view v-slot="{ Component, route }">
@@ -35,9 +35,11 @@
 .wrapper {
 	position: relative;
 	min-height: 100vh;
+    width: 100%;
 }
 .wrapcontent {
 	position: relative;
-	height: 100% !important;
+	height: 100%;
+    width: 100%;
 }
 </style>

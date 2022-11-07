@@ -1,0 +1,9 @@
+// Colors
+$color-example: (
+    "example-100": "#CCD9E5",
+);
+
+// update the default theme
+$themes: theme('default', (
+    'example': $color-example
+));
