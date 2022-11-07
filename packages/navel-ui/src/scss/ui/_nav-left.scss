@@ -27,7 +27,6 @@
 
 	ul.nav-list
 	{
-        position: relative;
 		display: block;
         width: 100%;
 		margin: 0;
@@ -121,13 +120,15 @@
 	// hide navigation
 	&.nav-hidden
 	{
-		box-shadow: $box-shadow;
+		box-shadow: none;
 		transform: translate3d(0, -100%, 0);
 	}
 
     // collapse navigation
     &.nav-collapsed
     {
+        display: none;
+
         .dropdown-content
         {
             z-index: 999;
@@ -155,7 +156,7 @@
 	&.nav-transparent
 	{
 		background-color: transparent;
-		box-shadow: $box-shadow;
+		box-shadow: none;
 	}
 
 	&.nav-rounded
@@ -184,20 +185,20 @@
             // Not collapsed
             &:not(.nav-collapsed)
             {
-                z-index: 100090;
+                position: absolute;
+                z-index: 100094 !important;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100vw;
+                max-width: 100vw;
+                height: 100vh;
 
                 .nav-collapse
                 {
                     background-color: var(--nav-top-primary-color);
                     color: var(--nav-top-secondary-color);
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    width: 100vw;
-                    max-width: 100vw;
-                    height: 100vh;
 
                     ul.nav-list
                     {

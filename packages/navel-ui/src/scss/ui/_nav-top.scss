@@ -66,6 +66,12 @@
 		}
 	}
 
+    .nav-collapse
+    {
+        display: flex;
+        flex: 1 1;
+    }
+
 	// fixed on top
 	&.nav-fixed
 	{
@@ -97,7 +103,7 @@
 	&.nav-transparent
 	{
 		background-color: transparent;
-		box-shadow: $border-radius;
+		box-shadow: none;
 	}
 
 	&.nav-rounded
@@ -170,8 +176,9 @@
                 {
                     background-color: var(--nav-top-primary-color);
                     color: var(--nav-top-secondary-color);
-                    position: fixed;
-                    top: 0;
+                    position: absolute;
+                    display: block;
+                    top: 50px;
                     left: 0;
                     right: 0;
                     bottom: 0;
