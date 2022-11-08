@@ -7,9 +7,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <slot name="table-content" />
-                </tr>
+                <slot name="table-content" />
             </tbody>
         </table>
     </div>
