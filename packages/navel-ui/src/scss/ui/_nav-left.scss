@@ -186,7 +186,7 @@
             // Not collapsed
             &:not(.nav-collapsed)
             {
-                position: relative;
+                position: absolute;
 		        z-index: 10010;
                 top: 0;
                 left: 0;

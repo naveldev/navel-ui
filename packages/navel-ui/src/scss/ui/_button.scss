@@ -1,7 +1,7 @@
 :root
 {
     --button-primary-color: var(--color-primary-100);
-    --button-secondary-color: var(--color-primary-100);
+    --button-secondary-color: var(--color-primary-600);
     --button-tertiary-color: var(--color-primary-200);
     --button-quaternary-color: var(--color-primary-500);
 	--button-text-color: var(--color-primary-900);
@@ -27,12 +27,11 @@ a.btn
     &.btn-soft
     {
         box-shadow: $box-shadow;
-        background-color: transparent;
+        background-color: var(--button-primary-color);
         color: var(--button-quaternary-color);
 
         &:hover
         {
-            background-color: var(--button-secondary-color);
         	color: var(--button-quaternary-color);
         }
 
@@ -44,19 +43,16 @@ a.btn
         }
     }
 
-	// Action
-	&.btn-action
-	{
-    	&:hover
-		{
-			box-shadow: 0 3px 5px rgb(0, 0, 0, .25);
-		}
+    &.btn-hover:hover
+    {
+        background-color: var(--button-secondary-color);
+    }
 
-		&:active,
-        &.btn-active
-		{
-			box-shadow: 0 2px 4px rgb(0, 0, 0, .25);
-		}
+	// Action
+	&.btn-action:active,
+	&.btn-action.btn-active
+	{
+        background-color: var(--button-secondary-color);
 	}
 
 	&.btn-text,
@@ -65,7 +61,7 @@ a.btn
 	{
 		background-color: transparent;
 		border-color: transparent;
-		box-shadow: $box-shadow;
+		box-shadow: none;
         color: var(--button-quaternary-color);
 	}
 
@@ -153,17 +149,8 @@ a.btn:hover,
     .btn-#{$type}
     {
         --button-primary-color: #{"var(--color-" + $type + "-100)"};
-        --button-secondary-color: #{"var(--color-" + $type + "-100)"};
+        --button-secondary-color: #{"var(--color-" + $type + "-600)"};
         --button-tertiary-color: #{"var(--color-" + $type + "-200)"};
-        --button-quaternary-color: #{"var(--color-" + $type + "-500)"};
-        --button-text-color: #{"var(--color-" + $type + "-900)"};
-    }
-
-    .btn-#{$type}-inverted
-    {
-        --button-primary-color: #{"var(--color-" + $type + "-100)"};
-        --button-secondary-color: #{"var(--color-" + $type + "-700)"};
-        --button-tertiary-color: #{"var(--color-" + $type + "-800)"};
         --button-quaternary-color: #{"var(--color-" + $type + "-500)"};
         --button-text-color: #{"var(--color-" + $type + "-900)"};
     }

@@ -14,8 +14,8 @@ export const components = [
     VDatePicker,
     VCheckbox,
 	VButton,
-    VTable,
     VInput,
 	VIcon,
     VDropdown,
+    VTable,
 ]
