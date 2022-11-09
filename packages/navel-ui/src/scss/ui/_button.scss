@@ -21,7 +21,7 @@ a.btn
     cursor: pointer;
     display: inline-block;
     transition: .25s;
-    padding: 8px 1rem;
+    padding: 12px;
 
     // Soft button
     &.btn-soft
@@ -29,11 +29,6 @@ a.btn
         box-shadow: $box-shadow;
         background-color: var(--button-primary-color);
         color: var(--button-quaternary-color);
-
-        &:hover
-        {
-        	color: var(--button-quaternary-color);
-        }
 
         &:active,
         &.btn-active
@@ -43,9 +38,16 @@ a.btn
         }
     }
 
-    &.btn-hover:hover
+    &.btn-hover
     {
-        background-color: var(--button-secondary-color);
+        box-shadow: none;
+        background-color: transparent;
+        color: var(--button-quaternary-color);
+
+        &:hover
+        {
+            background-color: var(--button-primary-color);
+        }
     }
 
 	// Action
@@ -78,6 +80,8 @@ a.btn
     &.btn-rounded
     {
         border-radius: 2.5rem;
+        padding: 8px 12px;
+        min-width: 40px;
     }
 
 	// Disabled button

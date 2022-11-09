@@ -1,0 +1,45 @@
+.icon
+{
+    @extend .badge;
+    background-color: var(--icon-primary-color);
+    color: var(--icon-tertiary-color);
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    padding: 15px;
+
+    &.icon-small
+    {
+        @extend .badge-small;
+    }
+
+    &.icon-medium
+    {
+        @extend .badge-medium;
+    }
+
+    &.icon-large
+    {
+        @extend .badge-large;
+    }
+
+    &.icon-soft
+    {
+        background-color: var(--icon-tertiary-color);
+        color: var(--icon-primary-color);
+    }
+
+    &.icon-rounded
+    {
+        @extend .badge-rounded;
+    }
+}
+
+@include colors() using ( $color, $value, $type )
+{
+    .icon-#{$type}
+    {
+        --icon-primary-color: #{"var(--color-" + $type + "-500)"};
+        --icon-secondary-color: #{"var(--color-" + $type + "-400)"};
+        --icon-tertiary-color: #{"var(--color-" + $type + "-100)"};
+    }
+}
