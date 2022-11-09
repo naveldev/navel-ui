@@ -1,0 +1,10 @@
+/*
+ * Positionings
+ */
+@mixin positioning-list()
+{
+    @for $i from 0 through 10
+    {
+        @content( $i * 10 );
+    }
+}
