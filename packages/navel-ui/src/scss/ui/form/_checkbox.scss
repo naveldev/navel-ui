@@ -12,7 +12,7 @@
     background: var(--form-primary-color);
     color: var(--form-secondary-color);
     box-shadow: $box-shadow;
-    border-radius: $border-radius;
+    border-radius: 3px;
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -29,18 +29,15 @@
     // Checkbox
     &:after
     {
-        display: block;
-        font-style: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        font-family: "Font Awesome 6 Pro";
-        font-weight: 900;
-        content: "\f00c";
-        text-align: center;
-        font-size: small;
-        color: var(--form-control-color);
-        padding: 2px 0;
+        display: inline-block;
+        transform: rotate(45deg);
+        height: 13px;
+        width: 6px;
+        border-bottom: 2px solid var(--form-control-color);
+        border-right: 2px solid var(--form-control-color);
+        content: " ";
+        position: absolute;
+        left: 5px;
     }
 
     // Hover
