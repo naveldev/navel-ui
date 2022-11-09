@@ -1,6 +1,6 @@
 <template>
 	<div class="position-relative">
-		<div v-if="showOptions" class="position-absolute right-2 top-2">
+		<div v-if="showOptions" class="position-absolute right-10 top-10">
 			<div class="ml-auto">
 				<a @click="copyToClipboard" class="btn btn-primary btn-soft tooltip-bottom" aria-label="Copy" id="copy"><i class="fa-regular fa-copy"></i></a>
 			</div>
