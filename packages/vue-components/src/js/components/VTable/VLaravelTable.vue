@@ -1,7 +1,7 @@
 <template>
     <div v-if="data" :class="{ 'table-loading': loading }">
         <!-- multiSelectOptions -->
-        <div class="card-heading md:d-flex align-items-center">
+        <div v-if="this.$slots.tableTitle || this.$slots.multiSelectOptions" class="card-heading md:d-flex align-items-center">
             <slot name="table-title" />
 
             <div class="ml-auto">
@@ -25,7 +25,7 @@
 				<tr v-for="(entry, key) in data" :key="key">
                     <td v-if="this.$slots.multiSelectOptions">
                         <div class="d-block">
-                            <input class="form-control" type="checkbox" v-model="selectedEntries" :value="key" :id="key" @change="checkCheckboxState" />
+                            <input class="form-control" type="checkbox" v-model="selectedEntries" :value="entry.id" :id="entry.id" @change="checkCheckboxState" />
                         </div>
                     </td>
 					<td v-for="(type, key) in defaultColumns" :key="key">
