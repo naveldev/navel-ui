@@ -1,5 +1,4 @@
 
-/* Margin */
 /* Position */
 @include breakpoints() using ( $name, $breakpoint )
 {
@@ -7,33 +6,50 @@
 
 	@media (min-width: #{$breakpoint})
     {
-        @each $type, $suffix in $style-types
+        @include positioning-list() using ( $value )
         {
-            @include spacing-list() using ( $name, $value )
+            #{"." + $prefix + "top-" + $value}
             {
-                #{"." + $type + $prefix + "top-" + $name},
-                #{"." + $type + $prefix + "start-" + $name}
-                {
-                    top: #{$value} !important;
-                }
+                top: #{$value + "px"} !important;
+            }
 
-                #{"." + $type + $prefix + "bottom-" + $name},
-                #{"." + $type + $prefix + "end-" + $name}
-                {
-                    bottom: #{$value} !important;
-                }
+            #{"." + $prefix + "top-pull-" + $value}
+            {
+                top: #{"-" + $value + "px"} !important;
+            }
 
-                #{"." + $type + $prefix + "start-" + $name},
-                #{"." + $type + $prefix + "left-" + $name}
-                {
-                    left: #{$value} !important;
-                }
+            #{"." + $prefix + "bottom-" + $value}
+            {
+                bottom: #{$value + "px"} !important;
+            }
 
-                #{"." + $type + $prefix + "end-" + $name},
-                #{"." + $type + $prefix + "right-" + $name}
-                {
-                    right: #{$value} !important;
-                }
+            #{"." + $prefix + "bottom-pull-" + $value}
+            {
+                bottom: #{"-" + $value + "px"} !important;
+            }
+
+            #{"." + $prefix + "start-" + $value},
+            #{"." + $prefix + "left-" + $value}
+            {
+                left: #{$value + "px"} !important;
+            }
+
+            #{"." + $prefix + "start-pull-" + $value},
+            #{"." + $prefix + "left-pull-" + $value}
+            {
+                left: #{"-" + $value + "px"} !important;
+            }
+
+            #{"." + $prefix + "end-" + $value},
+            #{"." + $prefix + "right-" + $value}
+            {
+                right: #{$value + "px"} !important;
+            }
+
+            #{"." + $prefix + "end-pull-" + $value},
+            #{"." + $prefix + "right-pull-" + $value}
+            {
+                right: #{"-" + $value + "px"} !important;
             }
         }
     }

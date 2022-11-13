@@ -1,12 +1,22 @@
 <template>
     <div v-if="data" :class="{ 'table-loading': loading }">
         <!-- multiSelectOptions -->
-        <slot name="multiSelectOptions" v-bind:entries="selectedEntries" />
+        <div v-if="this.$slots.tableTitle || this.$slots.multiSelectOptions" class="card-heading md:d-flex align-items-center">
+            <slot name="table-title" />
+
+            <div class="ml-auto">
+                <slot name="multiSelectOptions" v-bind:entries="selectedEntries" />
+            </div>
+        </div>
 
         <!-- Table -->
         <v-table>
             <template v-slot:table-head>
-                <th v-if="this.$slots.multiSelectOptions"></th>
+                <th v-if="this.$slots.multiSelectOptions">
+                    <div class="d-block">
+                        <input class="form-control" type="checkbox" value="test" v-model="toggledCheckboxes" @click="this.toggleChecboxState(!this.toggledCheckboxes)" />
+                    </div>
+                </th>
                 <th v-for="(type, key) in defaultColumns" :key="key">{{ settings.parseColumns[type] || type }}</th>
                 <th v-if="this.$slots.tableActions"></th>
             </template>
@@ -15,7 +25,7 @@
 				<tr v-for="(entry, key) in data" :key="key">
                     <td v-if="this.$slots.multiSelectOptions">
                         <div class="d-block">
-                            <input class="form-control" type="checkbox" v-model="selectedEntries" :value="entry" :id="key" />
+                            <input class="form-control" type="checkbox" v-model="selectedEntries" :value="entry.id" :id="entry.id" @change="checkCheckboxState" />
                         </div>
                     </td>
 					<td v-for="(type, key) in defaultColumns" :key="key">
@@ -32,17 +42,17 @@
         </v-table>
 
         <!-- Controls -->
-        <div v-if="this.paginator" class="d-flex">
+        <div v-if="this.paginator" class="card-footer md:d-flex align-items-center">
             <p class="text-muted p-1">Page {{ paginator.page }} / {{ paginator.pages }}</p>
 
             <div class="ml-auto">
-                <button class="btn btn-rounded btn-soft" :class="{ 'btn-disabled': (paginator.page <= 1) }" @click="previous">
+                <button class="btn btn-rounded btn-hover btn-soft" :class="{ 'btn-disabled': (paginator.page <= 1) }" @click="previous">
                     <i class="far fa-long-arrow-left"></i>
                 </button>
-                <button v-for="(page, key) in pages" :key="key" class="btn btn-rounded btn-soft" :class="{ 'btn-active': (page == this.paginator.page) }" @click="setPage(page)">
+                <button v-for="(page, key) in pages" :key="key" class="btn btn-rounded btn-hover btn-soft" :class="{ 'btn-active': (page == this.paginator.page) }" @click="setPage(page)">
                     {{ page }}
                 </button>
-                <button class="btn btn-rounded btn-soft" :class="{ 'btn-disabled': (paginator.page >= paginator.pages) }" @click="next">
+                <button class="btn btn-rounded btn-hover btn-soft" :class="{ 'btn-disabled': (paginator.page >= paginator.pages) }" @click="next">
                     <i class="far fa-long-arrow-right"></i>
                 </button>
             </div>
@@ -81,6 +91,7 @@
 
 		data () {
             return {
+                toggledCheckboxes: false,
                 selectedEntries: [],
                 defaultColumns: {},
                 defaultOptions: {
@@ -131,6 +142,40 @@
 				}
 
                 this.paginator.page = page
+            },
+            /**
+             * Toggle the checkbox states
+             *
+             * @param   {boolean}  state
+             *
+             * @return  {void}
+             */
+            toggleChecboxState(state) {
+                let checkboxes = this.$el.querySelectorAll('tbody input[type=checkbox]')
+
+                if (state === true) {
+                    checkboxes.forEach((checkbox) => {
+                        this.selectedEntries.push(checkbox.id)
+                    })
+                }
+
+                if (state === false) {
+                    this.selectedEntries = []
+                }
+
+                this.toggledCheckboxes = state
+            },
+            /**
+             * Check wether all the checkboxes are still checked or not
+             *
+             * @return  {void}
+             */
+            checkCheckboxState: function(){
+                if(this.selectedEntries.length == this.data.length){
+                    this.toggledCheckboxes = true
+                }else{
+                    this.toggledCheckboxes = false
+                }
             },
             /**
              * Truncate a string

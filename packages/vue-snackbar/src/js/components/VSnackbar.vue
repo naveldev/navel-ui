@@ -1,7 +1,9 @@
 <template>
     <div class="snackbar mt-2 mx-2" :style="snackbarStyle" :class="snackbarClass">
         <div class="snackbar-content d-flex align-items-center">
-            <p v-if="this.message.text" class="mr-3" v-html="this.message.text"></p>
+            <i v-if="this.message.icon" class="far fa-2x mr-3" :class="this.message.icon" />
+
+            <p v-if="this.message.text" class="pr-3" v-html="this.message.text"></p>
 
             <div class="ml-auto" v-if="this.message.dismissible !== false" @click="dismissClick">
                 <button class="btn btn-transparent">

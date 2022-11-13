@@ -2,7 +2,7 @@
 	<teleport :to="this.attach">
 		<section
 			:class="[generatedBaseClasses]"
-			class="position-fixed bottom-2 end-2"
+			class="position-fixed bottom-10 end-10"
 			:style="generatedBaseStyles"
 		>
 			<transition-group v-if="messages" name="snackbar" tag="div">
