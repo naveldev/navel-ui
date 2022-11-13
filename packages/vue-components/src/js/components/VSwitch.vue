@@ -1,6 +1,6 @@
 <template>
 	<label for="styled-switch" class="d-block">{{ label }}</label>
-	<input class="form-switch" id="styled-switch" type="checkbox" v-model="modelValue" />
+	<input class="form-switch" id="styled-switch" type="checkbox" :value="modelValue" @input="e => this.$emit('update:modelValue', e.target.value)" />
 </template>
 
 <script>

@@ -9,7 +9,7 @@
 
         <!-- Input -->
         <slot name="input">
-            <input class="flex-grow-1 p-3" :type="formType" v-model="modelValue" :placeholder="placeholder" :required="required" :disabled="disabled" @input="e => this.$emit('update:modelValue', e.target.value)" :autocomplete="autocomplete" />
+            <input class="flex-grow-1 p-3" :type="formType" :value="modelValue" :placeholder="placeholder" :required="required" :disabled="disabled" @input="e => this.$emit('update:modelValue', e.target.value)" :autocomplete="autocomplete" />
         </slot>
 
         <!-- Suffix -->
