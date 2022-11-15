@@ -2,9 +2,9 @@
 	<div class="card">
         <div class="d-flex card-content">
             <ol class="breadcrumbs">
-                <li>Coffee</li>
-                <li>Tea</li>
-                <li>Milk</li>
+                <li>Folder</li>
+                <li>Folder</li>
+                <li class="active">Folder</li>
             </ol>
 
             <div class="ml-auto">
@@ -16,18 +16,24 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th style="width: 20px"></th>
                     <th>Name</th>
+                    <th>Owner</th>
                     <th>Size</th>
                     <th>Modified</th>
-                    <th></th>
+                    <th style="width: 20px"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
+                    <td><i class="icon-folder" /></td>
+                    <td>Folder</td>
                     <td class="d-flex align-items-center">
-                        <i class="icon-folder" />
+                        <div class="profile-picture mr-2">
+                            <img src="https://st3.depositphotos.com/1767687/16607/v/450/depositphotos_166074422-stock-illustration-default-avatar-profile-icon-grey.jpg" />
+                        </div>
 
-                        <p class="px-2">Folder</p>
+                        User
                     </td>
                     <td>3.2 GB</td>
                     <td>2022-11-15 09:38:36</td>
@@ -38,12 +44,16 @@
                     </td>
                 </tr>
                 <tr>
+                    <td><i class="icon-document" /></td>
+                    <td>Document</td>
                     <td class="d-flex align-items-center">
-                        <i class="icon-document" />
+                        <div class="profile-picture mr-2">
+                            <img src="https://st3.depositphotos.com/1767687/16607/v/450/depositphotos_166074422-stock-illustration-default-avatar-profile-icon-grey.jpg" />
+                        </div>
 
-                        <p class="px-2">File</p>
+                        User
                     </td>
-                    <td>3.2 GB</td>
+                    <td>2.9 MB</td>
                     <td>1 hour ago</td>
                     <td class="d-flex justify-content-end">
                         <v-button class="btn-soft btn-xs">
@@ -52,10 +62,14 @@
                     </td>
                 </tr>
                 <tr>
+                    <td><i class="icon-image" /></td>
+                    <td>Image</td>
                     <td class="d-flex align-items-center">
-                        <i class="icon-image" />
+                        <div class="profile-picture mr-2">
+                            <img src="https://st3.depositphotos.com/1767687/16607/v/450/depositphotos_166074422-stock-illustration-default-avatar-profile-icon-grey.jpg" />
+                        </div>
 
-                        <p class="px-2">Image</p>
+                        User
                     </td>
                     <td>64 KB</td>
                     <td>Yesterday</td>
@@ -98,26 +112,43 @@
     padding: 0;
     margin: 0;
     font-size: 22px;
+    color: var(--color-muted-500);
+}
+.breadcrumbs li.active {
+    color: var(--color-gray-900);
+    font-weight: bold;
 }
 .breadcrumbs li:not(:last-child):after {
     display: inline-block;
-    border-right: 2px solid var(--color-gray-900);
-    border-bottom: 2px solid var(--color-gray-900);
+    border-right: 2px solid var(--color-muted-500);
+    border-bottom: 2px solid var(--color-muted-500);
     width: 8px;
     height: 8px;
     transform: rotate(-45deg);
     content: " ";
-    margin: 0 5px;
+    margin: 3px 10px;
+}
+.profile-picture {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 25px;
+    width: 25px;
+}
+.profile-picture img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    min-height: 100%;
 }
 .icon-folder,
 .icon-folder::after {
+    color: var(--color-muted-500);
     box-sizing: border-box;
     position: relative;
     display: block;
     width: 22px;
     height: 16px;
     border: 2px solid;
-    border-radius: 3px
+    border-radius: 3px;
 }
 .icon-folder::after {
     content: "";
@@ -129,9 +160,10 @@
     border-top-right-radius: 4px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    top: -5px
+    top: -5px;
 }
 .icon-document {
+    color: var(--color-muted-500);
     box-sizing: border-box;
     position: relative;
     display: block;
@@ -143,24 +175,22 @@
     box-shadow: 0 0 0 2px;
     border-radius: 1px;
     border-top-right-radius: 4px;
-    overflow: hidden
+    overflow: hidden;
 }
 .icon-document::after,
 .icon-document::before {
     content: "";
     display: block;
     box-sizing: border-box;
-    position: absolute
+    position: absolute;
 }
 .icon-document::before {
     background: currentColor;
-    box-shadow:
-        0 4px 0,
-        -6px -4px 0;
+    box-shadow: 0 4px 0, -6px -4px 0;
     left: 0;
     width: 10px;
     height: 2px;
-    top: 8px
+    top: 8px;
 }
 .icon-document::after {
     width: 6px;
@@ -168,9 +198,10 @@
     border-left: 2px solid;
     border-bottom: 2px solid;
     right: -1px;
-    top: -1px
+    top: -1px;
 }
 .icon-image {
+    color: var(--color-muted-500);
     box-sizing: border-box;
     position: relative;
     display: block;
@@ -178,7 +209,7 @@
     height: 16px;
     overflow: hidden;
     box-shadow: 0 0 0 2px;
-    border-radius: 2px
+    border-radius: 2px;
 }
 .icon-image::after,
 .icon-image::before {
@@ -186,7 +217,7 @@
     display: block;
     box-sizing: border-box;
     position: absolute;
-    border: 2px solid
+    border: 2px solid;
 }
 .icon-image::after {
     transform: rotate(45deg);
@@ -194,13 +225,13 @@
     width: 16px;
     height: 16px;
     top: 9px;
-    left: 6px
+    left: 6px;
 }
 .icon-image::before {
     width: 6px;
     height: 6px;
     border-radius: 100%;
     top: 2px;
-    left: 2px
+    left: 2px;
 }
 </style>
