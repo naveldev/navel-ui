@@ -42,7 +42,7 @@
         </v-table>
 
         <!-- Controls -->
-        <div v-if="this.paginator" class="card-footer md:d-flex align-items-center">
+        <div v-if="this.paginator" class="card-content md:d-flex align-items-center">
             <p class="text-muted p-1">Page {{ paginator.page }} / {{ paginator.pages }}</p>
 
             <div class="ml-auto">
