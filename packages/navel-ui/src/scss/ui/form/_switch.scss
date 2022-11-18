@@ -6,6 +6,7 @@
 // Switch
 .form-switch[type="checkbox"]
 {
+    border: 1px solid var(--color-gray-500);
     background: var(--form-primary-color);
     color: var(--form-secondary-color);
     box-shadow: $box-shadow;
@@ -13,8 +14,8 @@
     position: relative;
     display: inline-block;
     cursor: pointer;
-    width: 40px;
-    height: 20px;
+    width: 42px;
+    height: 22px;
 
     & + label
     {

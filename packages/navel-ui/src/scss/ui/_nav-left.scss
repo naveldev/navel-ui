@@ -25,6 +25,15 @@
 		}
 	}
 
+    .nav-title
+    {
+        color: var(--color-gray-600);
+        text-transform: uppercase;
+        font-size: small;
+        display: flex;
+        align-items: center;
+    }
+
 	ul.nav-list
 	{
 		display: block;
@@ -57,16 +66,13 @@
 				}
 			}
 
-			.link-icon
-			{
-				color: var(--nav-left-tertiary-color);
-				font-size: 22px;
-				padding: 0 10px;
-				width: 40px;
-				box-sizing: border-box;
-				text-align: center;
-				display: inline-block;
-			}
+            .nav-icon
+            {
+                width: 40px;
+                text-align: center;
+                display: inline-block;
+                color: inherit;
+            }
 		}
 	}
 
@@ -144,6 +150,11 @@
         }
     }
 
+    &:not(.nav-collapsed)
+    {
+        min-width: 300px;
+    }
+
 	// stick within element
 	&.nav-sticky
 	{
@@ -177,6 +188,8 @@
             // Collapsed
             &.nav-collapsed
             {
+                display: none;
+
                 .nav-collapse
                 {
                     display: none;
@@ -186,15 +199,12 @@
             // Not collapsed
             &:not(.nav-collapsed)
             {
-                position: absolute;
-		        z-index: 10010;
+                position: fixed;
+		        z-index: 100101 !important;
                 top: 0;
                 left: 0;
                 right: 0;
                 bottom: 0;
-                width: 100vw;
-                max-width: 100vw;
-                height: 100vh;
 
                 .nav-collapse
                 {
@@ -233,13 +243,40 @@
 {
     @media (min-width: #{$breakpoint})
     {
-        .nav-left
+        nav.nav-left
         {
-            .nav-collapse
+
+            &.nav-collapsed
             {
-                display: flex;
-                flex: 1 1;
-                flex-direction: column;
+                .nav-title
+                {
+                    display: none;
+                }
+
+                .nav-label
+                {
+                    display: none;
+                }
+
+                ul.nav-items
+                {
+
+                    li.nav-item
+                    {
+
+                        .nav-label
+                        {
+                            display: none;
+                        }
+                    }
+                }
+
+                .nav-collapse
+                {
+                    display: flex;
+                    flex: 1 1;
+                    flex-direction: column;
+                }
             }
         }
     }

@@ -12,7 +12,7 @@ table.table
 
     thead
     {
-        background-color: var(--color-gray-200);
+        // background-color: var(--color-gray-200);
 
         tr
         {
@@ -22,9 +22,8 @@ table.table
             {
                 padding: 10px 15px;
                 color: var(--color-muted-500);
-                font-size: 14px;
 		        text-align: left;
-                text-transform: uppercase;
+                text-transform: capitalize;
             }
         }
     }
@@ -39,13 +38,9 @@ table.table
 
             td
             {
+                //border-top: 1px solid var(--color-gray-300);
                 text-align: left;
                 padding: 15px;
-            }
-
-            &:not(:last-child)
-            {
-                border-bottom: 1px solid var(--color-gray-300);
             }
 		}
 
