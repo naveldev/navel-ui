@@ -103,7 +103,7 @@
 		},
 
         mounted() {
-            this.defaultColumns = this.parseColumnsFromData(this.data[0])
+            this.defaultColumns = this.parseColumnsFromData(this.data[0] ?? {})
         },
 
         methods: {

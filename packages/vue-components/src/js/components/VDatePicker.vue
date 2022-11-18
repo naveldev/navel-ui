@@ -1,4 +1,4 @@
-<template>
+ <template>
     <div class="">
         <div class="form-input d-flex justify-content-start" :class="{ 'form-error': error, 'form-loading': loading, 'color-muted': disabled }" @click="!disabled ? setState(!calendar.state) : () => {}">
             <!-- Prefix -->
@@ -32,15 +32,15 @@
         </div>
         <div v-if="calendar.state" class="card">
             <div class="card-heading d-flex p-1">
-                <button class="btn btn-primary btn-soft mr-auto" @click="this.addMonths(-12)">&lt;&lt;</button>
+                <button class="btn btn-primary btn-hover mr-auto" @click="this.addMonths(-12)">&lt;&lt;</button>
 
-                <button class="btn btn-primary btn-soft mr-auto" @click="previousMonth">&lt;</button>
+                <button class="btn btn-primary btn-hover mr-auto" @click="previousMonth">&lt;</button>
 
                 <strong class="flex-fill-1">{{ currentMonthLabel }} {{ currentYear }}</strong>
 
-                <button class="btn btn-primary btn-soft ml-auto" @click="nextMonth">&gt;</button>
+                <button class="btn btn-primary btn-hover ml-auto" @click="nextMonth">&gt;</button>
 
-                <button class="btn btn-primary btn-soft ml-auto" @click="this.addMonths(12)">&gt;&gt;</button>
+                <button class="btn btn-primary btn-hover ml-auto" @click="this.addMonths(12)">&gt;&gt;</button>
             </div>
 
             <div class="card-content p-1">
@@ -49,7 +49,7 @@
                         <strong>{{ dayLabel }}</strong>
                     </div>
 
-                    <button v-for="(day, index) in dates" :key="index" class="btn btn-soft p-2" :class="dayClassObj(day)" @click.prevent="setSelectedDate(day)">
+                    <button v-for="(day, index) in dates" :key="index" class="btn btn-hover p-2" :class="dayClassObj(day)" @click.prevent="setSelectedDate(day)">
                         {{ formatDateToDay(day) }}
                     </button>
                 </div>
@@ -59,7 +59,7 @@
                 <button class="btn btn-primary btn-outline btn-block m-1" @click.prevent="setSelectedDate(null)">
                     Clear
                 </button>
-                <button class="btn btn-primary btn-action btn-block m-1" @click.prevent="setState(false)">
+                <button class="btn btn-primary btn-hover btn-block m-1" @click.prevent="setState(false)">
                     Apply
                 </button>
             </div>
