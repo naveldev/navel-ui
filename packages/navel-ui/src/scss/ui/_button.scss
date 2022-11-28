@@ -44,7 +44,8 @@ a.btn
         background-color: transparent;
         color: var(--button-quaternary-color);
 
-        &:hover
+        &:hover,
+        &.btn-active
         {
             background-color: var(--button-primary-color);
         }
