@@ -1,16 +1,14 @@
 <template>
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-                <tr>
-                    <slot name="table-head" />
-                </tr>
-            </thead>
-            <tbody>
-                <slot name="table-content" />
-            </tbody>
-        </table>
-    </div>
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <slot name="table-head" />
+            </tr>
+        </thead>
+        <tbody>
+            <slot name="table-content" />
+        </tbody>
+    </table>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-    <div v-if="data" :class="{ 'table-loading': loading }">
+    <div v-if="data">
         <!-- multiSelectOptions -->
         <div v-if="this.$slots.tableTitle || this.$slots.multiSelectOptions" class="card-heading md:d-flex align-items-center">
             <slot name="table-title" />
@@ -10,7 +10,7 @@
         </div>
 
         <!-- Table -->
-        <v-table>
+        <v-table :class="{ 'table-loading': loading, 'table-striped': striped, 'table-hover': hover }">
             <template v-slot:table-head>
                 <th v-if="this.$slots.multiSelectOptions">
                     <div class="d-block">
@@ -34,7 +34,7 @@
                             <span v-else>{{ truncate(parseAttributeFromArray(entry, type) ?? false, 40, '...') }}</span>
                         </slot>
 					</td>
-                    <td v-if="this.$slots.tableActions">
+                    <td v-if="this.$slots.tableActions" class="d-flex justify-content-end">
                         <slot name="tableActions" v-bind:entry="entry"/>
                     </td>
 				</tr>
@@ -46,13 +46,13 @@
             <p class="text-muted p-1">Page {{ paginator.page }} / {{ paginator.pages }}</p>
 
             <div class="ml-auto">
-                <button class="btn btn-rounded btn-hover btn-soft" :class="{ 'btn-disabled': (paginator.page <= 1) }" @click="previous">
+                <button class="btn btn-rounded btn-hover" :class="{ 'btn-disabled': (paginator.page <= 1) }" @click="previous">
                     <i class="far fa-long-arrow-left"></i>
                 </button>
-                <button v-for="(page, key) in pages" :key="key" class="btn btn-rounded btn-hover btn-soft" :class="{ 'btn-active': (page == this.paginator.page) }" @click="setPage(page)">
+                <button v-for="(page, key) in pages" :key="key" class="btn btn-rounded btn-hover" :class="{ 'btn-active': (page == this.paginator.page) }" @click="setPage(page)">
                     {{ page }}
                 </button>
-                <button class="btn btn-rounded btn-hover btn-soft" :class="{ 'btn-disabled': (paginator.page >= paginator.pages) }" @click="next">
+                <button class="btn btn-rounded btn-hover" :class="{ 'btn-disabled': (paginator.page >= paginator.pages) }" @click="next">
                     <i class="far fa-long-arrow-right"></i>
                 </button>
             </div>
@@ -72,6 +72,14 @@
 
 		props: {
 			loading: {
+                type: Boolean,
+                default: false
+			},
+			striped: {
+                type: Boolean,
+                default: false
+			},
+			hover: {
                 type: Boolean,
                 default: false
 			},
