@@ -66,6 +66,13 @@
         box-shadow: $box-shadow;
         border-radius: $border-radius;
     }
+
+    table.table
+    {
+        background-color: transparent;
+        box-shadow: none;
+        border-radius: 0;
+    }
 }
 
 @include colors() using ( $color, $value, $type )
